@@ -335,4 +335,71 @@
         </div>
 
         <p class="hintText" id="topMsg">
-          QR-koden
+          QR-koden kan være <b>1010011100</b>, <b>1-7</b>, eller <b>code=…</b>. Navnet er skjult som standard.
+        </p>
+      </div>
+
+      <div class="manual">
+        <div class="field">
+          <span aria-hidden="true">⌨️</span>
+          <input id="manualInput" inputmode="text" autocomplete="off"
+                 placeholder="…eller skriv inn kode / id (f.eks. 1010011100 eller 1-7)" />
+        </div>
+        <div class="btnRow">
+          <button id="btnLookup">🔎 Vis hint</button>
+          <button id="btnClear" class="btnGhost">🧼 Nullstill</button>
+        </div>
+      </div>
+
+      <div class="scanner" id="scannerWrap">
+        <div id="qr-reader"></div>
+        <div class="scanHelp">
+          <span>Bruk godt lys og hold kortet rolig.</span>
+          <span>Hvis det hakker: “Stopp” → “SCAN”.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel result" id="resultCard" aria-live="polite">
+      <div class="titleRow">
+        <div>
+          <h2 class="cardTitle" id="rName">???</h2>
+          <div class="smallMeta" id="rMeta">—</div>
+        </div>
+        <div class="badge">
+          <span class="dot ok"></span>
+          <span>Hint funnet</span>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="kv">
+          <div class="k">⏳ Levde</div>
+          <div class="v" id="rLived">—</div>
+        </div>
+        <div class="kv">
+          <div class="k">🗺️ Født / oppvokst</div>
+          <div class="v" id="rPlace">—</div>
+        </div>
+        <div class="kv">
+          <div class="k">🛡️ Yrke / rolle</div>
+          <div class="v" id="rRole">—</div>
+        </div>
+        <div class="kv">
+          <div class="k">✨ Kjennetegn</div>
+          <div class="v" id="rTagline">—</div>
+        </div>
+      </div>
+
+      <div class="footerActions">
+        <button class="btnPrimary" id="btnScanAgain">🔄 Scan igjen</button>
+        <button class="btnGhost" id="btnRevealName">👁️ Vis navn</button>
+      </div>
+
+      <div class="msg" id="bottomMsg"></div>
+    </section>
+  </div>
+
+  <script src="./index_addon.js"></script>
+</body>
+</html>
