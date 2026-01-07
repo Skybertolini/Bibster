@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Bibster – Scan</title>
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- QR-scanner library (CDN) -->
+  <script src="https://unpkg.com/html5-qrcode@2.3.10/html5-qrcode.min.js"></script>
+
+  <style>
+    :root{
+      --bg1:#0b1020;
+      --bg2:#101a35;
+      --card:#0f1b33cc;
+      --card2:#0b1326cc;
+      --text:#e9f0ff;
+      --muted:#b8c6e6;
+      --gold:#f6d27a;
+      --gold2:#b9872f;
+      --danger:#ff6b6b;
+      --ok:#7CFFB2;
+      --shadow: 0 12px 40px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% 10%, #233a7a55, transparent 60%),
+        radial-gradient(900px 600px at 90% 20%, #2b7a5a33, transparent 55%),
+        radial-gradient(900px 600px at 50% 90%, #7a5b2b33, transparent 60%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .wrap{
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 18px 16px 32px;
+      padding-bottom: max(32px, env(safe-area-inset-bottom));
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin: 6px 0 14px;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:10px;
+    }
+    .sigil{
+      width:40px; height:40px;
+      border-radius: 12px;
+      background:
+        radial-gradient(circle at 30% 30%, #ffffff22, transparent 45%),
+        linear-gradient(135deg, #2d3d8f, #1a8f6a);
+      box-shadow: 0 8px 18px rgba(0,0,0,.3);
+      position:relative;
+      overflow:hidden;
+    }
+    .sigil:after{
+      content:"";
+      position:absolute; inset:-40%;
+      background: conic-gradient(from 180deg, transparent, #ffffff22, transparent);
+      animation: spin 6s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    h1{
+      font-size: 18px;
+      margin:0;
+      letter-spacing:.2px;
+    }
+    .sub{
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .panel{
+      background: linear-gradient(180deg, var(--card), var(--card2));
+      border: 1px solid #ffffff12;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero{
+      padding: 16px;
+      display:grid;
+      gap:12px;
+    }
+
+    .btnRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    button, .btn{
+      border:0;
+      border-radius: 14px;
+      padding: 13px 14px;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text);
+      background: #ffffff14;
+      box-shadow: 0 10px 24px rgba(0,0,0,.25);
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      cursor:pointer;
+      user-select:none;
+      transition: transform .08s ease, filter .15s ease;
+    }
+    button:active{ transform: translateY(1px) scale(.99); }
+    button:disabled{ opacity:.55; cursor:not-allowed; }
+
+    .btnPrimary{
+      background: linear-gradient(180deg, var(--gold), var(--gold2));
+      color: #1a1206;
+    }
+    .btnGhost{
+      background: #00000022;
+      border: 1px solid #ffffff12;
+      box-shadow:none;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid #ffffff14;
+      background: #00000022;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .dot{ width:8px; height:8px; border-radius:50%; background:#ffffff55; }
+    .dot.ok{ background: var(--ok); }
+    .dot.bad{ background: var(--danger); }
+
+    .manual{
+      display:grid;
+      gap:10px;
+      padding: 0 16px 16px;
+    }
+    .field{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      background:#00000022;
+      border: 1px solid #ffffff14;
+      border-radius: 14px;
+      padding: 10px 12px;
+    }
+    input{
+      width:100%;
+      border:0;
+      outline:none;
+      background:transparent;
+      color: var(--text);
+      font-size: 15px;
+    }
+    input::placeholder{ color:#cfe0ff66; }
+
+    /* Scanner area */
+    .scanner{
+      display:none;
+      padding: 16px;
+      border-top: 1px solid #ffffff12;
+      background: #0000001a;
+    }
+    .scanner.on{ display:block; }
+    #qr-reader{
+      width:100%;
+      border-radius: 16px;
+      overflow:hidden;
+      border: 1px solid #ffffff14;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+      background:#00000033;
+    }
+    .scanHelp{
+      margin-top:10px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* Result card */
+    .result{
+      margin-top: 14px;
+      padding: 16px;
+      display:none;
+    }
+    .result.on{ display:block; }
+
+    .titleRow{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .cardTitle{
+      font-size: 18px;
+      margin: 0;
+      letter-spacing:.2px;
+    }
+    .smallCode{
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .grid{
+      margin-top: 12px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+    }
+
+    .kv{
+      background:#00000022;
+      border: 1px solid #ffffff12;
+      border-radius: 14px;
+      padding: 12px;
+    }
+    .k{
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 4px;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    .v{
+      font-size: 15px;
+      line-height:1.25rem;
+    }
+    .msg{
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footerActions{
+      margin-top: 14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="sigil" aria-hidden="true"></div>
+        <div>
+          <h1>Bibster Scanner</h1>
+          <div class="sub">Scan kortet → få hint → gjett personen</div>
+        </div>
+      </div>
+
+      <div class="pill" id="statusPill">
+        <span class="dot" id="statusDot"></span>
+        <span id="statusText">Laster data…</span>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="hero">
+        <div class="btnRow">
+          <button class="btnPrimary" id="btnScan" disabled>
+            📷 SCAN
+          </button>
+          <button class="btnGhost" id="btnStop" disabled>
+            ✋ Stopp
+          </button>
+          <button class="btnGhost" id="btnRandom" disabled>
+            🎲 Tilfeldig (test)
+          </button>
+        </div>
+        <div class="msg" id="topMsg">
+          Tips: QR-koden kan inneholde enten selve binærkoden (f.eks. <b>1010011100</b>) eller <b>code=1010011100</b>.
+        </div>
+      </div>
+
+      <div class="manual">
+        <div class="field">
+          <span aria-hidden="true">⌨️</span>
+          <input id="manualInput" inputmode="text" autocomplete="off" placeholder="…eller skriv inn kode / id (f.eks. 1010011100 eller 1-7)" />
+        </div>
+        <div class="btnRow">
+          <button id="btnLookup" class="btn">
+            🔎 Vis hint
+          </button>
+          <button id="btnClear" class="btnGhost">
+            🧼 Nullstill
+          </button>
+        </div>
+      </div>
+
+      <div class="scanner" id="scannerWrap">
+        <div id="qr-reader"></div>
+        <div class="scanHelp">
+          <span>Hold kortet rolig i godt lys.</span>
+          <span>Hvis det hakker: prøv “Stopp” og “SCAN” igjen.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel result" id="resultCard" aria-live="polite">
+      <div class="titleRow">
+        <div>
+          <h2 class="cardTitle" id="rName">—</h2>
+          <div class="smallCode" id="rMeta">—</div>
+        </div>
+        <div class="pill">
+          <span class="dot ok"></span>
+          <span>Hint funnet</span>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="kv">
+          <div class="k">⏳ Levde</div>
+          <div class="v" id="rLived">—</div>
+        </div>
+        <div class="kv">
+          <div class="k">🗺️ Født / oppvokst</div>
+          <div class="v" id="rPlace">—</div>
+        </div>
+        <div class="kv">
+          <div class="k">🛡️ Yrke / rolle</div>
+          <div class="v" id="rRole">—</div>
+        </div>
+        <div class="kv">
+          <div class="k">✨ Kjennetegn</div>
+          <div class="v" id="rTagline">—</div>
+        </div>
+      </div>
+
+      <div class="footerActions">
+        <button class="btnPrimary" id="btnScanAgain">🔄 Scan igjen</button>
+        <button class="btnGhost" id="btnHideName">🙈 Skjul navn</button>
+      </div>
+
+      <div class="msg" id="bottomMsg"></div>
+    </section>
+  </div>
+
+  <script src="./index_addon.js"></script>
+</body>
+</html>
