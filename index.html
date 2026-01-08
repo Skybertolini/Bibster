@@ -292,8 +292,21 @@
       aspect-ratio: 1;
       border-radius: 999px;
       overflow: hidden;
-      background: transparent;
+      background: radial-gradient(circle at 50% 35%, rgba(124,243,255,.18), rgba(7,12,25,0) 70%);
       border: none;
+      position: relative;
+      box-shadow:
+        0 0 35px rgba(124,243,255,.25),
+        0 0 60px rgba(167,139,250,.22);
+    }
+    .personImageWrap::before{
+      content:"";
+      position:absolute;
+      inset:-12%;
+      background: radial-gradient(circle at 50% 40%, rgba(124,243,255,.35), rgba(0,0,0,0) 70%);
+      filter: blur(12px);
+      opacity: .9;
+      z-index: 0;
     }
     .personImageWrap.on{ display:flex; }
     .personImage{
@@ -302,6 +315,8 @@
       border-radius: 999px;
       object-fit: cover;
       background: transparent;
+      position: relative;
+      z-index: 1;
       pointer-events: none;
       user-select: none;
       -webkit-user-drag: none;
