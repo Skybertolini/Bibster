@@ -365,30 +365,11 @@
     }
     .parchment-cover::before,
     .parchment-cover::after{
-      content:"";
-      position:absolute;
-      inset: 0;
-      border-radius: 12px;
-      background:
-        linear-gradient(180deg, rgba(255,244,214,.95), rgba(224,196,150,.92)),
-        repeating-linear-gradient(90deg, rgba(255,255,255,.08), rgba(255,255,255,.08) 6px, rgba(0,0,0,.05) 6px, rgba(0,0,0,.05) 12px);
-      box-shadow: inset 0 0 18px rgba(96,62,24,.2);
-      opacity: .9;
-    }
-    .parchment-cover::before{
-      clip-path: polygon(0 0, 58% 0, 44% 60%, 0 100%);
-    }
-    .parchment-cover::after{
-      clip-path: polygon(58% 0, 100% 0, 100% 100%, 36% 76%);
+      content: none;
+      display: none;
     }
     .hint-card.revealing .parchment-cover{
       animation: parchment-fall 700ms ease forwards;
-    }
-    .hint-card.revealing .parchment-cover::before{
-      animation: parchment-fragment-left 700ms ease forwards;
-    }
-    .hint-card.revealing .parchment-cover::after{
-      animation: parchment-fragment-right 700ms ease forwards;
     }
     .hint-card.revealed .parchment-cover{
       opacity: 0;
