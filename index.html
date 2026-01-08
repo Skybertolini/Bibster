@@ -56,24 +56,29 @@
 
     header{
       display:flex;
+      flex-direction:column;
       align-items:center;
-      justify-content:space-between;
       gap:12px;
       margin: 6px 2px 14px;
+      text-align:center;
     }
 
     .brand{
       display:flex;
       align-items:center;
+      justify-content:center;
       gap:12px;
       min-width: 0;
+      width: 100%;
     }
 
     .logo{
-      width: 150px;
+      width: 300px;
       height: auto;
       display:block;
       filter: drop-shadow(0 12px 26px rgba(0,0,0,.45));
+      pointer-events: none;
+      user-select: none;
     }
 
     .tagline{
@@ -125,6 +130,16 @@
       display:flex;
       gap:10px;
       flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .btnMain{
+      font-size: 20px;
+      padding: 20px 28px;
+      border-radius: 18px;
+      min-width: 220px;
+      justify-content: center;
+      text-align: center;
     }
 
     button{
@@ -303,7 +318,7 @@
 
     /* Small screens: keep header clean */
     @media (max-width: 420px){
-      .logo{ width: 130px; }
+      .logo{ width: 260px; }
       .tagline{ display:none; }
     }
   </style>
@@ -314,7 +329,7 @@
     <header>
       <div class="brand">
         <div>
-          <img class="logo" src="./assets/bibster-logo.png" alt="Bibster logo">
+          <img class="logo" src="./assets/bibster-logo.png" alt="Bibster logo" draggable="false">
           <div class="tagline">Scan kortet → få hint → gjett personen</div>
         </div>
       </div>
@@ -328,9 +343,8 @@
     <section class="panel">
       <div class="hero">
         <div class="btnRow">
-          <button class="btnPrimary" id="btnScan" disabled>📷 SCAN</button>
-          <button class="btnGhost" id="btnStop" disabled>✋ Stopp</button>
-          <button class="btnGhost" id="btnRandom" disabled>🎲 Tilfeldig (test)</button>
+          <button class="btnPrimary btnMain" id="btnScan" disabled>📷 SCAN</button>
+          <button class="btnGhost btnMain" id="btnStop" disabled>✋ STOPP SCANNING</button>
         </div>
 
       <div class="scanner" id="scannerWrap">
