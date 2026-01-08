@@ -297,6 +297,10 @@
       gap:8px;
       align-items:center;
     }
+    .hintIndex{
+      color: var(--text);
+      font-weight: 700;
+    }
     .v{
       font-size: 15px;
       line-height:1.25rem;
@@ -370,26 +374,22 @@
 
       <div class="grid">
         <div class="kv">
-          <div class="k">⏳ Levde</div>
-          <div class="v" id="rLived">—</div>
-        </div>
-        <div class="kv">
-          <div class="k">🗺️ Født / oppvokst</div>
+          <div class="k"><span class="hintIndex">Hint 1</span><span>🗺️ Født / oppvokst</span></div>
           <div class="v" id="rPlace">—</div>
         </div>
         <div class="kv">
-          <div class="k">🛡️ Yrke / rolle</div>
+          <div class="k"><span class="hintIndex">Hint 2</span><span>🛡️ Yrke / rolle</span></div>
           <div class="v" id="rRole">—</div>
         </div>
         <div class="kv">
-          <div class="k">✨ Kjennetegn</div>
+          <div class="k"><span class="hintIndex">Hint 3</span><span>✨ Kjennetegn</span></div>
           <div class="v" id="rTagline">—</div>
         </div>
       </div>
 
       <div class="footerActions">
         <button class="btnPrimary" id="btnScanAgain">🔄 Scan igjen</button>
-        <button class="btnGhost" id="btnRevealName">👁️ Vis navn</button>
+        <button class="btnGhost" id="btnRevealName">👁️ Avslør hvem det er</button>
       </div>
 
       <div class="msg" id="bottomMsg"></div>

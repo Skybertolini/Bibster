@@ -23,7 +23,6 @@
 
   const rName = el("rName");
   const rMeta = el("rMeta");
-  const rLived = el("rLived");
   const rPlace = el("rPlace");
   const rRole = el("rRole");
   const rTagline = el("rTagline");
@@ -102,7 +101,7 @@
     rName.dataset.full = person?.name || "Ukjent";
     rName.dataset.hidden = "1";
     rName.textContent = "???";
-    btnRevealName.textContent = "👁️ Vis navn";
+    btnRevealName.textContent = "👁️ Avslør hvem det er";
   }
 
   function showResult(person, parsed) {
@@ -121,7 +120,6 @@
     if (person.code) metaParts.push(`KODE ${person.code}`);
     rMeta.textContent = metaParts.join(" • ") || "—";
 
-    rLived.textContent = person.lived_text || "—";
     rPlace.textContent = person.place || "—";
     rRole.textContent = person.role || "—";
     rTagline.textContent = person.tagline || "—";
@@ -255,7 +253,7 @@
     } else {
       rName.textContent = "???";
       rName.dataset.hidden = "1";
-      btnRevealName.textContent = "👁️ Vis navn";
+      btnRevealName.textContent = "👁️ Avslør hvem det er";
     }
   });
 
