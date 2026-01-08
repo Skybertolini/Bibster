@@ -23,6 +23,10 @@
 
   const rName = el("rName");
   const rMeta = el("rMeta");
+  const rImage = el("rImage");
+  const rImageWrap = el("rImageWrap");
+  const rLived = el("rLived");
+  const rLivedWrap = el("rLivedWrap");
   const rPlace = el("rPlace");
   const rRole = el("rRole");
   const rTagline = el("rTagline");
@@ -97,11 +101,30 @@
     return { person: null, parsed };
   }
 
+  function setRevealState(show) {
+    if (show) {
+      rName.textContent = rName.dataset.full || "—";
+      rName.dataset.hidden = "0";
+      btnRevealName.textContent = "🙈 Skjul navn";
+      rLivedWrap.classList.add("on");
+      if (rImage.dataset.failed !== "1" && rImage.src) {
+        rImageWrap.classList.add("on");
+      }
+      resultCard.dataset.revealed = "1";
+      return;
+    }
+
+    rName.textContent = "???";
+    rName.dataset.hidden = "1";
+    btnRevealName.textContent = "👁️ Avslør hvem det er";
+    rLivedWrap.classList.remove("on");
+    rImageWrap.classList.remove("on");
+    resultCard.dataset.revealed = "0";
+  }
+
   function setNameHidden(person) {
     rName.dataset.full = person?.name || "Ukjent";
-    rName.dataset.hidden = "1";
-    rName.textContent = "???";
-    btnRevealName.textContent = "👁️ Avslør hvem det er";
+    setRevealState(false);
   }
 
   function showResult(person, parsed) {
@@ -123,6 +146,18 @@
     rPlace.textContent = person.place || "—";
     rRole.textContent = person.role || "—";
     rTagline.textContent = person.tagline || "—";
+    rLived.textContent = person.lived_text || "—";
+    rLivedWrap.classList.remove("on");
+
+    if (person.id) {
+      rImage.dataset.failed = "0";
+      rImage.src = `./assets/${person.id}.png`;
+    } else {
+      rImage.dataset.failed = "1";
+      rImage.removeAttribute("src");
+    }
+    rImage.alt = "Personbilde";
+    rImageWrap.classList.remove("on");
 
     bottomMsg.textContent =
       parsed.code ? `QR: code=${parsed.code}` :
@@ -134,7 +169,6 @@
   }
 
   function clearUI() {
-    manualInput.value = "";
     resultCard.classList.remove("on");
     bottomMsg.textContent = "";
     lastDecoded = null;
@@ -246,14 +280,18 @@
 
   btnRevealName.addEventListener("click", () => {
     const hidden = rName.dataset.hidden === "1";
-    if (hidden) {
-      rName.textContent = rName.dataset.full || "—";
-      rName.dataset.hidden = "0";
-      btnRevealName.textContent = "🙈 Skjul navn";
-    } else {
-      rName.textContent = "???";
-      rName.dataset.hidden = "1";
-      btnRevealName.textContent = "👁️ Avslør hvem det er";
+    setRevealState(hidden);
+  });
+
+  rImage.addEventListener("error", () => {
+    rImage.dataset.failed = "1";
+    rImageWrap.classList.remove("on");
+  });
+
+  rImage.addEventListener("load", () => {
+    rImage.dataset.failed = "0";
+    if (resultCard.dataset.revealed === "1") {
+      rImageWrap.classList.add("on");
     }
   });
 
