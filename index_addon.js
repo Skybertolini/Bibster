@@ -32,11 +32,11 @@
   const rTagline = el("rTagline");
   const bottomMsg = el("bottomMsg");
 
-  const btnScanAgain = el("btnScanAgain");
   const btnRevealName = el("btnRevealName");
 
   const hintCards = Array.from(document.querySelectorAll(".hint-card"));
   let hintProgressIndex = 0;
+  const hintRevealTimers = new WeakMap();
 
   function setStatus(ok, text) {
     statusDot.classList.remove("ok", "bad");
@@ -134,78 +134,52 @@
     hintCards.forEach((card, index) => {
       const isLocked = index > hintProgressIndex;
       card.classList.toggle("locked", isLocked);
+      card.setAttribute("aria-disabled", isLocked ? "true" : "false");
     });
   }
 
   function revealHint(card) {
-    if (card.classList.contains("revealed")) return;
-    card.classList.add("revealed");
-    hintProgressIndex = Math.min(hintProgressIndex + 1, hintCards.length - 1);
-    updateHintLocks();
+    if (card.classList.contains("revealed") || card.classList.contains("revealing")) return;
+    if (card.classList.contains("locked")) return;
+
+    card.classList.add("revealing");
+    const finishReveal = () => {
+      card.classList.remove("revealing");
+      card.classList.add("revealed");
+      hintProgressIndex = Math.min(hintProgressIndex + 1, hintCards.length - 1);
+      updateHintLocks();
+    };
+    const timer = window.setTimeout(finishReveal, 720);
+    hintRevealTimers.set(card, timer);
   }
 
   function resetHintProgress() {
     hintProgressIndex = 0;
     hintCards.forEach((card) => {
+      const timer = hintRevealTimers.get(card);
+      if (timer) window.clearTimeout(timer);
+      hintRevealTimers.delete(card);
       card.classList.remove("revealed");
+      card.classList.remove("revealing");
       card.classList.remove("locked");
-      const slider = card.querySelector(".parchment-slider");
-      if (slider) {
-        slider.classList.remove("dragging");
-        slider.style.removeProperty("--slide-x");
-      }
     });
     updateHintLocks();
   }
 
-  function initHintSliders() {
+  function initHintTaps() {
+    const tryReveal = (card) => {
+      if (card.classList.contains("locked")) return;
+      revealHint(card);
+    };
+
     hintCards.forEach((card) => {
-      const slider = card.querySelector(".parchment-slider");
-      if (!slider) return;
-
-      let startX = 0;
-      let currentX = 0;
-      let dragging = false;
-
-      const getWidth = () => card.getBoundingClientRect().width || 1;
-
-      const onPointerDown = (event) => {
-        if (card.classList.contains("locked") || card.classList.contains("revealed")) return;
-        dragging = true;
-        startX = event.clientX;
-        currentX = 0;
-        slider.classList.add("dragging");
-        slider.setPointerCapture(event.pointerId);
-      };
-
-      const onPointerMove = (event) => {
-        if (!dragging) return;
-        const dx = Math.max(0, event.clientX - startX);
-        const width = getWidth();
-        currentX = Math.min(dx, width);
-        slider.style.setProperty("--slide-x", `${currentX}px`);
-        event.preventDefault();
-      };
-
-      const endDrag = () => {
-        if (!dragging) return;
-        dragging = false;
-        slider.classList.remove("dragging");
-        const width = getWidth();
-        const progress = currentX / width;
-        if (progress >= 0.6) {
-          slider.style.removeProperty("--slide-x");
-          revealHint(card);
-        } else {
-          slider.style.setProperty("--slide-x", "0px");
+      card.addEventListener("click", () => tryReveal(card));
+      card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          tryReveal(card);
         }
-      };
-
-      slider.addEventListener("pointerdown", onPointerDown);
-      slider.addEventListener("pointermove", onPointerMove);
-      slider.addEventListener("pointerup", endDrag);
-      slider.addEventListener("pointercancel", endDrag);
-      slider.addEventListener("lostpointercapture", endDrag);
+      });
     });
   }
 
@@ -249,13 +223,6 @@
 
     resultCard.classList.add("on");
     setStatus(true, "Klar");
-  }
-
-  function clearUI() {
-    resultCard.classList.remove("on");
-    bottomMsg.textContent = "";
-    lastDecoded = null;
-    if (persons.length) setStatus(true, "Klar");
   }
 
   async function startScan() {
@@ -356,11 +323,6 @@
   btnStop.addEventListener("click", () => stopScan(true));
 
 
-  btnScanAgain.addEventListener("click", () => {
-    clearUI();
-    startScan();
-  });
-
   btnRevealName.addEventListener("click", () => {
     const hidden = rName.dataset.hidden === "1";
     setRevealState(hidden);
@@ -380,6 +342,6 @@
 
 
   // Init
-  initHintSliders();
+  initHintTaps();
   loadPersons();
 })();
