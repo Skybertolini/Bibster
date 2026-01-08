@@ -18,9 +18,6 @@
   const btnStop = el("btnStop");
   const btnRandom = el("btnRandom");
 
-  const manualInput = el("manualInput");
-  const btnLookup = el("btnLookup");
-  const btnClear = el("btnClear");
 
   const scannerWrap = el("scannerWrap");
   const resultCard = el("resultCard");
@@ -247,17 +244,6 @@
   btnScan.addEventListener("click", startScan);
   btnStop.addEventListener("click", () => stopScan(true));
 
-  btnLookup.addEventListener("click", () => {
-    const val = normalize(manualInput.value);
-    if (!val) return;
-    const { person, parsed } = findPersonByInput(val);
-    showResult(person, parsed);
-  });
-
-  btnClear.addEventListener("click", () => {
-    stopScan(true);
-    clearUI();
-  });
 
   btnRandom.addEventListener("click", () => {
     if (!persons.length) return;
@@ -283,9 +269,6 @@
     }
   });
 
-  manualInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") btnLookup.click();
-  });
 
   // Init
   loadPersons();
