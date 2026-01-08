@@ -33,6 +33,7 @@
   const bottomMsg = el("bottomMsg");
 
   const btnRevealName = el("btnRevealName");
+  const silhouetteSrc = "./assets/silhouette.png";
 
   const hintCards = Array.from(document.querySelectorAll(".hint-card"));
   let hintProgressIndex = 0;
@@ -104,15 +105,25 @@
     return { person: null, parsed };
   }
 
+  function setImageSource(src) {
+    rImage.src = src || silhouetteSrc;
+  }
+
   function setRevealState(show) {
     if (show) {
       rName.textContent = rName.dataset.full || "—";
       rName.dataset.hidden = "0";
       btnRevealName.textContent = "🙈 Skjul navn";
       rLivedWrap.classList.add("on");
-      if (rImage.dataset.failed !== "1" && rImage.src) {
-        rImageWrap.classList.add("on");
+      const personSrc = rImage.dataset.personSrc || "";
+      if (personSrc) {
+        rImage.dataset.failed = "0";
+        setImageSource(personSrc);
+      } else {
+        rImage.dataset.failed = "1";
+        setImageSource(silhouetteSrc);
       }
+      rImageWrap.classList.add("on");
       resultCard.dataset.revealed = "1";
       return;
     }
@@ -121,7 +132,8 @@
     rName.dataset.hidden = "1";
     btnRevealName.textContent = "👁️ Avslør hvem det er";
     rLivedWrap.classList.remove("on");
-    rImageWrap.classList.remove("on");
+    setImageSource(silhouetteSrc);
+    rImageWrap.classList.add("on");
     resultCard.dataset.revealed = "0";
   }
 
@@ -207,14 +219,15 @@
     rLivedWrap.classList.remove("on");
 
     if (person.id) {
+      rImage.dataset.personSrc = `./assets/${person.id}.png`;
       rImage.dataset.failed = "0";
-      rImage.src = `./assets/${person.id}.png`;
     } else {
+      rImage.dataset.personSrc = "";
       rImage.dataset.failed = "1";
-      rImage.removeAttribute("src");
     }
+    setImageSource(silhouetteSrc);
     rImage.alt = "Personbilde";
-    rImageWrap.classList.remove("on");
+    rImageWrap.classList.add("on");
 
     bottomMsg.textContent =
       parsed.code ? `QR: code=${parsed.code}` :
@@ -329,15 +342,16 @@
   });
 
   rImage.addEventListener("error", () => {
+    const currentSrc = rImage.getAttribute("src") || "";
     rImage.dataset.failed = "1";
-    rImageWrap.classList.remove("on");
+    if (!currentSrc.endsWith("silhouette.png")) {
+      setImageSource(silhouetteSrc);
+    }
   });
 
   rImage.addEventListener("load", () => {
     rImage.dataset.failed = "0";
-    if (resultCard.dataset.revealed === "1") {
-      rImageWrap.classList.add("on");
-    }
+    rImageWrap.classList.add("on");
   });
 
 

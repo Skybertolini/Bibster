@@ -285,19 +285,26 @@
     .revealOnly.on{ display:block; }
 
     .personImageWrap{
-      margin-top: 12px;
+      margin: 12px auto 0;
       display:none;
       justify-content:center;
+      width: min(280px, 100%);
+      aspect-ratio: 1;
+      border-radius: 999px;
+      overflow: hidden;
+      background: transparent;
+      border: none;
     }
     .personImageWrap.on{ display:flex; }
     .personImage{
       width: 100%;
-      max-width: 280px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.18);
-      box-shadow: 0 16px 36px rgba(0,0,0,.35);
+      height: 100%;
+      border-radius: 999px;
       object-fit: cover;
       background: transparent;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
     }
 
     .kv{
@@ -441,6 +448,15 @@
       line-height: 1.2rem;
     }
 
+    .site-footer{
+      margin-top: 24px;
+      padding: 8px 0 16px;
+      text-align:center;
+      font-size: 12px;
+      color: var(--muted);
+      opacity: .7;
+    }
+
     /* Small screens: keep header clean */
     @media (max-width: 420px){
       .logo{ width: 260px; }
@@ -520,7 +536,7 @@
           <div class="k"><span class="hintIndex">Hint 1</span><span>🗺️ Født / oppvokst</span></div>
           <div class="v hint-content" id="rPlace">—</div>
           <div class="parchment-cover">
-            <div class="slider-label">Trykk for å avsløre</div>
+            <div class="slider-label">Trykk for å avsløre hint 1</div>
           </div>
           <div class="lock-indicator">🔒 Låst</div>
         </div>
@@ -528,7 +544,7 @@
           <div class="k"><span class="hintIndex">Hint 2</span><span>🛡️ Yrke / rolle</span></div>
           <div class="v hint-content" id="rRole">—</div>
           <div class="parchment-cover">
-            <div class="slider-label">Trykk for å avsløre</div>
+            <div class="slider-label">Trykk for å avsløre hint 2</div>
           </div>
           <div class="lock-indicator">🔒 Låst</div>
         </div>
@@ -536,7 +552,7 @@
           <div class="k"><span class="hintIndex">Hint 3</span><span>✨ Kjennetegn</span></div>
           <div class="v hint-content" id="rTagline">—</div>
           <div class="parchment-cover">
-            <div class="slider-label">Trykk for å avsløre</div>
+            <div class="slider-label">Trykk for å avsløre hint 3</div>
           </div>
           <div class="lock-indicator">🔒 Låst</div>
         </div>
@@ -548,6 +564,8 @@
 
       <div class="msg" id="bottomMsg"></div>
     </section>
+
+    <footer class="site-footer">Bibster © 2026 - Made by Skybert</footer>
   </div>
 
   <script src="./index_addon.js"></script>
