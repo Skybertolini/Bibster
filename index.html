@@ -294,10 +294,10 @@
       width: 100%;
       max-width: 280px;
       border-radius: 16px;
-      border: 1px solid var(--stroke);
+      border: 1px solid rgba(255,255,255,.18);
       box-shadow: 0 16px 36px rgba(0,0,0,.35);
       object-fit: cover;
-      background: rgba(0,0,0,.18);
+      background: transparent;
     }
 
     .kv{
@@ -310,6 +310,7 @@
       position: relative;
       overflow: hidden;
       min-height: 86px;
+      cursor: pointer;
     }
     .k{
       font-size: 11px;
@@ -333,11 +334,11 @@
       opacity: 0;
       transition: opacity 250ms ease;
     }
+    .hint-card.revealing .hint-content,
     .hint-card.revealed .hint-content{
       opacity: 1;
     }
-    .parchment-slider{
-      --slide-x: 0px;
+    .parchment-cover{
       position: absolute;
       inset: 0;
       border-radius: 12px;
@@ -353,25 +354,43 @@
       font-weight:700;
       letter-spacing:.3px;
       text-transform:uppercase;
-      transition: transform 220ms ease, opacity 220ms ease;
-      transform: translateX(var(--slide-x));
-      touch-action: pan-y;
-      cursor: grab;
-    }
-    .parchment-slider.dragging{
-      transition: none;
-      cursor: grabbing;
-    }
-    .hint-card.revealed .parchment-slider{
-      --slide-x: 110%;
-      opacity: 0;
       pointer-events:none;
+    }
+    .parchment-cover::before,
+    .parchment-cover::after{
+      content:"";
+      position:absolute;
+      inset: 0;
+      border-radius: 12px;
+      background:
+        linear-gradient(180deg, rgba(255,244,214,.95), rgba(224,196,150,.92)),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.08), rgba(255,255,255,.08) 6px, rgba(0,0,0,.05) 6px, rgba(0,0,0,.05) 12px);
+      box-shadow: inset 0 0 18px rgba(96,62,24,.2);
+      opacity: .9;
+    }
+    .parchment-cover::before{
+      clip-path: polygon(0 0, 58% 0, 44% 60%, 0 100%);
+    }
+    .parchment-cover::after{
+      clip-path: polygon(58% 0, 100% 0, 100% 100%, 36% 76%);
+    }
+    .hint-card.revealing .parchment-cover{
+      animation: parchment-fall 700ms ease forwards;
+    }
+    .hint-card.revealing .parchment-cover::before{
+      animation: parchment-fragment-left 700ms ease forwards;
+    }
+    .hint-card.revealing .parchment-cover::after{
+      animation: parchment-fragment-right 700ms ease forwards;
+    }
+    .hint-card.revealed .parchment-cover{
+      opacity: 0;
     }
     .hint-card.locked{
       opacity: .55;
-    }
-    .hint-card.locked .parchment-slider{
       cursor: not-allowed;
+    }
+    .hint-card.locked .parchment-cover{
       filter: grayscale(.2);
     }
     .slider-label{
@@ -407,6 +426,14 @@
       flex-wrap:wrap;
     }
 
+    .btnCta{
+      width: 100%;
+      justify-content: center;
+      font-size: 16px;
+      padding: 18px 22px;
+      border-radius: 16px;
+    }
+
     .msg{
       margin-top: 12px;
       color: var(--muted);
@@ -418,6 +445,20 @@
     @media (max-width: 420px){
       .logo{ width: 260px; }
       .tagline{ display:none; }
+    }
+
+    @keyframes parchment-fall{
+      0%{ opacity: 1; transform: translateY(0) rotate(0deg); filter: blur(0); }
+      55%{ opacity: .75; transform: translateY(20px) rotate(-2deg); }
+      100%{ opacity: 0; transform: translateY(70px) rotate(-6deg); filter: blur(2px); }
+    }
+    @keyframes parchment-fragment-left{
+      0%{ opacity: .9; transform: translate(0,0) rotate(0deg); }
+      100%{ opacity: 0; transform: translate(-30px, 80px) rotate(-10deg); }
+    }
+    @keyframes parchment-fragment-right{
+      0%{ opacity: .9; transform: translate(0,0) rotate(0deg); }
+      100%{ opacity: 0; transform: translate(30px, 85px) rotate(12deg); }
     }
   </style>
 </head>
@@ -475,35 +516,34 @@
           <div class="k"><span>Levde</span></div>
           <div class="v" id="rLived">—</div>
         </div>
-        <div class="kv hint-card" data-hint="1">
+        <div class="kv hint-card" data-hint="1" role="button" tabindex="0" aria-disabled="false">
           <div class="k"><span class="hintIndex">Hint 1</span><span>🗺️ Født / oppvokst</span></div>
           <div class="v hint-content" id="rPlace">—</div>
-          <div class="parchment-slider">
-            <div class="slider-label">Skyv pergamentet ➜</div>
+          <div class="parchment-cover">
+            <div class="slider-label">Trykk for å avsløre</div>
           </div>
           <div class="lock-indicator">🔒 Låst</div>
         </div>
-        <div class="kv hint-card" data-hint="2">
+        <div class="kv hint-card" data-hint="2" role="button" tabindex="0" aria-disabled="true">
           <div class="k"><span class="hintIndex">Hint 2</span><span>🛡️ Yrke / rolle</span></div>
           <div class="v hint-content" id="rRole">—</div>
-          <div class="parchment-slider">
-            <div class="slider-label">Skyv pergamentet ➜</div>
+          <div class="parchment-cover">
+            <div class="slider-label">Trykk for å avsløre</div>
           </div>
           <div class="lock-indicator">🔒 Låst</div>
         </div>
-        <div class="kv hint-card" data-hint="3">
+        <div class="kv hint-card" data-hint="3" role="button" tabindex="0" aria-disabled="true">
           <div class="k"><span class="hintIndex">Hint 3</span><span>✨ Kjennetegn</span></div>
           <div class="v hint-content" id="rTagline">—</div>
-          <div class="parchment-slider">
-            <div class="slider-label">Skyv pergamentet ➜</div>
+          <div class="parchment-cover">
+            <div class="slider-label">Trykk for å avsløre</div>
           </div>
           <div class="lock-indicator">🔒 Låst</div>
         </div>
       </div>
 
       <div class="footerActions">
-        <button class="btnPrimary" id="btnScanAgain">🔄 Scan igjen</button>
-        <button class="btnGhost" id="btnRevealName">👁️ Avslør hvem det er</button>
+        <button class="btnPrimary btnCta" id="btnRevealName">👁️ Avslør hvem det er</button>
       </div>
 
       <div class="msg" id="bottomMsg"></div>
