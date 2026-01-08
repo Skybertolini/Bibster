@@ -130,7 +130,7 @@
 
     rName.textContent = "???";
     rName.dataset.hidden = "1";
-    btnRevealName.textContent = "👁️ Avslør hvem det er";
+    btnRevealName.textContent = "Avslør hvem det er 🔍";
     rLivedWrap.classList.remove("on");
     setImageSource(silhouetteSrc);
     rImageWrap.classList.add("on");
