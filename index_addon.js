@@ -16,7 +16,6 @@
 
   const btnScan = el("btnScan");
   const btnStop = el("btnStop");
-  const btnRandom = el("btnRandom");
 
 
   const scannerWrap = el("scannerWrap");
@@ -226,14 +225,11 @@
 
       setStatus(true, `Klar (${persons.length} kort)`);
       btnScan.disabled = false;
-      btnRandom.disabled = false;
-      btnLookup.disabled = false;
       btnStop.disabled = true;
       return true;
     } catch (e) {
       setStatus(false, "Klarte ikke laste data");
       btnScan.disabled = true;
-      btnRandom.disabled = true;
       bottomMsg.textContent =
         `Sjekk at ${DATA_URL} finnes og er gyldig JSON. (${String(e).slice(0, 160)})`;
       return false;
@@ -244,12 +240,6 @@
   btnScan.addEventListener("click", startScan);
   btnStop.addEventListener("click", () => stopScan(true));
 
-
-  btnRandom.addEventListener("click", () => {
-    if (!persons.length) return;
-    const p = persons[Math.floor(Math.random() * persons.length)];
-    showResult(p, { code: p.code || "", id: p.id || "", raw: "(tilfeldig test)" });
-  });
 
   btnScanAgain.addEventListener("click", () => {
     clearUI();
