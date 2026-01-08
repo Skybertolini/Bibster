@@ -35,6 +35,9 @@
   const btnScanAgain = el("btnScanAgain");
   const btnRevealName = el("btnRevealName");
 
+  const hintCards = Array.from(document.querySelectorAll(".hint-card"));
+  let hintProgressIndex = 0;
+
   function setStatus(ok, text) {
     statusDot.classList.remove("ok", "bad");
     if (ok === true) statusDot.classList.add("ok");
@@ -127,6 +130,85 @@
     setRevealState(false);
   }
 
+  function updateHintLocks() {
+    hintCards.forEach((card, index) => {
+      const isLocked = index > hintProgressIndex;
+      card.classList.toggle("locked", isLocked);
+    });
+  }
+
+  function revealHint(card) {
+    if (card.classList.contains("revealed")) return;
+    card.classList.add("revealed");
+    hintProgressIndex = Math.min(hintProgressIndex + 1, hintCards.length - 1);
+    updateHintLocks();
+  }
+
+  function resetHintProgress() {
+    hintProgressIndex = 0;
+    hintCards.forEach((card) => {
+      card.classList.remove("revealed");
+      card.classList.remove("locked");
+      const slider = card.querySelector(".parchment-slider");
+      if (slider) {
+        slider.classList.remove("dragging");
+        slider.style.removeProperty("--slide-x");
+      }
+    });
+    updateHintLocks();
+  }
+
+  function initHintSliders() {
+    hintCards.forEach((card) => {
+      const slider = card.querySelector(".parchment-slider");
+      if (!slider) return;
+
+      let startX = 0;
+      let currentX = 0;
+      let dragging = false;
+
+      const getWidth = () => card.getBoundingClientRect().width || 1;
+
+      const onPointerDown = (event) => {
+        if (card.classList.contains("locked") || card.classList.contains("revealed")) return;
+        dragging = true;
+        startX = event.clientX;
+        currentX = 0;
+        slider.classList.add("dragging");
+        slider.setPointerCapture(event.pointerId);
+      };
+
+      const onPointerMove = (event) => {
+        if (!dragging) return;
+        const dx = Math.max(0, event.clientX - startX);
+        const width = getWidth();
+        currentX = Math.min(dx, width);
+        slider.style.setProperty("--slide-x", `${currentX}px`);
+        event.preventDefault();
+      };
+
+      const endDrag = () => {
+        if (!dragging) return;
+        dragging = false;
+        slider.classList.remove("dragging");
+        const width = getWidth();
+        const progress = currentX / width;
+        if (progress >= 0.6) {
+          slider.style.removeProperty("--slide-x");
+          revealHint(card);
+        } else {
+          slider.style.setProperty("--slide-x", "0px");
+        }
+      };
+
+      slider.addEventListener("pointerdown", onPointerDown);
+      slider.addEventListener("pointermove", onPointerMove);
+      slider.addEventListener("pointerup", endDrag);
+      slider.addEventListener("pointercancel", endDrag);
+      slider.addEventListener("lostpointercapture", endDrag);
+    });
+  }
+
   function showResult(person, parsed) {
     if (!person) {
       resultCard.classList.remove("on");
@@ -137,6 +219,7 @@
 
     // Name hidden by default
     setNameHidden(person);
+    resetHintProgress();
 
     const metaParts = [];
     if (person.id) metaParts.push(`ID ${person.id}`);
@@ -297,5 +380,6 @@
 
 
   // Init
+  initHintSliders();
   loadPersons();
 })();
