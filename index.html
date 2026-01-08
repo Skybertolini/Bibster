@@ -281,6 +281,25 @@
       gap:10px;
     }
 
+    .revealOnly{ display:none; }
+    .revealOnly.on{ display:block; }
+
+    .personImageWrap{
+      margin-top: 12px;
+      display:none;
+      justify-content:center;
+    }
+    .personImageWrap.on{ display:flex; }
+    .personImage{
+      width: 100%;
+      max-width: 280px;
+      border-radius: 16px;
+      border: 1px solid var(--stroke);
+      box-shadow: 0 16px 36px rgba(0,0,0,.35);
+      object-fit: cover;
+      background: rgba(0,0,0,.18);
+    }
+
     .kv{
       background: rgba(0,0,0,.14);
       border: 1px solid var(--stroke);
@@ -347,15 +366,15 @@
     <section class="panel">
       <div class="hero">
         <div class="btnRow">
-          <button class="btnPrimary btnMain" id="btnScan" disabled>📷 SCAN</button>
-          <button class="btnGhost btnMain" id="btnStop" disabled>✋ STOPP SCANNING</button>
+          <button class="btnPrimary btnMain" id="btnScan" disabled>SCAN QR-KODE</button>
+          <button class="btnGhost btnMain" id="btnStop" disabled>STOPP SCANNING</button>
         </div>
 
       <div class="scanner" id="scannerWrap">
         <div id="qr-reader"></div>
         <div class="scanHelp">
           <span>Bruk godt lys og hold kortet rolig.</span>
-          <span>Hvis det hakker, trykk «STOPP SCANNING» og deretter «SCAN» på nytt.</span>
+          <span>Hvis det hakker, trykk «STOPP SCANNING» og deretter «SCAN QR-KODE» på nytt.</span>
         </div>
       </div>
     </section>
@@ -372,7 +391,15 @@
         </div>
       </div>
 
+      <div class="personImageWrap" id="rImageWrap">
+        <img id="rImage" class="personImage" alt="Personbilde" loading="lazy">
+      </div>
+
       <div class="grid">
+        <div class="kv revealOnly" id="rLivedWrap">
+          <div class="k"><span>Levde</span></div>
+          <div class="v" id="rLived">—</div>
+        </div>
         <div class="kv">
           <div class="k"><span class="hintIndex">Hint 1</span><span>🗺️ Født / oppvokst</span></div>
           <div class="v" id="rPlace">—</div>
