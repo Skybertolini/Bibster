@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Bibster – Scan</title>
   <meta name="theme-color" content="#0B1020" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet" />
 
 <script defer src="https://unpkg.com/html5-qrcode@latest/html5-qrcode.min.js"></script>
 
@@ -27,6 +30,7 @@
       --accent2:#A78BFA;    /* purple */
       --good:#70FFB1;
       --bad:#FF6B6B;
+      --parchment:#E6D8BF;
 
       --shadow: 0 18px 50px rgba(0,0,0,.45);
       --radius: 20px;
@@ -89,6 +93,16 @@
       overflow:hidden;
       text-overflow: ellipsis;
       max-width: 220px;
+    }
+
+    .logoSubtitle{
+      margin-top: 6px;
+      font-family: "Dancing Script", "Segoe Script", "Brush Script MT", "Comic Sans MS", cursive;
+      font-size: clamp(16px, 2.4vw, 22px);
+      letter-spacing: 0.02em;
+      color: var(--parchment);
+      line-height: 1.1;
+      text-align:center;
     }
 
     .status{
@@ -498,6 +512,7 @@
       <div class="brand">
         <div>
           <img class="logo" src="./assets/bibster-logo.png" alt="Bibster logo" draggable="false">
+          <div class="logoSubtitle">Who &amp; When</div>
           <div class="tagline">Scan kortet → få hint → gjett personen</div>
         </div>
       </div>
