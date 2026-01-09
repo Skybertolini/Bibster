@@ -1378,45 +1378,6 @@
     "approx": true
   },
   {
-    "id": "12-8",
-    "code": "0010101110",
-    "name": "",
-    "lived_text": "",
-    "place": "",
-    "role": "",
-    "tagline": "",
-    "era": "",
-    "year_from": null,
-    "year_to": null,
-    "approx": false
-  },
-  {
-    "id": "12-9",
-    "code": "1011010110",
-    "name": "",
-    "lived_text": "",
-    "place": "",
-    "role": "",
-    "tagline": "",
-    "era": "",
-    "year_from": null,
-    "year_to": null,
-    "approx": false
-  },
-  {
-    "id": "13-1",
-    "code": "1110010110",
-    "name": "",
-    "lived_text": "",
-    "place": "",
-    "role": "",
-    "tagline": "",
-    "era": "",
-    "year_from": null,
-    "year_to": null,
-    "approx": false
-  },
-  {
     "id": "13-2",
     "code": "0101001011",
     "name": "Hananja",
