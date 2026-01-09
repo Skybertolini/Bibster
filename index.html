@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Bibster – Scan</title>
+  <title>Bibster</title>
   <meta name="theme-color" content="#0B1020" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -153,6 +153,11 @@
       order:3;
     }
 
+    .btnCentered{
+      margin-left:auto;
+      margin-right:auto;
+    }
+
     .btnMain{
       font-size: 20px;
       padding: 20px 28px;
@@ -177,8 +182,6 @@
     #btnScan{ order:1; }
     #btnStop{
       order:4;
-      margin-left:auto;
-      margin-right:auto;
     }
 
     button{
@@ -543,8 +546,8 @@
     <section class="panel">
       <div class="hero">
         <div class="btnRow">
-          <button class="btnPrimary btnMain" id="btnScan" disabled>SCAN QR-KODE</button>
-          <button class="btnGhost btnMain" id="btnStop" disabled>STOPP SCANNING</button>
+          <button class="btnPrimary btnMain btnCentered" id="btnScan" disabled>SCAN QR-KODE</button>
+          <button class="btnGhost btnMain btnCentered" id="btnStop" disabled>STOPP SCANNING</button>
           <button class="btnGhost btnRandom" id="btnRandom" type="button" aria-label="Tilfeldig person">🎲</button>
         </div>
 
