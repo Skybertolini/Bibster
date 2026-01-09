@@ -209,7 +209,6 @@
     resetHintProgress();
 
     const metaParts = [];
-    if (person.id) metaParts.push(`ID ${person.id}`);
     if (person.code) metaParts.push(`KODE ${person.code}`);
     rMeta.textContent = metaParts.join(" • ") || "—";
 
