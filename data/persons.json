@@ -1378,45 +1378,6 @@
     "approx": true
   },
   {
-    "id": "12-8",
-    "code": "0010101110",
-    "name": "Sadrak",
-    "lived_text": "ca. 600 fvt",
-    "place": "Babylon",
-    "role": "Eksil",
-    "tagline": "Ildovnen (trofast)",
-    "era": "BCE",
-    "year_from": -600,
-    "year_to": -600,
-    "approx": true
-  },
-  {
-    "id": "12-9",
-    "code": "1011010110",
-    "name": "Mesak",
-    "lived_text": "ca. 600 fvt",
-    "place": "Babylon",
-    "role": "Eksil",
-    "tagline": "Ildovnen (trofast)",
-    "era": "BCE",
-    "year_from": -600,
-    "year_to": -600,
-    "approx": true
-  },
-  {
-    "id": "13-1",
-    "code": "1110010110",
-    "name": "Abednego",
-    "lived_text": "ca. 600 fvt",
-    "place": "Babylon",
-    "role": "Eksil",
-    "tagline": "Ildovnen (trofast)",
-    "era": "BCE",
-    "year_from": -600,
-    "year_to": -600,
-    "approx": true
-  },
-  {
     "id": "13-2",
     "code": "0101001011",
     "name": "Hananja",
