@@ -9,7 +9,7 @@
     "tagline": "Brøt Guds bud",
     "era": "BCE",
     "year_from": -4026,
-    "year_to": -4026,
+    "year_to": null,
     "approx": true
   },
   {
@@ -22,7 +22,7 @@
     "tagline": "Ble fristet av slangen",
     "era": "BCE",
     "year_from": -4026,
-    "year_to": -4026,
+    "year_to": null,
     "approx": true
   },
   {
@@ -35,7 +35,7 @@
     "tagline": "Første trofaste martyr",
     "era": "BCE",
     "year_from": -3900,
-    "year_to": -3900,
+    "year_to": null,
     "approx": true
   },
   {
@@ -48,7 +48,7 @@
     "tagline": "Drepte broren sin",
     "era": "BCE",
     "year_from": -3900,
-    "year_to": -3900,
+    "year_to": null,
     "approx": true
   },
   {
@@ -61,7 +61,7 @@
     "tagline": "«Erstattet» Abel",
     "era": "BCE",
     "year_from": -3896,
-    "year_to": -3896,
+    "year_to": null,
     "approx": true
   },
   {
@@ -74,7 +74,7 @@
     "tagline": "«Vandret med Gud»",
     "era": "BCE",
     "year_from": -3400,
-    "year_to": -3400,
+    "year_to": null,
     "approx": true
   },
   {
@@ -152,7 +152,7 @@
     "tagline": "Fikk Isak sent",
     "era": "BCE",
     "year_from": -1900,
-    "year_to": -1900,
+    "year_to": null,
     "approx": true
   },
   {
@@ -165,7 +165,7 @@
     "tagline": "Flyktet fra Sodoma",
     "era": "BCE",
     "year_from": -1900,
-    "year_to": -1900,
+    "year_to": null,
     "approx": true
   },
   {
@@ -178,7 +178,7 @@
     "tagline": "Mor til Ismael",
     "era": "BCE",
     "year_from": -1900,
-    "year_to": -1900,
+    "year_to": null,
     "approx": true
   },
   {
@@ -191,7 +191,7 @@
     "tagline": "Bueskytter i ørkenen",
     "era": "BCE",
     "year_from": -1800,
-    "year_to": -1800,
+    "year_to": null,
     "approx": true
   },
   {
@@ -217,7 +217,7 @@
     "tagline": "Mor til tvillingene",
     "era": "BCE",
     "year_from": -1800,
-    "year_to": -1800,
+    "year_to": null,
     "approx": true
   },
   {
@@ -243,33 +243,33 @@
     "tagline": "Solgte førstefødselsretten",
     "era": "BCE",
     "year_from": -1800,
-    "year_to": -1800,
+    "year_to": null,
     "approx": true
   },
   {
     "id": "3-2",
     "code": "0100011110",
     "name": "Lea",
-    "lived_text": "ca. 1700–1800 fvt",
+    "lived_text": "ca. 1800–1700 fvt",
     "place": "Mesopotamia",
     "role": "Mor i Israel",
     "tagline": "Mor til Juda m.fl.",
     "era": "BCE",
-    "year_from": -1700,
-    "year_to": -1800,
+    "year_from": -1800,
+    "year_to": -1700,
     "approx": true
   },
   {
     "id": "3-3",
     "code": "1001110100",
     "name": "Rakel",
-    "lived_text": "ca. 1700–1800 fvt",
+    "lived_text": "ca. 1800–1700 fvt",
     "place": "Mesopotamia",
     "role": "Mor i Israel",
     "tagline": "Mor til Josef og Benjamin",
     "era": "BCE",
-    "year_from": -1700,
-    "year_to": -1800,
+    "year_from": -1800,
+    "year_to": -1700,
     "approx": true
   },
   {
@@ -282,7 +282,7 @@
     "tagline": "Tydet drømmer",
     "era": "BCE",
     "year_from": -1700,
-    "year_to": -1700,
+    "year_to": null,
     "approx": true
   },
   {
@@ -295,7 +295,7 @@
     "tagline": "Messias-linjen",
     "era": "BCE",
     "year_from": -1700,
-    "year_to": -1700,
+    "year_to": null,
     "approx": true
   },
   {
@@ -308,7 +308,7 @@
     "tagline": "Jakobs førstefødte",
     "era": "BCE",
     "year_from": -1700,
-    "year_to": -1700,
+    "year_to": null,
     "approx": true
   },
   {
@@ -321,7 +321,7 @@
     "tagline": "Yngste sønn",
     "era": "BCE",
     "year_from": -1700,
-    "year_to": -1700,
+    "year_to": null,
     "approx": true
   },
   {
@@ -334,7 +334,7 @@
     "tagline": "Ledet utgangen",
     "era": "BCE",
     "year_from": -1500,
-    "year_to": -1500,
+    "year_to": null,
     "approx": true
   },
   {
@@ -347,7 +347,7 @@
     "tagline": "Moses’ talerør",
     "era": "BCE",
     "year_from": -1500,
-    "year_to": -1500,
+    "year_to": null,
     "approx": true
   },
   {
@@ -360,7 +360,7 @@
     "tagline": "Motstod Jehova",
     "era": "BCE",
     "year_from": -1510,
-    "year_to": -1510,
+    "year_to": null,
     "approx": true
   },
   {
@@ -399,7 +399,7 @@
     "tagline": "Ga Moses råd",
     "era": "BCE",
     "year_from": -1500,
-    "year_to": -1500,
+    "year_to": null,
     "approx": true
   },
   {
@@ -412,7 +412,7 @@
     "tagline": "Handlet raskt",
     "era": "BCE",
     "year_from": -1500,
-    "year_to": -1500,
+    "year_to": null,
     "approx": true
   },
   {
@@ -425,20 +425,20 @@
     "tagline": "Etterfulgte Aron",
     "era": "BCE",
     "year_from": -1450,
-    "year_to": -1450,
+    "year_to": null,
     "approx": true
   },
   {
     "id": "4-7",
     "code": "1100011010",
-    "name": "Pinehas",
+    "name": "Pinehas (Eleasars sønn)",
     "lived_text": "ca. 1400 fvt",
     "place": "Israel-leiren",
     "role": "Prest",
     "tagline": "Viste sterk nidkjærhet",
     "era": "BCE",
     "year_from": -1400,
-    "year_to": -1400,
+    "year_to": null,
     "approx": true
   },
   {
@@ -451,7 +451,7 @@
     "tagline": "Ville forbanne Israel",
     "era": "BCE",
     "year_from": -1400,
-    "year_to": -1400,
+    "year_to": null,
     "approx": true
   },
   {
@@ -464,7 +464,7 @@
     "tagline": "Ledet opprør",
     "era": "BCE",
     "year_from": -1470,
-    "year_to": -1470,
+    "year_to": null,
     "approx": true
   },
   {
@@ -477,7 +477,7 @@
     "tagline": "Stod mot Moses",
     "era": "BCE",
     "year_from": -1470,
-    "year_to": -1470,
+    "year_to": null,
     "approx": true
   },
   {
@@ -490,7 +490,7 @@
     "tagline": "Med Korah-gruppen",
     "era": "BCE",
     "year_from": -1470,
-    "year_to": -1470,
+    "year_to": null,
     "approx": true
   },
   {
@@ -503,7 +503,7 @@
     "tagline": "«Sterk og modig»",
     "era": "BCE",
     "year_from": -1470,
-    "year_to": -1470,
+    "year_to": null,
     "approx": true
   },
   {
@@ -516,7 +516,7 @@
     "tagline": "Døtrene arvet land",
     "era": "BCE",
     "year_from": -1470,
-    "year_to": -1470,
+    "year_to": null,
     "approx": true
   },
   {
@@ -529,7 +529,7 @@
     "tagline": "Lurte Jakob",
     "era": "BCE",
     "year_from": -1800,
-    "year_to": -1800,
+    "year_to": null,
     "approx": true
   },
   {
@@ -542,7 +542,7 @@
     "tagline": "Velsignet Abraham",
     "era": "BCE",
     "year_from": -1900,
-    "year_to": -1900,
+    "year_to": null,
     "approx": true
   },
   {
@@ -555,7 +555,7 @@
     "tagline": "Møtte Abraham/Isak",
     "era": "BCE",
     "year_from": -1900,
-    "year_to": -1900,
+    "year_to": null,
     "approx": true
   },
   {
@@ -568,7 +568,7 @@
     "tagline": "Josef i huset hans",
     "era": "BCE",
     "year_from": -1700,
-    "year_to": -1700,
+    "year_to": null,
     "approx": true
   },
   {
@@ -581,7 +581,7 @@
     "tagline": "Falsk anklage mot Josef",
     "era": "BCE",
     "year_from": -1700,
-    "year_to": -1700,
+    "year_to": null,
     "approx": true
   },
   {
@@ -594,7 +594,7 @@
     "tagline": "Ledet med Barak",
     "era": "BCE",
     "year_from": -1200,
-    "year_to": -1200,
+    "year_to": null,
     "approx": true
   },
   {
@@ -607,7 +607,7 @@
     "tagline": "Seier over Sisera",
     "era": "BCE",
     "year_from": -1200,
-    "year_to": -1200,
+    "year_to": null,
     "approx": true
   },
   {
@@ -620,7 +620,7 @@
     "tagline": "Drepte Sisera",
     "era": "BCE",
     "year_from": -1200,
-    "year_to": -1200,
+    "year_to": null,
     "approx": true
   },
   {
@@ -633,7 +633,7 @@
     "tagline": "300 menn mot midianittene",
     "era": "BCE",
     "year_from": -1150,
-    "year_to": -1150,
+    "year_to": null,
     "approx": true
   },
   {
@@ -646,7 +646,7 @@
     "tagline": "Hindret David i å gjøre noe dumt",
     "era": "BCE",
     "year_from": -1000,
-    "year_to": -1000,
+    "year_to": null,
     "approx": true
   },
   {
@@ -659,7 +659,7 @@
     "tagline": "Kjempet mot ammonittene",
     "era": "BCE",
     "year_from": -1100,
-    "year_to": -1100,
+    "year_to": null,
     "approx": true
   },
   {
@@ -685,7 +685,7 @@
     "tagline": "Fikk englebesøk",
     "era": "BCE",
     "year_from": -1120,
-    "year_to": -1120,
+    "year_to": null,
     "approx": true
   },
   {
@@ -698,7 +698,7 @@
     "tagline": "Lokket ut hemmeligheten",
     "era": "BCE",
     "year_from": -1100,
-    "year_to": -1100,
+    "year_to": null,
     "approx": true
   },
   {
@@ -711,7 +711,7 @@
     "tagline": "Dømte Israel før Samuel",
     "era": "BCE",
     "year_from": -1120,
-    "year_to": -1120,
+    "year_to": null,
     "approx": true
   },
   {
@@ -724,7 +724,7 @@
     "tagline": "Ba om barn (Samuel)",
     "era": "BCE",
     "year_from": -1120,
-    "year_to": -1120,
+    "year_to": null,
     "approx": true
   },
   {
@@ -750,7 +750,7 @@
     "tagline": "Lojal mot Naomi",
     "era": "BCE",
     "year_from": -1150,
-    "year_to": -1150,
+    "year_to": null,
     "approx": true
   },
   {
@@ -763,7 +763,7 @@
     "tagline": "Vendte tilbake med Rut",
     "era": "BCE",
     "year_from": -1150,
-    "year_to": -1150,
+    "year_to": null,
     "approx": true
   },
   {
@@ -776,7 +776,7 @@
     "tagline": "Gjenløser for Rut",
     "era": "BCE",
     "year_from": -1150,
-    "year_to": -1150,
+    "year_to": null,
     "approx": true
   },
   {
@@ -789,7 +789,7 @@
     "tagline": "Vendte hjem",
     "era": "BCE",
     "year_from": -1150,
-    "year_to": -1150,
+    "year_to": null,
     "approx": true
   },
   {
@@ -802,7 +802,7 @@
     "tagline": "Bestefar til David",
     "era": "BCE",
     "year_from": -1120,
-    "year_to": -1120,
+    "year_to": null,
     "approx": true
   },
   {
@@ -815,20 +815,20 @@
     "tagline": "Misbrukte tjenesten",
     "era": "BCE",
     "year_from": -1110,
-    "year_to": -1110,
+    "year_to": null,
     "approx": true
   },
   {
     "id": "8-1",
     "code": "1101010011",
-    "name": "Pinehas",
+    "name": "Pinehas (Eli sin sønn)",
     "lived_text": "ca. 1110 fvt",
     "place": "Sjilo",
     "role": "Prest",
     "tagline": "Arken tatt i krig",
     "era": "BCE",
     "year_from": -1110,
-    "year_to": -1110,
+    "year_to": null,
     "approx": true
   },
   {
@@ -841,7 +841,7 @@
     "tagline": "30 sønner og byer",
     "era": "BCE",
     "year_from": -1120,
-    "year_to": -1120,
+    "year_to": null,
     "approx": true
   },
   {
@@ -854,7 +854,7 @@
     "tagline": "Lagde avgudsbilde",
     "era": "BCE",
     "year_from": -1100,
-    "year_to": -1100,
+    "year_to": null,
     "approx": true
   },
   {
@@ -880,7 +880,7 @@
     "tagline": "Davids nære venn",
     "era": "BCE",
     "year_from": -1030,
-    "year_to": -1030,
+    "year_to": null,
     "approx": true
   },
   {
@@ -906,20 +906,20 @@
     "tagline": "Kjempe utfordret Israel",
     "era": "BCE",
     "year_from": -1020,
-    "year_to": -1020,
+    "year_to": null,
     "approx": true
   },
   {
     "id": "8-8",
     "code": "0010101101",
-    "name": "Samuel",
-    "lived_text": "ca. 1050 fvt",
-    "place": "Sjilo",
+    "name": "Mika (profeten)",
+    "lived_text": "ca. 750–700 fvt",
+    "place": "Juda (Moresjet)",
     "role": "Profet",
-    "tagline": "Talte tydelig mot Saul",
+    "tagline": "Advarte mot urett; håp om fred",
     "era": "BCE",
-    "year_from": -1050,
-    "year_to": -1050,
+    "year_from": -750,
+    "year_to": -700,
     "approx": true
   },
   {
@@ -932,7 +932,7 @@
     "tagline": "Korrigerte David",
     "era": "BCE",
     "year_from": -1000,
-    "year_to": -1000,
+    "year_to": null,
     "approx": true
   },
   {
@@ -945,7 +945,7 @@
     "tagline": "Mor til Salomo",
     "era": "BCE",
     "year_from": -1000,
-    "year_to": -1000,
+    "year_to": null,
     "approx": true
   },
   {
@@ -971,7 +971,7 @@
     "tagline": "Riket ble delt",
     "era": "BCE",
     "year_from": -930,
-    "year_to": -930,
+    "year_to": null,
     "approx": true
   },
   {
@@ -984,7 +984,7 @@
     "tagline": "Gullkalver i Betel og Dan",
     "era": "BCE",
     "year_from": -930,
-    "year_to": -930,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1010,7 +1010,7 @@
     "tagline": "Gift med Jesabel",
     "era": "BCE",
     "year_from": -900,
-    "year_to": -801,
+    "year_to": -900,
     "approx": true
   },
   {
@@ -1023,7 +1023,7 @@
     "tagline": "Fremmet Ba’al-dyrkelse",
     "era": "BCE",
     "year_from": -900,
-    "year_to": -801,
+    "year_to": -900,
     "approx": true
   },
   {
@@ -1049,7 +1049,7 @@
     "tagline": "Grådig → spedalsk",
     "era": "BCE",
     "year_from": -880,
-    "year_to": -880,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1062,7 +1062,7 @@
     "tagline": "Utryddet Ahabs hus",
     "era": "BCE",
     "year_from": -840,
-    "year_to": -840,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1075,7 +1075,7 @@
     "tagline": "Tok makten voldelig",
     "era": "BCE",
     "year_from": -840,
-    "year_to": -840,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1088,7 +1088,7 @@
     "tagline": "Beskyttet Joas",
     "era": "BCE",
     "year_from": -840,
-    "year_to": -840,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1101,7 +1101,7 @@
     "tagline": "Skjulte Joas",
     "era": "BCE",
     "year_from": -840,
-    "year_to": -840,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1140,7 +1140,7 @@
     "tagline": "Relativt trofast",
     "era": "BCE",
     "year_from": -750,
-    "year_to": -750,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1153,7 +1153,7 @@
     "tagline": "Avgudsdyrkelse og uro",
     "era": "BCE",
     "year_from": -730,
-    "year_to": -730,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1166,7 +1166,7 @@
     "tagline": "Oppmuntret tempelbygging",
     "era": "BCE",
     "year_from": -520,
-    "year_to": -520,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1192,7 +1192,7 @@
     "tagline": "Advarte mot slapp tilbedelse",
     "era": "BCE",
     "year_from": -450,
-    "year_to": -450,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1205,7 +1205,7 @@
     "tagline": "Leste loven høyt",
     "era": "BCE",
     "year_from": -460,
-    "year_to": -460,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1218,7 +1218,7 @@
     "tagline": "Gjenoppbygde murene",
     "era": "BCE",
     "year_from": -445,
-    "year_to": -445,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1231,7 +1231,7 @@
     "tagline": "Reddet jødene",
     "era": "BCE",
     "year_from": -480,
-    "year_to": -480,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1244,7 +1244,7 @@
     "tagline": "Avslørte sammensvergelse",
     "era": "BCE",
     "year_from": -480,
-    "year_to": -480,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1257,7 +1257,7 @@
     "tagline": "Planla utryddelse",
     "era": "BCE",
     "year_from": -480,
-    "year_to": -480,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1270,7 +1270,7 @@
     "tagline": "Prøvde å stoppe murene",
     "era": "BCE",
     "year_from": -445,
-    "year_to": -445,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1283,7 +1283,7 @@
     "tagline": "Intriger mot Nehemja",
     "era": "BCE",
     "year_from": -445,
-    "year_to": -445,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1296,7 +1296,7 @@
     "tagline": "Utholdt store prøvelser",
     "era": "BCE",
     "year_from": -1600,
-    "year_to": -1600,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1322,7 +1322,7 @@
     "tagline": "«Skrift på veggen»",
     "era": "BCE",
     "year_from": -539,
-    "year_to": -539,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1335,7 +1335,7 @@
     "tagline": "Lot jødene vende tilbake",
     "era": "BCE",
     "year_from": -539,
-    "year_to": -539,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1378,6 +1378,45 @@
     "approx": true
   },
   {
+    "id": "12-8",
+    "code": "0010101110",
+    "name": "Daniel",
+    "lived_text": "ca. 620–530 fvt",
+    "place": "Juda / Babylon",
+    "role": "Profet",
+    "tagline": "Fikk profetiske syner",
+    "era": "BCE",
+    "year_from": -620,
+    "year_to": -530,
+    "approx": true
+  },
+  {
+    "id": "12-9",
+    "code": "1011010110",
+    "name": "Jona",
+    "lived_text": "ca. 800 fvt",
+    "place": "Israel",
+    "role": "Profet",
+    "tagline": "Flyktet fra oppdraget",
+    "era": "BCE",
+    "year_from": -800,
+    "year_to": null,
+    "approx": true
+  },
+  {
+    "id": "13-1",
+    "code": "1110010110",
+    "name": "Amos",
+    "lived_text": "ca. 760 fvt",
+    "place": "Juda / Israel",
+    "role": "Profet",
+    "tagline": "Advarte mot urettferdighet",
+    "era": "BCE",
+    "year_from": -760,
+    "year_to": null,
+    "approx": true
+  },
+  {
     "id": "13-2",
     "code": "0101001011",
     "name": "Hananja",
@@ -1387,7 +1426,7 @@
     "tagline": "Hebraisk navn",
     "era": "BCE",
     "year_from": -600,
-    "year_to": -600,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1400,7 +1439,7 @@
     "tagline": "Hebraisk navn",
     "era": "BCE",
     "year_from": -600,
-    "year_to": -600,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1413,7 +1452,7 @@
     "tagline": "Hebraisk navn",
     "era": "BCE",
     "year_from": -600,
-    "year_to": -600,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1439,7 +1478,7 @@
     "tagline": "Ført til Babylon",
     "era": "BCE",
     "year_from": -598,
-    "year_to": -598,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1465,7 +1504,7 @@
     "tagline": "Kort regjeringstid",
     "era": "BCE",
     "year_from": -609,
-    "year_to": -609,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1478,7 +1517,7 @@
     "tagline": "Gjorde opprør mot David",
     "era": "BCE",
     "year_from": -1000,
-    "year_to": -1000,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1491,7 +1530,7 @@
     "tagline": "Tragedie i Davids hus",
     "era": "BCE",
     "year_from": -1000,
-    "year_to": -1000,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1504,7 +1543,7 @@
     "tagline": "Sentral i familietragedie",
     "era": "BCE",
     "year_from": -1000,
-    "year_to": -1000,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1517,7 +1556,7 @@
     "tagline": "Prøvde å ta tronen",
     "era": "BCE",
     "year_from": -970,
-    "year_to": -970,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1530,7 +1569,7 @@
     "tagline": "Reiste opprør mot David",
     "era": "BCE",
     "year_from": -1000,
-    "year_to": -1000,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1543,7 +1582,7 @@
     "tagline": "Trofast, men sviktet av David",
     "era": "BCE",
     "year_from": -1000,
-    "year_to": -1000,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1569,7 +1608,7 @@
     "tagline": "Vist nåde av David",
     "era": "BCE",
     "year_from": -1000,
-    "year_to": -1000,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1582,7 +1621,7 @@
     "tagline": "Motsatte seg Jeremia",
     "era": "BCE",
     "year_from": -590,
-    "year_to": -590,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1634,7 +1673,7 @@
     "tagline": "Døpte Jesus",
     "era": "CE",
     "year_from": 29,
-    "year_to": 29,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1647,7 +1686,7 @@
     "tagline": "Mor til Johannes",
     "era": "CE",
     "year_from": 1,
-    "year_to": 1,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1660,7 +1699,7 @@
     "tagline": "Fikk englebesøk",
     "era": "CE",
     "year_from": 1,
-    "year_to": 1,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1673,7 +1712,7 @@
     "tagline": "Gjenkjente Jesus",
     "era": "CE",
     "year_from": 1,
-    "year_to": 1,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1686,7 +1725,7 @@
     "tagline": "Tjente ved templet",
     "era": "CE",
     "year_from": 1,
-    "year_to": 1,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1712,7 +1751,7 @@
     "tagline": "Brakte folk til Jesus",
     "era": "CE",
     "year_from": 30,
-    "year_to": 30,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1751,7 +1790,7 @@
     "tagline": "«Kom og se!»",
     "era": "CE",
     "year_from": 30,
-    "year_to": 30,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1764,7 +1803,7 @@
     "tagline": "«Uten svik»",
     "era": "CE",
     "year_from": 30,
-    "year_to": 30,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1777,7 +1816,7 @@
     "tagline": "Ville se bevis",
     "era": "CE",
     "year_from": 30,
-    "year_to": 30,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1790,7 +1829,7 @@
     "tagline": "Skrev Matteus",
     "era": "CE",
     "year_from": 30,
-    "year_to": 30,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1803,7 +1842,7 @@
     "tagline": "Mindre omtalt",
     "era": "CE",
     "year_from": 30,
-    "year_to": 30,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1816,7 +1855,7 @@
     "tagline": "Spurte Jesus siste natt",
     "era": "CE",
     "year_from": 30,
-    "year_to": 30,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1829,7 +1868,7 @@
     "tagline": "Tidligere selot",
     "era": "CE",
     "year_from": 30,
-    "year_to": 30,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1842,7 +1881,7 @@
     "tagline": "Forrådte Jesus",
     "era": "CE",
     "year_from": 33,
-    "year_to": 33,
+    "year_to": null,
     "approx": false
   },
   {
@@ -1855,7 +1894,7 @@
     "tagline": "Første vitne til oppstandelsen",
     "era": "CE",
     "year_from": 30,
-    "year_to": 30,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1868,7 +1907,7 @@
     "tagline": "Praktisk, trofast",
     "era": "CE",
     "year_from": 30,
-    "year_to": 30,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1881,7 +1920,7 @@
     "tagline": "Salvet Jesus",
     "era": "CE",
     "year_from": 30,
-    "year_to": 30,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1894,7 +1933,7 @@
     "tagline": "Ble oppreist",
     "era": "CE",
     "year_from": 30,
-    "year_to": 30,
+    "year_to": null,
     "approx": true
   },
   {
@@ -1946,7 +1985,7 @@
     "tagline": "Sang i fengsel med Paulus",
     "era": "CE",
     "year_from": 50,
-    "year_to": 50,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2089,7 +2128,7 @@
     "tagline": "Hjalp Paulus få synet",
     "era": "CE",
     "year_from": 34,
-    "year_to": 34,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2141,7 +2180,7 @@
     "tagline": "Skrev Judas-brevet",
     "era": "CE",
     "year_from": 60,
-    "year_to": 60,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2167,7 +2206,7 @@
     "tagline": "Ble kristen (Filemon)",
     "era": "CE",
     "year_from": 60,
-    "year_to": 60,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2180,7 +2219,7 @@
     "tagline": "Tok imot Onesimus",
     "era": "CE",
     "year_from": 60,
-    "year_to": 60,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2206,7 +2245,7 @@
     "tagline": "Bar brev for Paulus",
     "era": "CE",
     "year_from": 60,
-    "year_to": 60,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2232,7 +2271,7 @@
     "tagline": "Sang etter Rødehavet",
     "era": "BCE",
     "year_from": -1500,
-    "year_to": -1500,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2245,7 +2284,7 @@
     "tagline": "Overlevde flommen",
     "era": "BCE",
     "year_from": -2500,
-    "year_to": -2500,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2258,7 +2297,7 @@
     "tagline": "Sendt for å finne Rebekka",
     "era": "BCE",
     "year_from": -1900,
-    "year_to": -1900,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2271,7 +2310,7 @@
     "tagline": "Skjulte speiderne",
     "era": "BCE",
     "year_from": -1400,
-    "year_to": -1400,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2284,7 +2323,7 @@
     "tagline": "Jeremias sekretær",
     "era": "BCE",
     "year_from": -600,
-    "year_to": -600,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2349,7 +2388,7 @@
     "tagline": "Ga Jesus grav",
     "era": "CE",
     "year_from": 30,
-    "year_to": 30,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2362,7 +2401,7 @@
     "tagline": "Priste hevn",
     "era": "BCE",
     "year_from": -3800,
-    "year_to": -3800,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2375,7 +2414,7 @@
     "tagline": "Mektig jeger",
     "era": "BCE",
     "year_from": -2200,
-    "year_to": -2200,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2388,7 +2427,7 @@
     "tagline": "Forrådte David",
     "era": "BCE",
     "year_from": -1000,
-    "year_to": -1000,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2414,7 +2453,7 @@
     "tagline": "Makt bak kulissene",
     "era": "CE",
     "year_from": 30,
-    "year_to": 30,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2427,7 +2466,7 @@
     "tagline": "Drev fram Jesu dom",
     "era": "CE",
     "year_from": 30,
-    "year_to": 30,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2492,7 +2531,7 @@
     "tagline": "Pekte Naaman mot Elisja",
     "era": "BCE",
     "year_from": -850,
-    "year_to": -850,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2505,7 +2544,7 @@
     "tagline": "Helbredet for spedalskhet",
     "era": "BCE",
     "year_from": -850,
-    "year_to": -850,
+    "year_to": null,
     "approx": true
   },
   {
@@ -2571,6 +2610,123 @@
     "era": "BCE",
     "year_from": -705,
     "year_to": -681,
+    "approx": true
+  },
+  {
+    "id": "23-4",
+    "code": "0101100011",
+    "name": "Herodes Antipas",
+    "lived_text": "ca. 4 fvt – 39 evt",
+    "place": "Galilea",
+    "role": "Tetrark",
+    "tagline": "Lot Johannes døperen drepe",
+    "era": "BCE/CE",
+    "year_from": -4,
+    "year_to": 39,
+    "approx": true
+  },
+  {
+    "id": "23-5",
+    "code": "0101100111",
+    "name": "Herodes Agrippa I",
+    "lived_text": "ca. 10 fvt – 44 evt",
+    "place": "Judea",
+    "role": "Konge",
+    "tagline": "Forfulgte de kristne",
+    "era": "BCE/CE",
+    "year_from": -10,
+    "year_to": 44,
+    "approx": true
+  },
+  {
+    "id": "23-6",
+    "code": "0111001010",
+    "name": "Augustus",
+    "lived_text": "ca. 27 fvt – 14 evt",
+    "place": "Roma",
+    "role": "Keiser",
+    "tagline": "Keiser ved Jesu fødsel",
+    "era": "BCE/CE",
+    "year_from": -27,
+    "year_to": 14,
+    "approx": true
+  },
+  {
+    "id": "23-7",
+    "code": "0101001110",
+    "name": "Caligula",
+    "lived_text": "ca. 37–41 evt",
+    "place": "Roma",
+    "role": "Keiser",
+    "tagline": "Ville vanhellige tempelet",
+    "era": "CE",
+    "year_from": 37,
+    "year_to": 41,
+    "approx": true
+  },
+  {
+    "id": "23-8",
+    "code": "0111000111",
+    "name": "Claudius",
+    "lived_text": "ca. 41–54 evt",
+    "place": "Roma",
+    "role": "Keiser",
+    "tagline": "Utviste jøder fra Roma",
+    "era": "CE",
+    "year_from": 41,
+    "year_to": 54,
+    "approx": true
+  },
+  {
+    "id": "23-9",
+    "code": "0101101100",
+    "name": "Hosea",
+    "lived_text": "ca. 760–720 fvt",
+    "place": "Nordriket (Israel)",
+    "role": "Profet",
+    "tagline": "Kalte folket tilbake til Jehova",
+    "era": "BCE",
+    "year_from": -760,
+    "year_to": -720,
+    "approx": true
+  },
+  {
+    "id": "24-1",
+    "code": "0111000111",
+    "name": "Titus",
+    "lived_text": "70 evt",
+    "place": "Roma / Judea",
+    "role": "Romersk general",
+    "tagline": "Ødela Jerusalem",
+    "era": "CE",
+    "year_from": 70,
+    "year_to": null,
+    "approx": false
+  },
+  {
+    "id": "24-2",
+    "code": "0101101100",
+    "name": "Vespasian",
+    "lived_text": "ca. 69–79 evt",
+    "place": "Roma",
+    "role": "Keiser",
+    "tagline": "Startet krigen mot Jerusalem",
+    "era": "CE",
+    "year_from": 69,
+    "year_to": 79,
+    "approx": true
+  },
+  {
+    "id": "24-3",
+    "code": "0110011110",
+    "name": "Domitian",
+    "lived_text": "ca. 81–96 evt",
+    "place": "Roma",
+    "role": "Keiser",
+    "tagline": "Forfulgte kristne",
+    "era": "CE",
+    "year_from": 81,
+    "year_to": 96,
     "approx": true
   }
 ]
