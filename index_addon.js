@@ -16,6 +16,7 @@
 
   const btnScan = el("btnScan");
   const btnStop = el("btnStop");
+  const btnRandom = el("btnRandom");
 
 
   const scannerWrap = el("scannerWrap");
@@ -238,6 +239,19 @@
     setStatus(true, "Klar");
   }
 
+  async function showRandomPerson() {
+    if (!persons.length) {
+      setStatus(false, "Ingen personer tilgjengelig");
+      return;
+    }
+
+    if (scanning) await stopScan(true);
+
+    const person = persons[Math.floor(Math.random() * persons.length)];
+    showResult(person, { code: "", id: "", raw: "Tilfeldig" });
+    bottomMsg.textContent = "Tilfeldig person";
+  }
+
   async function startScan() {
     if (scanning) return;
     if (!window.Html5Qrcode) {
@@ -334,6 +348,7 @@
   // Events
   btnScan.addEventListener("click", startScan);
   btnStop.addEventListener("click", () => stopScan(true));
+  btnRandom.addEventListener("click", showRandomPerson);
 
 
   btnRevealName.addEventListener("click", () => {
