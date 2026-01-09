@@ -137,20 +137,22 @@
       padding: 16px;
       display:grid;
       gap: 12px;
+      position: relative;
     }
 
-    .btnRow{
+    .btnStack{
       display:flex;
+      flex-direction: column;
+      align-items: center;
       gap:10px;
-      flex-wrap:wrap;
-      justify-content:center;
     }
 
-    .btnRow::after{
-      content:"";
-      flex-basis:100%;
-      height:0;
-      order:3;
+    .btnActions{
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      display: flex;
+      align-items: center;
     }
 
     .btnCentered{
@@ -168,9 +170,6 @@
     }
 
     .btnRandom{
-      order:2;
-      margin-left: auto;
-      align-self: flex-end;
       padding: 10px 12px;
       font-size: 20px;
       min-width: 0;
@@ -179,10 +178,8 @@
       justify-content: center;
     }
 
-    #btnScan{ order:1; }
-    #btnStop{
-      order:4;
-    }
+    #btnScan{ }
+    #btnStop{ }
 
     button{
       border:0;
@@ -545,9 +542,11 @@
 
     <section class="panel">
       <div class="hero">
-        <div class="btnRow">
+        <div class="btnStack">
           <button class="btnPrimary btnMain btnCentered" id="btnScan" disabled>SCAN QR-KODE</button>
           <button class="btnGhost btnMain btnCentered" id="btnStop" disabled>STOPP SCANNING</button>
+        </div>
+        <div class="btnActions">
           <button class="btnGhost btnRandom" id="btnRandom" type="button" aria-label="Tilfeldig person">🎲</button>
         </div>
 
