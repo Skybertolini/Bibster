@@ -909,19 +909,19 @@
     "year_to": null,
     "approx": true
   },
-  {
-    "id": "8-8",
-    "code": "0010101101",
-    "name": "Mika (profeten)",
-    "lived_text": "ca. 750–700 fvt",
-    "place": "Juda (Moresjet)",
-    "role": "Profet",
-    "tagline": "Advarte mot urett; håp om fred",
-    "era": "BCE",
-    "year_from": -750,
-    "year_to": -700,
-    "approx": true
-  },
+{
+  "id": "8-8",
+  "code": "0010101101",
+  "name": "Jeftas datter",
+  "lived_text": "ca. 1100 fvt",
+  "place": "Gilead",
+  "role": "Jeftas datter",
+  "tagline": "Offer for et uklokt løfte",
+  "era": "BCE",
+  "year_from": -1100,
+  "year_to": null,
+  "approx": true
+},
   {
     "id": "8-9",
     "code": "1011010100",
@@ -2326,19 +2326,19 @@
     "year_to": null,
     "approx": true
   },
-  {
-    "id": "20-9",
-    "code": "0111010101",
-    "name": "Daniel",
-    "lived_text": "ca. 620–530 fvt",
-    "place": "Juda / Babylon",
-    "role": "Profet",
-    "tagline": "Trofast i eksil",
-    "era": "BCE",
-    "year_from": -620,
-    "year_to": -530,
-    "approx": true
-  },
+{
+  "id": "20-9",
+  "code": "0111010101",
+  "name": "Jesaja",
+  "lived_text": "ca. 740–680 fvt",
+  "place": "Jerusalem (Juda)",
+  "role": "Profet",
+  "tagline": "Profeterte om Messias, dom og trøst",
+  "era": "BCE",
+  "year_from": -740,
+  "year_to": -680,
+  "approx": true
+},
   {
     "id": "21-1",
     "code": "0101101001",
@@ -2732,14 +2732,14 @@
   {
   "id": "24-4",
   "code": "0101001110",
-  "name": "Jesaja",
-  "lived_text": "ca. 740–680 fvt",
-  "place": "Jerusalem (Juda)",
+  "name": "Mika (profeten)",
+  "lived_text": "ca. 750–700 fvt",
+  "place": "Juda (Moresjet)",
   "role": "Profet",
-  "tagline": "Profeterte om Messias, dom og trøst",
+  "tagline": "Advarte mot urett, håp om fred",
   "era": "BCE",
-  "year_from": -740,
-  "year_to": -680,
+  "year_from": -750,
+  "year_to": -700,
   "approx": true
 }
 ]
