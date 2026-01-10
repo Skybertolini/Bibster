@@ -2728,5 +2728,18 @@
     "year_from": 81,
     "year_to": 96,
     "approx": true
-  }
+  },
+  {
+  "id": "24-4",
+  "code": "0101001110",
+  "name": "Jesaja",
+  "lived_text": "ca. 740–680 fvt",
+  "place": "Jerusalem (Juda)",
+  "role": "Profet",
+  "tagline": "Profeterte om Messias, dom og trøst",
+  "era": "BCE",
+  "year_from": -740,
+  "year_to": -680,
+  "approx": true
+}
 ]
