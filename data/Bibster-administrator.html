@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Bibster Administrator</title>
+  <meta name="theme-color" content="#0B1020" />
+
+  <style>
+    :root{
+      --bg0:#060814;
+      --bg1:#0B1020;
+      --bg2:#0D1633;
+
+      --card:#0f1b33cc;
+      --card2:#0b1326cc;
+
+      --text:#EAF0FF;
+      --muted:#AEBCE0;
+
+      --stroke: rgba(255,255,255,.10);
+      --stroke2: rgba(255,255,255,.06);
+
+      --accent:#7CF3FF;
+      --accent2:#9BFFB5;
+
+      --danger:#FF6B6B;
+      --warn:#FFD166;
+
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 20% -10%, rgba(124,243,255,.18), transparent 60%),
+        radial-gradient(900px 600px at 90% 0%, rgba(155,255,181,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      min-height:100vh;
+    }
+
+    header{
+      padding:18px 18px 10px;
+      position:sticky;
+      top:0;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(6,8,20,.75), rgba(6,8,20,.15));
+      border-bottom: 1px solid var(--stroke2);
+      z-index:5;
+    }
+
+    .top{
+      max-width:1200px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .brand{display:flex; flex-direction:column; gap:4px;}
+    .brand h1{margin:0; font-size:18px; letter-spacing:.2px;}
+    .brand p{margin:0; font-size:12.5px; color:var(--muted);}
+
+    .btnrow{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    button{
+      border:1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:14px;
+      cursor:pointer;
+      font-weight:600;
+      letter-spacing:.2px;
+    }
+    button:hover{border-color: rgba(124,243,255,.35)}
+    button.primary{
+      border-color: rgba(124,243,255,.45);
+      background: linear-gradient(180deg, rgba(124,243,255,.22), rgba(124,243,255,.10));
+    }
+    button.danger{
+      border-color: rgba(255,107,107,.55);
+      background: linear-gradient(180deg, rgba(255,107,107,.22), rgba(255,107,107,.10));
+    }
+
+    main{
+      max-width:1200px;
+      margin:0 auto;
+      padding:14px 18px 24px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+
+    .card{
+      border:1px solid var(--stroke2);
+      background: linear-gradient(180deg, var(--card), var(--card2));
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,.25);
+    }
+    .cardhead{
+      padding:14px 14px 10px;
+      border-bottom:1px solid var(--stroke2);
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .cardhead h2{margin:0; font-size:14px; letter-spacing:.2px;}
+    .meta{
+      font-size:12px;
+      color:var(--muted);
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .pill{
+      border:1px solid var(--stroke2);
+      padding:4px 8px;
+      border-radius:999px;
+      background: rgba(255,255,255,.04);
+    }
+
+    textarea{
+      width:100%;
+      min-height:520px;
+      resize:vertical;
+      padding:12px 12px;
+      border:0;
+      outline:none;
+      color:var(--text);
+      background: transparent;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size:12.5px;
+      line-height:1.45;
+    }
+
+    .foot{
+      padding:12px 14px;
+      border-top:1px solid var(--stroke2);
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    .errors{
+      padding:12px 14px;
+      border-top:1px solid var(--stroke2);
+      background: rgba(0,0,0,.18);
+      max-height:220px;
+      overflow:auto;
+    }
+    .errors ul{margin:0; padding-left:18px}
+    .errors li{margin:6px 0; color:var(--muted)}
+    .errors li.bad{color:var(--danger)}
+    .errors li.warn{color:var(--warn)}
+
+    .hint{
+      font-size:12px;
+      color:var(--muted);
+      padding:0 14px 14px;
+    }
+
+    /* Preview rows (green/red) */
+    .preview {
+      border-top: 1px solid var(--stroke2);
+      padding: 10px 10px 12px;
+      max-height: 240px;
+      overflow: auto;
+      background: rgba(0,0,0,.14);
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 10px;
+      padding: 8px 10px;
+      border: 1px solid var(--stroke2);
+      border-radius: 12px;
+      margin: 8px 4px;
+      background: rgba(255,255,255,.03);
+    }
+    .row .ln {
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .row .txt {
+      font-size: 12.5px;
+      line-height: 1.35;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+    }
+    .row.ok  { border-color: rgba(255,255,255,.10); }
+    .row.dup { border-color: rgba(155,255,181,.55); background: rgba(155,255,181,.10); }
+    .row.bad { border-color: rgba(255,107,107,.55); background: rgba(255,107,107,.12); }
+
+    .row .badge {
+      display:inline-block;
+      margin-left:6px;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid var(--stroke2);
+      font-size:11px;
+      color: var(--muted);
+      vertical-align: middle;
+    }
+    .row.dup .badge{ border-color: rgba(155,255,181,.55); color: rgba(155,255,181,.95); }
+    .row.bad .badge{ border-color: rgba(255,107,107,.55); color: rgba(255,107,107,.95); }
+
+    @media (max-width: 980px){
+      main{grid-template-columns: 1fr}
+      textarea{min-height:420px}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="top">
+      <div class="brand">
+        <h1>Bibster Administrator</h1>
+        <p>Lim inn tabellen → få korrekt <code>persons.json</code> live (hopper over første datarad)</p>
+      </div>
+      <div class="btnrow">
+        <button id="btnSample">Sett inn eksempel</button>
+        <button id="btnNormalize">Normaliser input</button>
+        <button class="primary" id="btnCopy">Kopier JSON</button>
+        <button id="btnDownload">Last ned persons.json</button>
+        <button class="danger" id="btnClear">Tøm</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="cardhead">
+        <h2>Tabell (TSV/Excel-kopi)</h2>
+        <div class="meta">
+          <span class="pill">Støtter tab-separert</span>
+          <span class="pill">Kolonnenavn på første linje</span>
+          <span class="pill">Hopper over 1. datarad</span>
+        </div>
+      </div>
+
+      <textarea id="tableInput" spellcheck="false" placeholder="Lim inn tabellen din her (inkludér kolonnenavn).&#10;&#10;Kolonner: NUMMER, KODE, NAVN, LEVDE, FØDT/OPPVOKST, YRKE/ROLLE, KJENNETEGN"></textarea>
+
+      <div class="hint">
+        ✅ Viktig: Etter kolonneheaderen hopper vi over første rad (den du bruker “bare til informasjon”).<br/>
+        🎨 Under ser du rader farget: <b>rød</b> = skippes, <b>grønn</b> = duplikat.
+      </div>
+
+      <!-- PREVIEW (THIS WAS MISSING IN YOUR FILE) -->
+      <div class="preview" id="preview"></div>
+
+      <div class="errors">
+        <ul id="issues"></ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="cardhead">
+        <h2>Generert persons.json</h2>
+        <div class="meta">
+          <span class="pill" id="rowCount">0 personer</span>
+          <span class="pill" id="errCount">0 feil</span>
+          <span class="pill" id="dupCount">0 duplikater</span>
+        </div>
+      </div>
+
+      <textarea id="jsonOutput" spellcheck="false" readonly></textarea>
+
+      <div class="foot">
+        <div style="color:var(--muted);font-size:12px">
+          Slankt JSON: tomme felter droppes. Røde rader skippes.
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <button id="btnMinify">Minify</button>
+          <button id="btnPretty">Pretty</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Kolonner -> inputfelt
+    const COLUMN_ALIASES = {
+      id: ["NUMMER","ID","NR"],
+      code: ["KODE","CODE"],
+      name: ["NAVN","NAME"],
+      lived_text: ["LEVDE","LIVED","TID","PERIODE"],
+      place: ["FØDT/OPPVOKST","FODT/OPPVOKST","FØDT","FODT","OPPVOKST","PLACE","ORIGIN"],
+      role: ["YRKE/ROLLE","YRKE","ROLLE","ROLE"],
+      tagline: ["KJENNETEGN","HINT","TAGLINE","KJENNETEGN/HINT"]
+    };
+
+    const elIn = document.getElementById("tableInput");
+    const elOut = document.getElementById("jsonOutput");
+    const elIssues = document.getElementById("issues");
+    const elPreview = document.getElementById("preview");
+
+    const elRowCount = document.getElementById("rowCount");
+    const elErrCount = document.getElementById("errCount");
+    const elDupCount = document.getElementById("dupCount");
+
+    const btnCopy = document.getElementById("btnCopy");
+    const btnDownload = document.getElementById("btnDownload");
+    const btnClear = document.getElementById("btnClear");
+    const btnSample = document.getElementById("btnSample");
+    const btnNormalize = document.getElementById("btnNormalize");
+    const btnMinify = document.getElementById("btnMinify");
+    const btnPretty = document.getElementById("btnPretty");
+
+    let currentData = [];
+    let currentPretty = true;
+
+    function guessDelimiter(line){
+      const t = (line.match(/\t/g)||[]).length;
+      const s = (line.match(/;/g)||[]).length;
+      const c = (line.match(/,/g)||[]).length;
+      if (t >= s && t >= c && t > 0) return "\t";
+      if (s >= c && s > 0) return ";";
+      if (c > 0) return ",";
+      return "\t";
+    }
+
+    function safeStr(v){ return String(v ?? "").trim(); }
+
+    function normalizeHeader(h){
+      return safeStr(h).replace(/\s+/g," ").toUpperCase();
+    }
+
+    function findHeaderIndex(headers, wantedList){
+      const map = new Map();
+      headers.forEach((h,i)=>map.set(normalizeHeader(h), i));
+      for (const w of wantedList){
+        const key = normalizeHeader(w);
+        if (map.has(key)) return map.get(key);
+      }
+      return -1;
+    }
+
+    function clearIssues(){ elIssues.innerHTML = ""; }
+    function addIssue(text, cls=""){
+      const li = document.createElement("li");
+      if (cls) li.className = cls;
+      li.textContent = text;
+      elIssues.appendChild(li);
+    }
+
+    // ---- LEVDE-parser: "ca. 2500–2300 fvt" -> era=BCE, year_from=-2500, year_to=-2300, approx=true
+    function parseLivedText(livedText){
+      const raw = safeStr(livedText);
+      if (!raw) return { era: null, year_from: null, year_to: null, approx: false };
+
+      const approx = /\bca\.?\b/i.test(raw);
+
+      let era = null;
+      if (/\bfvt\b/i.test(raw)) era = "BCE";
+      if (/\bevt\b/i.test(raw)) era = "CE";
+
+      const t = raw.replace(/[–—]/g, "-");
+      const nums = (t.match(/\d{1,4}/g) || [])
+        .map(n => parseInt(n, 10))
+        .filter(n => !Number.isNaN(n));
+
+      let year_from = null;
+      let year_to = null;
+
+      if (nums.length >= 1){
+        year_from = nums[0];
+        if (nums.length >= 2) year_to = nums[1];
+      }
+
+      if (era === "BCE"){
+        if (year_from !== null) year_from = -Math.abs(year_from);
+        if (year_to !== null) year_to = -Math.abs(year_to);
+      }
+      if (era === "CE"){
+        if (year_from !== null) year_from = Math.abs(year_from);
+        if (year_to !== null) year_to = Math.abs(year_to);
+      }
+
+      return { era, year_from, year_to, approx };
+    }
+
+    // Bygger "slankt" object: tar bare med felter som faktisk har innhold
+    function addIf(out, key, val){
+      if (val === undefined || val === null) return;
+      if (typeof val === "string" && val.trim() === "") return;
+      out[key] = val;
+    }
+
+    function buildPersonRow(base){
+      const o = {};
+      addIf(o, "id", base.id);
+      addIf(o, "code", base.code);
+      addIf(o, "name", base.name);
+
+      addIf(o, "lived_text", base.lived_text);
+      addIf(o, "place", base.place);
+      addIf(o, "role", base.role);
+      addIf(o, "tagline", base.tagline);
+
+      // Avledede felt kun hvis lived_text finnes
+      if (base.lived_text && base.lived_text.trim() !== ""){
+        addIf(o, "era", base.era);
+        addIf(o, "year_from", base.year_from);
+        // year_to tas kun med hvis den finnes (ikke null)
+        if (base.year_to !== null && base.year_to !== undefined) addIf(o, "year_to", base.year_to);
+        if (base.approx === true) o.approx = true;
+      }
+      return o;
+    }
+
+    function parseTable(text){
+      const raw = text.replace(/\r\n/g,"\n").replace(/\r/g,"\n");
+      const lines = raw.split("\n").filter(l => l.trim().length > 0);
+      if (!lines.length) return { rows: [], issues: [] };
+
+      const delim = guessDelimiter(lines[0]);
+      const headers = lines[0].split(delim).map(safeStr);
+
+      const idx = {
+        id: findHeaderIndex(headers, COLUMN_ALIASES.id),
+        code: findHeaderIndex(headers, COLUMN_ALIASES.code),
+        name: findHeaderIndex(headers, COLUMN_ALIASES.name),
+        lived_text: findHeaderIndex(headers, COLUMN_ALIASES.lived_text),
+        place: findHeaderIndex(headers, COLUMN_ALIASES.place),
+        role: findHeaderIndex(headers, COLUMN_ALIASES.role),
+        tagline: findHeaderIndex(headers, COLUMN_ALIASES.tagline),
+      };
+
+      const issues = [];
+      for (const req of ["id","code","name","lived_text","place","role","tagline"]){
+        if (idx[req] === -1){
+          issues.push({ type:"bad", msg:`Mangler kolonne for ${req.toUpperCase()} (forventet f.eks. ${COLUMN_ALIASES[req].join(", ")})` });
+        }
+      }
+
+      // Hopper over første datarad etter header:
+      // lines[1] = "info"-rad
+      const startRow = 2;
+
+      const rows = [];
+      for (let i = startRow; i < lines.length; i++){
+        const parts = lines[i].split(delim);
+
+        const lived_text = safeStr(parts[idx.lived_text]);
+        const livedParsed = parseLivedText(lived_text);
+
+        const base = {
+          id: safeStr(parts[idx.id]),
+          code: safeStr(parts[idx.code]),
+          name: safeStr(parts[idx.name]),
+          lived_text,
+          place: safeStr(parts[idx.place]),
+          role: safeStr(parts[idx.role]),
+          tagline: safeStr(parts[idx.tagline]),
+          era: livedParsed.era,
+          year_from: livedParsed.year_from,
+          year_to: livedParsed.year_to,
+          approx: livedParsed.approx
+        };
+
+        // dropp HELT tom linje
+        const allEmpty = ["id","code","name","lived_text","place","role","tagline"].every(k => !base[k]);
+        if (allEmpty) continue;
+
+        rows.push({ base, sourceLine: i + 1 }); // 1-basert input-linje
+      }
+
+      return { rows, issues };
+    }
+
+    function analyzeRows(wrapped){
+      const issues = [];
+      let errorCount = 0;
+      let dupCount = 0;
+
+      const seenId = new Map();
+      const seenCode = new Map();
+
+      const analyzed = wrapped.map((w) => {
+        const r = w.base;
+        const lineNo = w.sourceLine;
+
+        let status = "ok";
+        let tag = "OK";
+        let skip = false;
+
+        // Skipp-kriterier
+        const missingCore = (!r.id || !r.code || !r.name);
+        const badCodeChars = (r.code && !/^[01]+$/.test(r.code));
+        const badCodeLen = (r.code && /^[01]+$/.test(r.code) && r.code.length !== 10);
+
+        if (missingCore){
+          status = "bad"; tag = "SKIP: mangler id/code/name"; skip = true;
+          issues.push({ type:"bad", msg:`Linje ${lineNo}: Mangler id/code/name.` });
+          errorCount++;
+        } else if (badCodeChars){
+          status = "bad"; tag = "SKIP: kode ikke 0/1"; skip = true;
+          issues.push({ type:"bad", msg:`Linje ${lineNo}: KODE har andre tegn enn 0/1: "${r.code}"` });
+          errorCount++;
+        } else if (badCodeLen){
+          status = "bad"; tag = "SKIP: kode != 10"; skip = true;
+          issues.push({ type:"bad", msg:`Linje ${lineNo}: KODE er ${r.code.length} tegn (forventet 10): "${r.code}"` });
+          errorCount++;
+        }
+
+        // Duplikater (markeres grønne, men skippes ikke)
+        if (!skip){
+          if (r.id){
+            if (seenId.has(r.id)){
+              status = "dup";
+              tag = `DUP ID (først ${seenId.get(r.id)})`;
+              dupCount++;
+              issues.push({ type:"warn", msg:`Linje ${lineNo}: Duplikat ID "${r.id}" (først linje ${seenId.get(r.id)}).` });
+            } else seenId.set(r.id, lineNo);
+          }
+          if (r.code){
+            if (seenCode.has(r.code)){
+              status = "dup";
+              tag = `DUP KODE (først ${seenCode.get(r.code)})`;
+              dupCount++;
+              issues.push({ type:"warn", msg:`Linje ${lineNo}: Duplikat KODE "${r.code}" (først linje ${seenCode.get(r.code)}).` });
+            } else seenCode.set(r.code, lineNo);
+          }
+        }
+
+        // Advarsel hvis LEVDE finnes men era ikke finnes (ikke skipp)
+        if (!skip && r.lived_text && !r.era){
+          issues.push({ type:"warn", msg:`Linje ${lineNo}: Fant ikke "fvt" eller "evt" i LEVDE: "${r.lived_text}"` });
+        }
+
+        return { ...w, status, tag, skip };
+      });
+
+      return { analyzed, issues, errorCount, dupCount };
+    }
+
+    function renderPreview(analyzed){
+      elPreview.innerHTML = "";
+      analyzed.forEach(w => {
+        const r = w.base;
+        const div = document.createElement("div");
+        div.className = `row ${w.status}`;
+        div.innerHTML = `
+          <div class="ln">Linje ${w.sourceLine}<span class="badge">${w.tag}</span></div>
+          <div class="txt">${r.id || "?"}\t${r.code || "?"}\t${r.name || "?"}\t${r.lived_text || ""}\t${r.place || ""}\t${r.role || ""}\t${r.tagline || ""}</div>
+        `;
+        elPreview.appendChild(div);
+      });
+    }
+
+    function prettyJson(data){ return JSON.stringify(data, null, 2) + "\n"; }
+    function minifyJson(data){ return JSON.stringify(data) + "\n"; }
+
+    function render(){
+      clearIssues();
+
+      const parsed = parseTable(elIn.value);
+      parsed.issues.forEach(x => addIssue(x.msg, x.type));
+
+      const a = analyzeRows(parsed.rows || []);
+      a.issues.forEach(x => addIssue(x.msg, x.type));
+      renderPreview(a.analyzed);
+
+      // Kun rader som IKKE skippes -> JSON
+      const jsonRows = a.analyzed
+        .filter(w => !w.skip)
+        .map(w => buildPersonRow(w.base))
+        // ekstra sikkerhet: hvis id likevel tom (skal ikke skje), dropp
+        .filter(o => o.id && String(o.id).trim() !== "");
+
+      currentData = jsonRows;
+
+      elRowCount.textContent = `${jsonRows.length} personer`;
+      elErrCount.textContent = `${a.errorCount} feil`;
+      elDupCount.textContent = `${a.dupCount} duplikater`;
+
+      elOut.value = currentPretty ? prettyJson(currentData) : minifyJson(currentData);
+    }
+
+    // Buttons
+    btnCopy.addEventListener("click", async () => {
+      try{
+        await navigator.clipboard.writeText(elOut.value);
+        btnCopy.textContent = "Kopiert!";
+        setTimeout(() => btnCopy.textContent = "Kopier JSON", 900);
+      }catch(e){
+        alert("Klarte ikke å kopiere automatisk. Marker og kopier manuelt.");
+      }
+    });
+
+    btnDownload.addEventListener("click", () => {
+      const blob = new Blob([elOut.value], { type:"application/json;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "persons.json";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    btnClear.addEventListener("click", () => {
+      elIn.value = "";
+      render();
+    });
+
+    btnSample.addEventListener("click", () => {
+      elIn.value =
+`NUMMER\tKODE\tNAVN\tLEVDE\tFØDT/OPPVOKST\tYRKE/ROLLE\tKJENNETEGN
+1-1\t1010011100\tAdam\tca. 4026 fvt\tEden\t\tBrøt Guds bud
+1-1\t1010011100\tAdam (duplikat)\tca. 4026 fvt\tEden\t\tBrøt Guds bud
+\t0110100101\tMangler ID\tca. 4026 fvt\tEden\t\tBlir skippet
+1-2\t0110100101\tEva\tca. 4026 fvt\tEden\tFørste kvinne\tBle fristet av slangen
+1-3\t1100101010\tAbel\tca. 3900 fvt\tUtenfor Eden\tHyrde\tFørste trofaste martyr`;
+      render();
+    });
+
+    btnNormalize.addEventListener("click", () => {
+      const raw = elIn.value.replace(/\r\n/g,"\n").replace(/\r/g,"\n");
+      const lines = raw.split("\n").filter(l => l.trim().length > 0);
+      if (!lines.length) return;
+
+      const delim = guessDelimiter(lines[0]);
+      const norm = lines.map(line => line.split(delim).map(safeStr).join("\t")).join("\n");
+      elIn.value = norm + "\n";
+      render();
+    });
+
+    btnMinify.addEventListener("click", () => {
+      currentPretty = false;
+      elOut.value = minifyJson(currentData);
+    });
+
+    btnPretty.addEventListener("click", () => {
+      currentPretty = true;
+      elOut.value = prettyJson(currentData);
+    });
+
+    elIn.addEventListener("input", render);
+
+    // Initial
+    render();
+  </script>
+</body>
+</html>
