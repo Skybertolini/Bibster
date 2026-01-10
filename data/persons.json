@@ -2678,18 +2678,18 @@
     "approx": true
   },
   {
-    "id": "23-9",
-    "code": "0101101100",
-    "name": "Hosea",
-    "lived_text": "ca. 760–720 fvt",
-    "place": "Nordriket (Israel)",
-    "role": "Profet",
-    "tagline": "Kalte folket tilbake til Jehova",
-    "era": "BCE",
-    "year_from": -760,
-    "year_to": -720,
-    "approx": true
-  },
+  "id": "23-9",
+  "code": "0101101100",
+  "name": "Nero",
+  "lived_text": "ca. 54–68 evt",
+  "place": "Roma",
+  "role": "Keiser",
+  "tagline": "Forfulgte kristne",
+  "era": "CE",
+  "year_from": 54,
+  "year_to": 68,
+  "approx": true
+},
   {
     "id": "24-1",
     "code": "0111000111",
@@ -2740,6 +2740,19 @@
   "era": "BCE",
   "year_from": -750,
   "year_to": -700,
+  "approx": true
+},
+  {
+  "id": "24-5",
+  "code": "0111000111",
+  "name": "Hosea",
+  "lived_text": "ca. 760–720 fvt",
+  "place": "Nordriket (Israel)",
+  "role": "Profet",
+  "tagline": "Kalte folket tilbake til Jehova",
+  "era": "BCE",
+  "year_from": -760,
+  "year_to": -720,
   "approx": true
 }
 ]
