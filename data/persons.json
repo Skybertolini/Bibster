@@ -8,7 +8,9 @@
     "tagline": "Brøt Guds bud",
     "era": "BCE",
     "year_from": -4026,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "1-2",
@@ -20,7 +22,9 @@
     "tagline": "Ble fristet av slangen",
     "era": "BCE",
     "year_from": -4026,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "1-3",
@@ -32,7 +36,9 @@
     "tagline": "Første trofaste martyr",
     "era": "BCE",
     "year_from": -3900,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "1-4",
@@ -44,7 +50,9 @@
     "tagline": "Drepte broren sin",
     "era": "BCE",
     "year_from": -3900,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "1-5",
@@ -56,7 +64,9 @@
     "tagline": "«Erstattet» Abel",
     "era": "BCE",
     "year_from": -3896,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "1-6",
@@ -68,7 +78,9 @@
     "tagline": "«Vandret med Gud»",
     "era": "BCE",
     "year_from": -3400,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "1-7",
@@ -81,7 +93,9 @@
     "era": "BCE",
     "year_from": -2500,
     "year_to": -2300,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "1-8",
@@ -94,7 +108,9 @@
     "era": "BCE",
     "year_from": -2300,
     "year_to": -2000,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "1-9",
@@ -107,7 +123,9 @@
     "era": "BCE",
     "year_from": -2300,
     "year_to": -2000,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "2-1",
@@ -120,7 +138,9 @@
     "era": "BCE",
     "year_from": -2300,
     "year_to": -2000,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "2-2",
@@ -133,7 +153,9 @@
     "era": "BCE",
     "year_from": -1900,
     "year_to": -1800,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "2-3",
@@ -145,7 +167,9 @@
     "tagline": "Fikk Isak sent",
     "era": "BCE",
     "year_from": -1900,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "2-4",
@@ -157,7 +181,9 @@
     "tagline": "Flyktet fra Sodoma",
     "era": "BCE",
     "year_from": -1900,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "2-5",
@@ -169,7 +195,9 @@
     "tagline": "Mor til Ismael",
     "era": "BCE",
     "year_from": -1900,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "2-6",
@@ -181,7 +209,9 @@
     "tagline": "Bueskytter i ørkenen",
     "era": "BCE",
     "year_from": -1800,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "2-7",
@@ -194,7 +224,9 @@
     "era": "BCE",
     "year_from": -1900,
     "year_to": -1700,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "2-8",
@@ -206,7 +238,9 @@
     "tagline": "Mor til tvillingene",
     "era": "BCE",
     "year_from": -1800,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "2-9",
@@ -219,7 +253,9 @@
     "era": "BCE",
     "year_from": -1800,
     "year_to": -1700,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "3-1",
@@ -231,7 +267,9 @@
     "tagline": "Solgte førstefødselsretten",
     "era": "BCE",
     "year_from": -1800,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "3-2",
@@ -244,7 +282,9 @@
     "era": "BCE",
     "year_from": -1700,
     "year_to": -1800,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "3-3",
@@ -257,7 +297,9 @@
     "era": "BCE",
     "year_from": -1700,
     "year_to": -1800,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "3-4",
@@ -269,7 +311,9 @@
     "tagline": "Tydet drømmer",
     "era": "BCE",
     "year_from": -1700,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "3-5",
@@ -281,7 +325,9 @@
     "tagline": "Messias-linjen",
     "era": "BCE",
     "year_from": -1700,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "3-6",
@@ -293,7 +339,9 @@
     "tagline": "Jakobs førstefødte",
     "era": "BCE",
     "year_from": -1700,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "3-7",
@@ -305,7 +353,9 @@
     "tagline": "Yngste sønn",
     "era": "BCE",
     "year_from": -1700,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "3-8",
@@ -317,7 +367,9 @@
     "tagline": "Ledet utgangen",
     "era": "BCE",
     "year_from": -1500,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "3-9",
@@ -329,7 +381,9 @@
     "tagline": "Moses’ talerør",
     "era": "BCE",
     "year_from": -1500,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "4-1",
@@ -341,7 +395,9 @@
     "tagline": "Motstod Jehova",
     "era": "BCE",
     "year_from": -1510,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "4-2",
@@ -354,7 +410,9 @@
     "era": "BCE",
     "year_from": -1470,
     "year_to": -1450,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "4-3",
@@ -367,7 +425,9 @@
     "era": "BCE",
     "year_from": -1470,
     "year_to": -1450,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "4-4",
@@ -379,7 +439,9 @@
     "tagline": "Ga Moses råd",
     "era": "BCE",
     "year_from": -1500,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "4-5",
@@ -391,7 +453,9 @@
     "tagline": "Handlet raskt",
     "era": "BCE",
     "year_from": -1500,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "4-6",
@@ -403,7 +467,9 @@
     "tagline": "Etterfulgte Aron",
     "era": "BCE",
     "year_from": -1450,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "4-7",
@@ -415,7 +481,9 @@
     "tagline": "Viste sterk nidkjærhet",
     "era": "BCE",
     "year_from": -1400,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "4-8",
@@ -427,7 +495,9 @@
     "tagline": "Ville forbanne Israel",
     "era": "BCE",
     "year_from": -1400,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "4-9",
@@ -439,7 +509,9 @@
     "tagline": "Ledet opprør",
     "era": "BCE",
     "year_from": -1470,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "5-1",
@@ -451,7 +523,9 @@
     "tagline": "Stod mot Moses",
     "era": "BCE",
     "year_from": -1470,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "5-2",
@@ -463,7 +537,9 @@
     "tagline": "Med Korah-gruppen",
     "era": "BCE",
     "year_from": -1470,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "5-3",
@@ -475,7 +551,9 @@
     "tagline": "Utsatt for overgrep i Sikem",
     "era": "BCE",
     "year_from": -1750,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "5-4",
@@ -487,7 +565,9 @@
     "tagline": "Døtrene arvet land",
     "era": "BCE",
     "year_from": -1470,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "5-5",
@@ -499,7 +579,9 @@
     "tagline": "Lurte Jakob",
     "era": "BCE",
     "year_from": -1800,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "5-6",
@@ -511,7 +593,9 @@
     "tagline": "Velsignet Abraham",
     "era": "BCE",
     "year_from": -1900,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "5-7",
@@ -523,7 +607,9 @@
     "tagline": "Møtte Abraham/Isak",
     "era": "BCE",
     "year_from": -1900,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "5-8",
@@ -535,7 +621,9 @@
     "tagline": "Josef i huset hans",
     "era": "BCE",
     "year_from": -1700,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "5-9",
@@ -547,7 +635,9 @@
     "tagline": "Falsk anklage mot Josef",
     "era": "BCE",
     "year_from": -1700,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "6-1",
@@ -559,7 +649,9 @@
     "tagline": "Ledet med Barak",
     "era": "BCE",
     "year_from": -1200,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "6-2",
@@ -571,7 +663,9 @@
     "tagline": "Seier over Sisera",
     "era": "BCE",
     "year_from": -1200,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "6-3",
@@ -583,7 +677,9 @@
     "tagline": "Drepte Sisera",
     "era": "BCE",
     "year_from": -1200,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "6-4",
@@ -595,7 +691,9 @@
     "tagline": "300 menn mot midianittene",
     "era": "BCE",
     "year_from": -1150,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "6-5",
@@ -607,7 +705,9 @@
     "tagline": "Hindret David i å gjøre noe dumt",
     "era": "BCE",
     "year_from": -1000,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "6-6",
@@ -619,7 +719,9 @@
     "tagline": "Kjempet mot ammonittene",
     "era": "BCE",
     "year_from": -1100,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "6-7",
@@ -632,7 +734,9 @@
     "era": "BCE",
     "year_from": -1120,
     "year_to": -1100,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "6-8",
@@ -644,7 +748,9 @@
     "tagline": "Fikk englebesøk",
     "era": "BCE",
     "year_from": -1120,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "6-9",
@@ -656,7 +762,9 @@
     "tagline": "Lokket ut hemmeligheten",
     "era": "BCE",
     "year_from": -1100,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "7-1",
@@ -668,7 +776,9 @@
     "tagline": "Dømte Israel før Samuel",
     "era": "BCE",
     "year_from": -1120,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "7-2",
@@ -680,7 +790,9 @@
     "tagline": "Ba om barn (Samuel)",
     "era": "BCE",
     "year_from": -1120,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "7-3",
@@ -693,7 +805,9 @@
     "era": "BCE",
     "year_from": -1100,
     "year_to": -1050,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "7-4",
@@ -705,7 +819,9 @@
     "tagline": "Lojal mot Naomi",
     "era": "BCE",
     "year_from": -1150,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "7-5",
@@ -717,7 +833,9 @@
     "tagline": "Vendte tilbake med Rut",
     "era": "BCE",
     "year_from": -1150,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "7-6",
@@ -729,7 +847,9 @@
     "tagline": "Gjenløser for Rut",
     "era": "BCE",
     "year_from": -1150,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "7-7",
@@ -741,7 +861,9 @@
     "tagline": "Vendte hjem",
     "era": "BCE",
     "year_from": -1150,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "7-8",
@@ -753,7 +875,9 @@
     "tagline": "Bestefar til David",
     "era": "BCE",
     "year_from": -1120,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "7-9",
@@ -765,7 +889,9 @@
     "tagline": "Misbrukte tjenesten",
     "era": "BCE",
     "year_from": -1110,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "8-1",
@@ -777,7 +903,9 @@
     "tagline": "Arken tatt i krig",
     "era": "BCE",
     "year_from": -1110,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "8-2",
@@ -789,7 +917,9 @@
     "tagline": "30 sønner og byer",
     "era": "BCE",
     "year_from": -1120,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "8-3",
@@ -801,7 +931,9 @@
     "tagline": "Lagde avgudsbilde",
     "era": "BCE",
     "year_from": -1100,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "8-4",
@@ -814,7 +946,9 @@
     "era": "BCE",
     "year_from": -1050,
     "year_to": -1010,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "8-5",
@@ -826,7 +960,9 @@
     "tagline": "Davids nære venn",
     "era": "BCE",
     "year_from": -1030,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "8-6",
@@ -839,7 +975,9 @@
     "era": "BCE",
     "year_from": -1020,
     "year_to": -970,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "8-7",
@@ -851,7 +989,9 @@
     "tagline": "Kjempe utfordret Israel",
     "era": "BCE",
     "year_from": -1020,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "8-8",
@@ -863,7 +1003,9 @@
     "tagline": "Offer for et uklokt løfte",
     "era": "BCE",
     "year_from": -1100,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "8-9",
@@ -875,7 +1017,9 @@
     "tagline": "Korrigerte David",
     "era": "BCE",
     "year_from": -1000,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "9-1",
@@ -887,7 +1031,9 @@
     "tagline": "Mor til Salomo",
     "era": "BCE",
     "year_from": -1000,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "9-2",
@@ -900,7 +1046,9 @@
     "era": "BCE",
     "year_from": -990,
     "year_to": -930,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "9-3",
@@ -912,7 +1060,9 @@
     "tagline": "Riket ble delt",
     "era": "BCE",
     "year_from": -930,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "9-4",
@@ -924,7 +1074,9 @@
     "tagline": "Gullkalver i Betel og Dan",
     "era": "BCE",
     "year_from": -930,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "9-5",
@@ -937,7 +1089,9 @@
     "era": "BCE",
     "year_from": -920,
     "year_to": -900,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "9-6",
@@ -949,7 +1103,9 @@
     "tagline": "Gift med Jesabel",
     "era": "BCE",
     "year_from": -900,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "9-7",
@@ -961,7 +1117,9 @@
     "tagline": "Fremmet Ba’al-dyrkelse",
     "era": "BCE",
     "year_from": -900,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "9-8",
@@ -974,7 +1132,9 @@
     "era": "BCE",
     "year_from": -890,
     "year_to": -860,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "9-9",
@@ -986,7 +1146,9 @@
     "tagline": "Grådig → spedalsk",
     "era": "BCE",
     "year_from": -880,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "10-1",
@@ -998,7 +1160,9 @@
     "tagline": "Utryddet Ahabs hus",
     "era": "BCE",
     "year_from": -840,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "10-2",
@@ -1010,7 +1174,9 @@
     "tagline": "Tok makten voldelig",
     "era": "BCE",
     "year_from": -840,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "10-3",
@@ -1022,7 +1188,9 @@
     "tagline": "Beskyttet Joas",
     "era": "BCE",
     "year_from": -840,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "10-4",
@@ -1034,7 +1202,9 @@
     "tagline": "Skjulte Joas",
     "era": "BCE",
     "year_from": -840,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "10-5",
@@ -1047,7 +1217,9 @@
     "era": "BCE",
     "year_from": -835,
     "year_to": -800,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "10-6",
@@ -1060,7 +1232,9 @@
     "era": "BCE",
     "year_from": -780,
     "year_to": -750,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "10-7",
@@ -1072,7 +1246,9 @@
     "tagline": "Relativt trofast",
     "era": "BCE",
     "year_from": -750,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "10-8",
@@ -1084,7 +1260,9 @@
     "tagline": "Avgudsdyrkelse og uro",
     "era": "BCE",
     "year_from": -730,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "10-9",
@@ -1096,7 +1274,9 @@
     "tagline": "Oppmuntret tempelbygging",
     "era": "BCE",
     "year_from": -520,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "11-1",
@@ -1109,7 +1289,9 @@
     "era": "BCE",
     "year_from": -520,
     "year_to": -500,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "11-2",
@@ -1121,7 +1303,9 @@
     "tagline": "Advarte mot slapp tilbedelse",
     "era": "BCE",
     "year_from": -450,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "11-3",
@@ -1133,7 +1317,9 @@
     "tagline": "Leste loven høyt",
     "era": "BCE",
     "year_from": -460,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "11-4",
@@ -1145,7 +1331,9 @@
     "tagline": "Gjenoppbygde murene",
     "era": "BCE",
     "year_from": -445,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "11-5",
@@ -1157,7 +1345,9 @@
     "tagline": "Reddet jødene",
     "era": "BCE",
     "year_from": -480,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "11-6",
@@ -1169,7 +1359,9 @@
     "tagline": "Avslørte sammensvergelse",
     "era": "BCE",
     "year_from": -480,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "11-7",
@@ -1181,7 +1373,9 @@
     "tagline": "Planla utryddelse",
     "era": "BCE",
     "year_from": -480,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "11-8",
@@ -1193,7 +1387,9 @@
     "tagline": "Prøvde å stoppe murene",
     "era": "BCE",
     "year_from": -445,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "11-9",
@@ -1205,7 +1401,9 @@
     "tagline": "Intriger mot Nehemja",
     "era": "BCE",
     "year_from": -445,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "12-1",
@@ -1217,7 +1415,9 @@
     "tagline": "Utholdt store prøvelser",
     "era": "BCE",
     "year_from": -1600,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "12-2",
@@ -1230,7 +1430,9 @@
     "era": "BCE",
     "year_from": -605,
     "year_to": -562,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "12-3",
@@ -1242,7 +1444,9 @@
     "tagline": "«Skrift på veggen»",
     "era": "BCE",
     "year_from": -539,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "12-4",
@@ -1254,7 +1458,9 @@
     "tagline": "Lot jødene vende tilbake",
     "era": "BCE",
     "year_from": -539,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "12-5",
@@ -1267,7 +1473,9 @@
     "era": "BCE",
     "year_from": -539,
     "year_to": -520,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "12-6",
@@ -1280,7 +1488,9 @@
     "era": "BCE",
     "year_from": -465,
     "year_to": -424,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "12-7",
@@ -1293,7 +1503,9 @@
     "era": "BCE",
     "year_from": -538,
     "year_to": -520,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "12-8",
@@ -1306,7 +1518,9 @@
     "era": "BCE",
     "year_from": -620,
     "year_to": -530,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "12-9",
@@ -1318,7 +1532,9 @@
     "tagline": "Flyktet fra oppdraget",
     "era": "BCE",
     "year_from": -800,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "13-1",
@@ -1330,7 +1546,9 @@
     "tagline": "Advarte mot urettferdighet",
     "era": "BCE",
     "year_from": -760,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "13-2",
@@ -1342,7 +1560,9 @@
     "tagline": "Hebraisk navn",
     "era": "BCE",
     "year_from": -600,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "13-3",
@@ -1354,7 +1574,9 @@
     "tagline": "Hebraisk navn",
     "era": "BCE",
     "year_from": -600,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "13-4",
@@ -1366,7 +1588,9 @@
     "tagline": "Hebraisk navn",
     "era": "BCE",
     "year_from": -600,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "13-5",
@@ -1379,7 +1603,9 @@
     "era": "BCE",
     "year_from": -609,
     "year_to": -598,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "13-6",
@@ -1391,7 +1617,9 @@
     "tagline": "Ført til Babylon",
     "era": "BCE",
     "year_from": -598,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "13-7",
@@ -1404,7 +1632,9 @@
     "era": "BCE",
     "year_from": -597,
     "year_to": -587,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "13-8",
@@ -1416,7 +1646,9 @@
     "tagline": "Kort regjeringstid",
     "era": "BCE",
     "year_from": -609,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "13-9",
@@ -1428,7 +1660,9 @@
     "tagline": "Gjorde opprør mot David",
     "era": "BCE",
     "year_from": -1000,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "14-1",
@@ -1440,7 +1674,9 @@
     "tagline": "Tragedie i Davids hus",
     "era": "BCE",
     "year_from": -1000,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "14-2",
@@ -1452,7 +1688,9 @@
     "tagline": "Sentral i familietragedie",
     "era": "BCE",
     "year_from": -1000,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "14-3",
@@ -1464,7 +1702,9 @@
     "tagline": "Prøvde å ta tronen",
     "era": "BCE",
     "year_from": -970,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "14-4",
@@ -1476,7 +1716,9 @@
     "tagline": "Reiste opprør mot David",
     "era": "BCE",
     "year_from": -1000,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "14-5",
@@ -1488,7 +1730,9 @@
     "tagline": "Trofast, men sviktet av David",
     "era": "BCE",
     "year_from": -1000,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "14-6",
@@ -1501,7 +1745,9 @@
     "era": "BCE",
     "year_from": -640,
     "year_to": -620,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "14-7",
@@ -1513,7 +1759,9 @@
     "tagline": "Vist nåde av David",
     "era": "BCE",
     "year_from": -1000,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "14-8",
@@ -1525,7 +1773,9 @@
     "tagline": "Motsatte seg Jeremia",
     "era": "BCE",
     "year_from": -590,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "14-9",
@@ -1538,7 +1788,9 @@
     "era": "CE",
     "year_from": 29,
     "year_to": 33,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "15-1",
@@ -1551,7 +1803,9 @@
     "era": "CE",
     "year_from": 1,
     "year_to": 33,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "15-2",
@@ -1564,7 +1818,9 @@
     "era": "CE",
     "year_from": 1,
     "year_to": 30,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "15-3",
@@ -1576,7 +1832,9 @@
     "tagline": "Døpte Jesus",
     "era": "CE",
     "year_from": 29,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "15-4",
@@ -1588,7 +1846,9 @@
     "tagline": "Mor til Johannes",
     "era": "CE",
     "year_from": 1,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "15-5",
@@ -1600,7 +1860,9 @@
     "tagline": "Fikk englebesøk",
     "era": "CE",
     "year_from": 1,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "15-6",
@@ -1612,7 +1874,9 @@
     "tagline": "Gjenkjente Jesus",
     "era": "CE",
     "year_from": 1,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "15-7",
@@ -1624,7 +1888,9 @@
     "tagline": "Tjente ved templet",
     "era": "CE",
     "year_from": 1,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "15-8",
@@ -1637,7 +1903,9 @@
     "era": "CE",
     "year_from": 30,
     "year_to": 60,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "15-9",
@@ -1649,7 +1917,9 @@
     "tagline": "Brakte folk til Jesus",
     "era": "CE",
     "year_from": 30,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "16-1",
@@ -1662,7 +1932,9 @@
     "era": "CE",
     "year_from": 30,
     "year_to": 44,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "16-2",
@@ -1675,7 +1947,9 @@
     "era": "CE",
     "year_from": 30,
     "year_to": 100,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "16-3",
@@ -1687,7 +1961,9 @@
     "tagline": "«Kom og se!»",
     "era": "CE",
     "year_from": 30,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "16-4",
@@ -1699,7 +1975,9 @@
     "tagline": "«Uten svik»",
     "era": "CE",
     "year_from": 30,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "16-5",
@@ -1711,7 +1989,9 @@
     "tagline": "Ville se bevis",
     "era": "CE",
     "year_from": 30,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "16-6",
@@ -1723,7 +2003,9 @@
     "tagline": "Skrev Matteus",
     "era": "CE",
     "year_from": 30,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "16-7",
@@ -1735,7 +2017,9 @@
     "tagline": "Mindre omtalt",
     "era": "CE",
     "year_from": 30,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "16-8",
@@ -1747,7 +2031,9 @@
     "tagline": "Spurte Jesus siste natt",
     "era": "CE",
     "year_from": 30,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "16-9",
@@ -1759,7 +2045,9 @@
     "tagline": "Tidligere selot",
     "era": "CE",
     "year_from": 30,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "17-1",
@@ -1770,7 +2058,9 @@
     "role": "Apostel",
     "tagline": "Forrådte Jesus",
     "era": "CE",
-    "year_from": 33
+    "year_from": 33,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "17-2",
@@ -1782,7 +2072,9 @@
     "tagline": "Første vitne til oppstandelsen",
     "era": "CE",
     "year_from": 30,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "17-3",
@@ -1794,7 +2086,9 @@
     "tagline": "Praktisk, trofast",
     "era": "CE",
     "year_from": 30,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "17-4",
@@ -1806,7 +2100,9 @@
     "tagline": "Salvet Jesus",
     "era": "CE",
     "year_from": 30,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "17-5",
@@ -1818,7 +2114,9 @@
     "tagline": "Ble oppreist",
     "era": "CE",
     "year_from": 30,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "17-6",
@@ -1831,7 +2129,9 @@
     "era": "CE",
     "year_from": 30,
     "year_to": 60,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "17-7",
@@ -1844,7 +2144,9 @@
     "era": "CE",
     "year_from": 34,
     "year_to": 65,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "17-8",
@@ -1857,7 +2159,9 @@
     "era": "CE",
     "year_from": 45,
     "year_to": 60,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "17-9",
@@ -1869,7 +2173,9 @@
     "tagline": "Sang i fengsel med Paulus",
     "era": "CE",
     "year_from": 50,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "18-1",
@@ -1882,7 +2188,9 @@
     "era": "CE",
     "year_from": 50,
     "year_to": 80,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "18-2",
@@ -1895,7 +2203,9 @@
     "era": "CE",
     "year_from": 50,
     "year_to": 90,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "18-3",
@@ -1908,7 +2218,9 @@
     "era": "CE",
     "year_from": 60,
     "year_to": 90,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "18-4",
@@ -1921,7 +2233,9 @@
     "era": "CE",
     "year_from": 45,
     "year_to": 70,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "18-5",
@@ -1934,7 +2248,9 @@
     "era": "CE",
     "year_from": 50,
     "year_to": 60,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "18-6",
@@ -1947,7 +2263,9 @@
     "era": "CE",
     "year_from": 50,
     "year_to": 60,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "18-7",
@@ -1960,7 +2278,9 @@
     "era": "CE",
     "year_from": 50,
     "year_to": 60,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "18-8",
@@ -1973,7 +2293,9 @@
     "era": "CE",
     "year_from": 34,
     "year_to": 35,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "18-9",
@@ -1986,7 +2308,9 @@
     "era": "CE",
     "year_from": 35,
     "year_to": 60,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "19-1",
@@ -1999,7 +2323,9 @@
     "era": "CE",
     "year_from": 36,
     "year_to": 40,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "19-2",
@@ -2011,7 +2337,9 @@
     "tagline": "Hjalp Paulus få synet",
     "era": "CE",
     "year_from": 34,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "19-3",
@@ -2024,7 +2352,9 @@
     "era": "CE",
     "year_from": 32,
     "year_to": 35,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "19-4",
@@ -2037,7 +2367,9 @@
     "era": "CE",
     "year_from": 32,
     "year_to": 35,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "19-5",
@@ -2050,7 +2382,9 @@
     "era": "CE",
     "year_from": 49,
     "year_to": 62,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "19-6",
@@ -2062,7 +2396,9 @@
     "tagline": "Skrev Judas-brevet",
     "era": "CE",
     "year_from": 60,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "19-7",
@@ -2075,7 +2411,9 @@
     "era": "CE",
     "year_from": 60,
     "year_to": 62,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "19-8",
@@ -2087,7 +2425,9 @@
     "tagline": "Ble kristen (Filemon)",
     "era": "CE",
     "year_from": 60,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "19-9",
@@ -2099,7 +2439,9 @@
     "tagline": "Tok imot Onesimus",
     "era": "CE",
     "year_from": 60,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "20-1",
@@ -2112,7 +2454,9 @@
     "era": "CE",
     "year_from": 60,
     "year_to": 65,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "20-2",
@@ -2124,7 +2468,9 @@
     "tagline": "Bar brev for Paulus",
     "era": "CE",
     "year_from": 60,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "20-3",
@@ -2137,7 +2483,9 @@
     "era": "CE",
     "year_from": 55,
     "year_to": 60,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "20-4",
@@ -2149,7 +2497,9 @@
     "tagline": "Sang etter Rødehavet",
     "era": "BCE",
     "year_from": -1500,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "20-5",
@@ -2161,7 +2511,9 @@
     "tagline": "Overlevde flommen",
     "era": "BCE",
     "year_from": -2500,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "20-6",
@@ -2173,7 +2525,9 @@
     "tagline": "Sendt for å finne Rebekka",
     "era": "BCE",
     "year_from": -1900,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "20-7",
@@ -2185,7 +2539,9 @@
     "tagline": "Skjulte speiderne",
     "era": "BCE",
     "year_from": -1400,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "20-8",
@@ -2197,7 +2553,9 @@
     "tagline": "Jeremias sekretær",
     "era": "BCE",
     "year_from": -600,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "20-9",
@@ -2210,7 +2568,9 @@
     "era": "BCE",
     "year_from": -740,
     "year_to": -680,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "21-1",
@@ -2223,7 +2583,9 @@
     "era": "BCE",
     "year_from": -640,
     "year_to": -609,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "21-2",
@@ -2236,7 +2598,9 @@
     "era": "BCE",
     "year_from": -715,
     "year_to": -686,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "21-3",
@@ -2249,7 +2613,9 @@
     "era": "BCE",
     "year_from": -650,
     "year_to": -580,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "21-4",
@@ -2261,7 +2627,9 @@
     "tagline": "Ga Jesus grav",
     "era": "CE",
     "year_from": 30,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "21-5",
@@ -2273,7 +2641,9 @@
     "tagline": "Priste hevn",
     "era": "BCE",
     "year_from": -3800,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "21-6",
@@ -2285,7 +2655,9 @@
     "tagline": "Mektig jeger",
     "era": "BCE",
     "year_from": -2200,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "21-7",
@@ -2297,7 +2669,9 @@
     "tagline": "Forrådte David",
     "era": "BCE",
     "year_from": -1000,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "21-8",
@@ -2310,7 +2684,9 @@
     "era": "BCE",
     "year_from": -697,
     "year_to": -642,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "21-9",
@@ -2322,7 +2698,9 @@
     "tagline": "Makt bak kulissene",
     "era": "CE",
     "year_from": 30,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "22-1",
@@ -2334,7 +2712,9 @@
     "tagline": "Drev fram Jesu dom",
     "era": "CE",
     "year_from": 30,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "22-2",
@@ -2347,7 +2727,9 @@
     "era": "BCE",
     "year_from": -37,
     "year_to": -4,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "22-3",
@@ -2360,7 +2742,9 @@
     "era": "CE",
     "year_from": 52,
     "year_to": 59,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "22-4",
@@ -2373,7 +2757,9 @@
     "era": "CE",
     "year_from": 26,
     "year_to": 36,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "22-5",
@@ -2386,7 +2772,9 @@
     "era": "CE",
     "year_from": 59,
     "year_to": 62,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "22-6",
@@ -2398,7 +2786,9 @@
     "tagline": "Pekte Naaman mot Elisja",
     "era": "BCE",
     "year_from": -850,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "22-7",
@@ -2410,7 +2800,9 @@
     "tagline": "Helbredet for spedalskhet",
     "era": "BCE",
     "year_from": -850,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "22-8",
@@ -2423,7 +2815,9 @@
     "era": "CE",
     "year_from": 54,
     "year_to": 68,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "22-9",
@@ -2436,7 +2830,9 @@
     "era": "BCE",
     "year_from": -486,
     "year_to": -465,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "23-1",
@@ -2449,7 +2845,9 @@
     "era": "CE",
     "year_from": 81,
     "year_to": 96,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "23-2",
@@ -2462,7 +2860,9 @@
     "era": "CE",
     "year_from": 14,
     "year_to": 37,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "23-3",
@@ -2475,7 +2875,9 @@
     "era": "BCE",
     "year_from": -705,
     "year_to": -681,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "23-4",
@@ -2488,7 +2890,9 @@
     "era": "CE",
     "year_from": 4,
     "year_to": 39,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "23-5",
@@ -2501,7 +2905,9 @@
     "era": "CE",
     "year_from": 10,
     "year_to": 44,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "23-6",
@@ -2514,7 +2920,9 @@
     "era": "CE",
     "year_from": 27,
     "year_to": 14,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "23-7",
@@ -2527,7 +2935,9 @@
     "era": "CE",
     "year_from": 37,
     "year_to": 41,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "23-8",
@@ -2540,7 +2950,9 @@
     "era": "CE",
     "year_from": 41,
     "year_to": 54,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "23-9",
@@ -2553,7 +2965,9 @@
     "era": "CE",
     "year_from": 54,
     "year_to": 68,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "24-1",
@@ -2565,7 +2979,9 @@
     "tagline": "Ødela Jerusalem",
     "era": "CE",
     "year_from": 70,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "24-2",
@@ -2578,7 +2994,9 @@
     "era": "CE",
     "year_from": 69,
     "year_to": 79,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "24-3",
@@ -2591,7 +3009,9 @@
     "era": "CE",
     "year_from": 81,
     "year_to": 96,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "24-4",
@@ -2604,7 +3024,9 @@
     "era": "BCE",
     "year_from": -750,
     "year_to": -700,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "24-5",
@@ -2617,7 +3039,9 @@
     "era": "BCE",
     "year_from": -760,
     "year_to": -720,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "24-6",
@@ -2629,7 +3053,9 @@
     "tagline": "Fødet Ruben og Dan for Rakel",
     "era": "BCE",
     "year_from": -1750,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   },
   {
     "id": "24-7",
@@ -2641,6 +3067,8 @@
     "tagline": "Fødet Gad og Aser for Lea",
     "era": "BCE",
     "year_from": -1750,
-    "approx": true
+    "approx": true,
+    "type": "person",
+    "time_label": "Levde"
   }
 ]
