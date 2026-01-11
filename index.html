@@ -16,6 +16,10 @@
       --bg0:#060814;
       --bg1:#0B1020;
       --bg2:#0D1633;
+      --bgEvent0: #06110B;
+      --bgEvent1: #0B1F14;
+      --bgMain0: var(--bg0);
+      --bgMain1: var(--bg2);
 
       --card:#0f1b33cc;
       --card2:#0b1326cc;
@@ -47,8 +51,14 @@
         radial-gradient(900px 600px at 10% 10%, rgba(124,243,255,.14), transparent 55%),
         radial-gradient(900px 600px at 95% 20%, rgba(167,139,250,.14), transparent 55%),
         radial-gradient(900px 600px at 50% 95%, rgba(255,255,255,.06), transparent 60%),
-        linear-gradient(180deg, var(--bg0), var(--bg2));
+        linear-gradient(180deg, var(--bgMain0), var(--bgMain1));
       -webkit-tap-highlight-color: transparent;
+      transition: background 400ms ease;
+    }
+
+    body.is-event{
+      --bgMain0: var(--bgEvent0);
+      --bgMain1: var(--bgEvent1);
     }
 
     .wrap{
@@ -397,6 +407,9 @@
       font-size: 30px;
       line-height: 2rem;
     }
+    body.is-event .hint-card .k{
+      display:none;
+    }
     .hint-content{
       opacity: 0;
       transition: opacity 250ms ease;
@@ -578,7 +591,7 @@
 
       <div class="grid">
         <div class="kv revealOnly" id="rLivedWrap">
-          <div class="k"><span>Levde</span></div>
+          <div class="k"><span id="rTimeLabel">Levde</span></div>
           <div class="v" id="rLived">—</div>
         </div>
         <div class="kv hint-card" data-hint="1" role="button" tabindex="0" aria-disabled="false">
@@ -608,7 +621,7 @@
       </div>
 
       <div class="footerActions">
-        <button class="btnPrimary btnCta" id="btnRevealName">Avslør hvem det er 🔍</button>
+        <button class="btnPrimary btnCta" id="btnRevealName">Avslør hvem det er</button>
       </div>
 
       <div class="msg" id="bottomMsg"></div>
