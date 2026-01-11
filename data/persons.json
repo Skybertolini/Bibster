@@ -1,5 +1,16 @@
 [
   {
+    "id": "1-1",
+    "code": "1010011100",
+    "name": "Adam",
+    "lived_text": "ca. 4026 fvt",
+    "place": "Eden",
+    "tagline": "Brøt Guds bud",
+    "era": "BCE",
+    "year_from": -4026,
+    "approx": true
+  },
+  {
     "id": "1-2",
     "code": "0110100101",
     "name": "Eva",
@@ -457,13 +468,13 @@
   {
     "id": "5-3",
     "code": "1000111100",
-    "name": "Josva (Nun)",
-    "lived_text": "ca. 1470 fvt",
-    "place": "Ørkenen",
-    "role": "Leder",
-    "tagline": "«Sterk og modig»",
+    "name": "Dina",
+    "lived_text": "ca. 1750 fvt",
+    "place": "Kana’an",
+    "role": "Jakobs datter",
+    "tagline": "Utsatt for overgrep i Sikem",
     "era": "BCE",
-    "year_from": -1470,
+    "year_from": -1750,
     "approx": true
   },
   {
@@ -2606,6 +2617,30 @@
     "era": "BCE",
     "year_from": -760,
     "year_to": -720,
+    "approx": true
+  },
+  {
+    "id": "24-6",
+    "code": "0101100001",
+    "name": "Bilha",
+    "lived_text": "ca. 1750 fvt",
+    "place": "Kana’an",
+    "role": "Tjenestekvinne og mor",
+    "tagline": "Fødet Ruben og Dan for Rakel",
+    "era": "BCE",
+    "year_from": -1750,
+    "approx": true
+  },
+  {
+    "id": "24-7",
+    "code": "0101101111",
+    "name": "Silpa",
+    "lived_text": "ca. 1750 fvt",
+    "place": "Kana’an",
+    "role": "Tjenestekvinne og mor",
+    "tagline": "Fødet Gad og Aser for Lea",
+    "era": "BCE",
+    "year_from": -1750,
     "approx": true
   }
 ]
