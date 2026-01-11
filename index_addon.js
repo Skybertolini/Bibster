@@ -28,6 +28,7 @@
   const rImageWrap = el("rImageWrap");
   const rLived = el("rLived");
   const rLivedWrap = el("rLivedWrap");
+  const rTimeLabel = el("rTimeLabel");
   const rPlace = el("rPlace");
   const rRole = el("rRole");
   const rTagline = el("rTagline");
@@ -35,6 +36,8 @@
 
   const btnRevealName = el("btnRevealName");
   const silhouetteSrc = "./assets/silhouette.png";
+  const silhouetteEventSrc = "./assets/silhouette_event.png";
+  let currentIsEvent = false;
 
   const hintCards = Array.from(document.querySelectorAll(".hint-card"));
   let hintProgressIndex = 0;
@@ -106,8 +109,12 @@
     return { person: null, parsed };
   }
 
+  function getSilhouetteSrc() {
+    return currentIsEvent ? silhouetteEventSrc : silhouetteSrc;
+  }
+
   function setImageSource(src) {
-    rImage.src = src || silhouetteSrc;
+    rImage.src = src || getSilhouetteSrc();
   }
 
   function setRevealState(show) {
@@ -122,7 +129,7 @@
         setImageSource(personSrc);
       } else {
         rImage.dataset.failed = "1";
-        setImageSource(silhouetteSrc);
+        setImageSource(getSilhouetteSrc());
       }
       rImageWrap.classList.add("on");
       resultCard.dataset.revealed = "1";
@@ -131,9 +138,9 @@
 
     rName.textContent = "???";
     rName.dataset.hidden = "1";
-    btnRevealName.textContent = "Avslør hvem det er 🔍";
+    btnRevealName.textContent = currentIsEvent ? "Avslør hva det er" : "Avslør hvem det er";
     rLivedWrap.classList.remove("on");
-    setImageSource(silhouetteSrc);
+    setImageSource(getSilhouetteSrc());
     rImageWrap.classList.add("on");
     resultCard.dataset.revealed = "0";
   }
@@ -204,6 +211,10 @@
       return;
     }
 
+    const isEvent = person.type === "event";
+    currentIsEvent = isEvent;
+    document.body.classList.toggle("is-event", isEvent);
+
     // Name hidden by default
     setNameHidden(person);
     resetHintProgress();
@@ -216,6 +227,7 @@
     rRole.textContent = person.role || "—";
     rTagline.textContent = person.tagline || "—";
     rLived.textContent = person.lived_text || "—";
+    rTimeLabel.textContent = person.time_label || "—";
     rLivedWrap.classList.remove("on");
 
     if (person.id) {
@@ -225,7 +237,7 @@
       rImage.dataset.personSrc = "";
       rImage.dataset.failed = "1";
     }
-    setImageSource(silhouetteSrc);
+    setImageSource(getSilhouetteSrc());
     rImage.alt = "Personbilde";
     rImageWrap.classList.add("on");
 
@@ -358,8 +370,8 @@
   rImage.addEventListener("error", () => {
     const currentSrc = rImage.getAttribute("src") || "";
     rImage.dataset.failed = "1";
-    if (!currentSrc.endsWith("silhouette.png")) {
-      setImageSource(silhouetteSrc);
+    if (!currentSrc.endsWith("silhouette.png") && !currentSrc.endsWith("silhouette_event.png")) {
+      setImageSource(getSilhouetteSrc());
     }
   });
 
