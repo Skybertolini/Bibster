@@ -2745,7 +2745,7 @@
   {
     "id": "21-4",
     "code": "1000101101",
-    "name": "Josef av Arimatea",
+    "name": "Josef fra Arimatea",
     "type": "person",
     "time_label": "Levde",
     "lived_text": "ca. 30–60 evt",
@@ -3210,7 +3210,7 @@
   {
     "id": "25-1",
     "code": "0001011101",
-    "name": "Vannflommen ødelegger verden",
+    "name": "Vannflommen",
     "type": "event",
     "time_label": "Skjedde",
     "lived_text": "2370 fvt",
@@ -3223,7 +3223,7 @@
   {
     "id": "25-2",
     "code": "0001101011",
-    "name": "Språkene forvirres ved Babel",
+    "name": "Språkforvirring i Babel",
     "type": "event",
     "time_label": "Skjedde",
     "lived_text": "ca. 2269 fvt",
@@ -3277,7 +3277,7 @@
   {
     "id": "25-6",
     "code": "0010010110",
-    "name": "Josef blir statsminister i Egypt",
+    "name": "Josef blir nestleder i Egypt",
     "type": "event",
     "time_label": "Skjedde",
     "lived_text": "1711 fvt",
@@ -3303,15 +3303,12 @@
   {
     "id": "25-8",
     "code": "0010100011",
-    "name": "Israelittene forlater Egypt",
+    "name": "Israelittene blir frigjort fra Egypt",
     "type": "event",
     "time_label": "Skjedde",
-    "lived_text": "1513 fvt",
     "place": "Befriende",
     "role": "En dramatisk utgang",
-    "tagline": "Slaveriet tar slutt",
-    "era": "BCE",
-    "year_from": -1513
+    "tagline": "Slaveriet tar slutt"
   },
   {
     "id": "25-9",
@@ -3329,20 +3326,20 @@
   {
     "id": "26-1",
     "code": "0010110000",
-    "name": "Speiderne i Kanaan",
+    "name": "Spionene utforsker det lovte land",
     "type": "event",
     "time_label": "Skjedde",
-    "lived_text": "1473 fvt",
+    "lived_text": "1512 fvt",
     "place": "Undersøkende",
     "role": "Landet utforskes",
     "tagline": "Tolvs utsendinger undersøker landet",
     "era": "BCE",
-    "year_from": -1473
+    "year_from": -1512
   },
   {
     "id": "26-2",
     "code": "0010110100",
-    "name": "Israel vil ha en konge",
+    "name": "Israel vil ha en konge over seg",
     "type": "event",
     "time_label": "Skjedde",
     "lived_text": "ca. 1117 fvt",
@@ -3370,7 +3367,7 @@
   {
     "id": "26-4",
     "code": "0011000101",
-    "name": "Jehova inngår pakt med David",
+    "name": "Jehova inngår pakt med David om et rike",
     "type": "event",
     "time_label": "Skjedde",
     "lived_text": "ca. 1070 fvt",
@@ -3411,7 +3408,7 @@
   {
     "id": "26-7",
     "code": "0011011001",
-    "name": "Riket deles i to",
+    "name": "Israel blir delt to",
     "type": "event",
     "time_label": "Skjedde",
     "lived_text": "997 fvt",
@@ -3424,7 +3421,7 @@
   {
     "id": "26-8",
     "code": "0011100001",
-    "name": "Elia på Karmelfjellet",
+    "name": "Elia får ild til å komme ned fra himmelen på Karmelfjellet",
     "type": "event",
     "time_label": "Skjedde",
     "lived_text": "ca. 913 fvt",
@@ -3465,7 +3462,7 @@
   {
     "id": "27-2",
     "code": "0011110010",
-    "name": "Babylonerne ødelegger tempelet og fører folket i Jerusalem i eksil",
+    "name": "Babylonerne ødelegger tempelet i Jerusalem og fører folket i eksil",
     "type": "event",
     "time_label": "Skjedde",
     "lived_text": "607 fvt",
@@ -3519,7 +3516,7 @@
   {
     "id": "27-6",
     "code": "0100011101",
-    "name": "Jødene får vende hjem",
+    "name": "Jødene får vende hjem til Israel",
     "type": "event",
     "time_label": "Skjedde",
     "lived_text": "537 fvt",
@@ -3558,7 +3555,7 @@
   {
     "id": "27-9",
     "code": "0100101110",
-    "name": "Johannes Døperen begynner å forkynne og døpe",
+    "name": "Døperen Johannes begynner sin tjeneste",
     "type": "event",
     "time_label": "Skjedde",
     "lived_text": "29 evt",
@@ -3597,36 +3594,39 @@
   {
     "id": "28-3",
     "code": "0101000011",
-    "name": "Jesus dør og blir oppreist etter 3 dager",
+    "name": "Jesus gir sitt liv for alle mennesker",
     "type": "event",
     "time_label": "Skjedde",
     "lived_text": "33 evt",
     "place": "Avgjørende",
     "role": "Offer og seier over døden",
+    "tagline": "Jesus dør trofast og åpner veien til liv",
     "era": "CE",
     "year_from": 33
   },
   {
     "id": "28-4",
     "code": "0101000110",
-    "name": "Den hellige ånd blir utøst",
+    "name": "Den første kristne menighet får hellig ånd",
     "type": "event",
     "time_label": "Skjedde",
     "lived_text": "33 evt",
     "place": "Livgivende",
     "role": "Guds kraft deles ut",
+    "tagline": "Disiplene får kraft til å forkynne frimodig",
     "era": "CE",
     "year_from": 33
   },
   {
     "id": "28-5",
     "code": "0101001001",
-    "name": "Paulus’ misjonsreiser",
+    "name": "Paulus sine misjonsreiser",
     "type": "event",
     "time_label": "Skjedde",
     "lived_text": "ca. 47–61 evt",
     "place": "Utvidende",
     "role": "Budskapet spres vidt",
+    "tagline": "Menigheter grunnlegges i mange land",
     "era": "CE",
     "year_from": 47,
     "year_to": 61,
@@ -3641,7 +3641,49 @@
     "lived_text": "70 evt",
     "place": "Endelig",
     "role": "En by i ruiner",
+    "tagline": "Jesu profeti om Jerusalems fall oppfylles",
     "era": "CE",
     "year_from": 70
+  },
+  {
+    "id": "28-7",
+    "code": "0101011110",
+    "name": "Abraham møter Melkisedek, konge og øversteprest i Salem",
+    "type": "event",
+    "time_label": "Skjedde",
+    "lived_text": "ca. 1930 fvt",
+    "place": "Velsignende",
+    "role": "En prestekonge velsigner Abraham",
+    "tagline": "Melkisedek velsigner Abraham etter seieren",
+    "era": "BCE",
+    "year_from": -1930,
+    "approx": true
+  },
+  {
+    "id": "28-8",
+    "code": "0101100010",
+    "name": "David inntar Jerusalem og gjør den til kongeby",
+    "type": "event",
+    "time_label": "Skjedde",
+    "lived_text": "ca. 1070 fvt",
+    "place": "Samlende",
+    "role": "En nøytral hovedstad etableres",
+    "tagline": "David gjør Jerusalem til hovedstad",
+    "era": "BCE",
+    "year_from": -1070,
+    "approx": true
+  },
+  {
+    "id": "28-9",
+    "code": "0101100100",
+    "name": "Israelittene inntar det lovte land",
+    "type": "event",
+    "time_label": "Skjedde",
+    "lived_text": "1473 fvt",
+    "place": "Oppfyllende",
+    "role": "Jordan krysses",
+    "tagline": "Inntoget i Kanaan begynner",
+    "era": "BCE",
+    "year_from": -1473
   }
 ]
