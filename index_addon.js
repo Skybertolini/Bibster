@@ -121,7 +121,7 @@
     if (show) {
       rName.textContent = rName.dataset.full || "—";
       rName.dataset.hidden = "0";
-      btnRevealName.textContent = "🙈 Skjul navn";
+      btnRevealName.textContent = currentIsEvent ? "🙈 Skjul hendelse" : "🙈 Skjul navn";
       rLivedWrap.classList.add("on");
       const personSrc = rImage.dataset.personSrc || "";
       if (personSrc) {
