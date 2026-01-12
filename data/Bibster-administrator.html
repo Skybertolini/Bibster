@@ -251,7 +251,7 @@
         </div>
       </div>
 
-      <textarea id="tableInput" spellcheck="false" placeholder="Lim inn tabellen din her (inkludér kolonnenavn).&#10;&#10;Kolonner: NUMMER, KODE, NAVN, LEVDE, FØDT/OPPVOKST, YRKE/ROLLE, KJENNETEGN"></textarea>
+      <textarea id="tableInput" spellcheck="false" placeholder="Lim inn tabellen din her (inkludér kolonnenavn).&#10;&#10;Kolonner: NUMMER, KODE, NAVN, LEVDE/SKJEDDE, (Hint 1) FØDT/OPPVOKST, (Hint 2) YRKE/ROLLE, (Hint 3) KJENNETEGN, PERSON/HENDELSE, PERSON/HENDELSE, PERSON/HENDELSE"></textarea>
 
       <div class="hint">
         ✅ Viktig: Etter kolonneheaderen hopper vi over første rad (den du bruker “bare til informasjon”).<br/>
@@ -270,9 +270,10 @@
       <div class="cardhead">
         <h2>Generert persons.json</h2>
         <div class="meta">
-          <span class="pill" id="rowCount">0 personer</span>
+          <span class="pill" id="rowCount">0 kort</span>
           <span class="pill" id="errCount">0 feil</span>
           <span class="pill" id="dupCount">0 duplikater</span>
+          <span class="pill" id="typeCount">0 personer • 0 hendelser</span>
         </div>
       </div>
 
@@ -296,10 +297,11 @@
       id: ["NUMMER","ID","NR"],
       code: ["KODE","CODE"],
       name: ["NAVN","NAME"],
-      lived_text: ["LEVDE","LIVED","TID","PERIODE"],
+      lived_text: ["LEVDE/SKJEDDE","LEVDE","SKJEDDE","LIVED","TID","PERIODE"],
       place: ["FØDT/OPPVOKST","FODT/OPPVOKST","FØDT","FODT","OPPVOKST","PLACE","ORIGIN"],
       role: ["YRKE/ROLLE","YRKE","ROLLE","ROLE"],
-      tagline: ["KJENNETEGN","HINT","TAGLINE","KJENNETEGN/HINT"]
+      tagline: ["KJENNETEGN","HINT","TAGLINE","KJENNETEGN/HINT"],
+      type: ["PERSON / HENDELSE","PERSON/HENDELSE","TYPE","KORTTYPE"]
     };
 
     const elIn = document.getElementById("tableInput");
@@ -310,6 +312,7 @@
     const elRowCount = document.getElementById("rowCount");
     const elErrCount = document.getElementById("errCount");
     const elDupCount = document.getElementById("dupCount");
+    const elTypeCount = document.getElementById("typeCount");
 
     const btnCopy = document.getElementById("btnCopy");
     const btnDownload = document.getElementById("btnDownload");
@@ -334,8 +337,22 @@
 
     function safeStr(v){ return String(v ?? "").trim(); }
 
+    function normalizeType(v){
+      const s = safeStr(v).toLowerCase();
+      if (!s) return "person";
+      if (s.includes("hendelse") || s.includes("event")) return "event";
+      if (s.includes("person")) return "person";
+      return "person";
+    }
+
     function normalizeHeader(h){
-      return safeStr(h).replace(/\s+/g," ").toUpperCase();
+      // Fjern f.eks. "(Hint 1)"-prefiks og annen pynt i header
+      let x = safeStr(h).replace(/^\s*\([^)]*\)\s*/,"");
+      x = x.replace(/\s+/g," ").toUpperCase();
+      // Normaliser: behold bokstaver/tall/ÆØÅ og /, erstatt resten med mellomrom
+      x = x.replace(/[^0-9A-ZÆØÅ\/]+/g, " ");
+      x = x.replace(/\s+/g," ").trim();
+      return x;
     }
 
     function findHeaderIndex(headers, wantedList){
@@ -356,41 +373,68 @@
       elIssues.appendChild(li);
     }
 
-    // ---- LEVDE-parser: "ca. 2500–2300 fvt" -> era=BCE, year_from=-2500, year_to=-2300, approx=true
+    // ---- Tids-parser:
+    // Støtter:
+    //  - "ca. 2500–2300 fvt"
+    //  - "2370 fvt"
+    //  - "ca. 42 fvt – 37 evt" (blandet era)
+    // Returnerer: era ("BCE"|"CE"|"MIXED"|null), year_from, year_to, approx
     function parseLivedText(livedText){
       const raw = safeStr(livedText);
       if (!raw) return { era: null, year_from: null, year_to: null, approx: false };
 
       const approx = /\bca\.?\b/i.test(raw);
 
-      let era = null;
-      if (/\bfvt\b/i.test(raw)) era = "BCE";
-      if (/\bevt\b/i.test(raw)) era = "CE";
-
+      // Normaliser dash
       const t = raw.replace(/[–—]/g, "-");
-      const nums = (t.match(/\d{1,4}/g) || [])
-        .map(n => parseInt(n, 10))
-        .filter(n => !Number.isNaN(n));
 
-      let year_from = null;
-      let year_to = null;
+      // Del i to deler om mulig (from-to)
+      const parts = t.split("-").map(s => s.trim()).filter(Boolean);
 
-      if (nums.length >= 1){
-        year_from = nums[0];
-        if (nums.length >= 2) year_to = nums[1];
+      function parsePart(part){
+        const p = part.toLowerCase();
+        const hasBce = /\bfvt\b/.test(p);
+        const hasCe  = /\bevt\b/.test(p);
+        const nums = (p.match(/\d{1,4}/g) || []).map(n => parseInt(n,10)).filter(n => !Number.isNaN(n));
+        const year = nums.length ? nums[0] : null;
+
+        let era = null;
+        if (hasBce) era = "BCE";
+        else if (hasCe) era = "CE";
+        return { era, year };
       }
 
-      if (era === "BCE"){
-        if (year_from !== null) year_from = -Math.abs(year_from);
-        if (year_to !== null) year_to = -Math.abs(year_to);
+      const a = parsePart(parts[0] || t);
+      const b = parts.length >= 2 ? parsePart(parts[1]) : { era: a.era, year: null };
+
+      // Bestem era
+      let era = a.era || b.era || null;
+      if (a.era && b.era && a.era !== b.era) era = "MIXED";
+
+      let year_from = a.year;
+      let year_to = b.year;
+
+      // Hvis bare ett tall finnes: behold kun year_from
+      if (parts.length < 2) year_to = null;
+
+      function applyEraSign(year, e){
+        if (year === null || year === undefined) return null;
+        if (e === "BCE") return -Math.abs(year);
+        if (e === "CE") return Math.abs(year);
+        return year; // MIXED håndteres separat
       }
-      if (era === "CE"){
-        if (year_from !== null) year_from = Math.abs(year_from);
-        if (year_to !== null) year_to = Math.abs(year_to);
+
+      if (era === "MIXED"){
+        // Anta format "42 fvt - 37 evt"
+        year_from = applyEraSign(year_from, a.era || "BCE");
+        year_to   = applyEraSign(year_to,   b.era || "CE");
+      } else {
+        year_from = applyEraSign(year_from, era);
+        year_to   = applyEraSign(year_to,   era);
       }
 
       return { era, year_from, year_to, approx };
-    }
+    } 
 
     // Bygger "slankt" object: tar bare med felter som faktisk har innhold
     function addIf(out, key, val){
@@ -404,6 +448,8 @@
       addIf(o, "id", base.id);
       addIf(o, "code", base.code);
       addIf(o, "name", base.name);
+      addIf(o, "type", base.type || "person");
+      addIf(o, "time_label", (base.type === "event") ? "Skjedde" : "Levde");
 
       addIf(o, "lived_text", base.lived_text);
       addIf(o, "place", base.place);
@@ -437,6 +483,7 @@
         place: findHeaderIndex(headers, COLUMN_ALIASES.place),
         role: findHeaderIndex(headers, COLUMN_ALIASES.role),
         tagline: findHeaderIndex(headers, COLUMN_ALIASES.tagline),
+        type: findHeaderIndex(headers, COLUMN_ALIASES.type),
       };
 
       const issues = [];
@@ -446,9 +493,23 @@
         }
       }
 
-      // Hopper over første datarad etter header:
-      // lines[1] = "info"-rad
-      const startRow = 2;
+      // Vanligvis har du en "info"-rad etter headeren som skal hoppes over.
+// Hvis den IKKE finnes, skal vi ikke miste første faktiske data-rad.
+function looksLikeRealDataLine(line){
+  const parts = line.split(delim);
+  const idVal = safeStr(parts[idx.id]);
+  const codeVal = safeStr(parts[idx.code]);
+  const nameVal = safeStr(parts[idx.name]);
+  const idOk = /^\d+\-\d+$/.test(idVal);
+  const codeOk = /^[01]{10}$/.test(codeVal);
+  return idOk && codeOk && !!nameVal;
+}
+
+// startRow:
+// - 1 => vi leser fra første linje etter header
+// - 2 => vi hopper over info-raden (lines[1]) hvis den ikke ser ut som ekte data
+let startRow = 1;
+if (lines.length > 1 && !looksLikeRealDataLine(lines[1])) startRow = 2;
 
       const rows = [];
       for (let i = startRow; i < lines.length; i++){
@@ -461,6 +522,7 @@
           id: safeStr(parts[idx.id]),
           code: safeStr(parts[idx.code]),
           name: safeStr(parts[idx.name]),
+          type: (idx.type !== -1) ? normalizeType(parts[idx.type]) : "person",
           lived_text,
           place: safeStr(parts[idx.place]),
           role: safeStr(parts[idx.role]),
@@ -554,8 +616,8 @@
         const div = document.createElement("div");
         div.className = `row ${w.status}`;
         div.innerHTML = `
-          <div class="ln">Linje ${w.sourceLine}<span class="badge">${w.tag}</span></div>
-          <div class="txt">${r.id || "?"}\t${r.code || "?"}\t${r.name || "?"}\t${r.lived_text || ""}\t${r.place || ""}\t${r.role || ""}\t${r.tagline || ""}</div>
+          <div class="ln">Linje ${w.sourceLine}<span class="badge">${w.tag}</span><span class="badge">${(r.type === "event") ? "HENDELSE" : "PERSON"}</span></div>
+          <div class="txt">${r.id || "?"}	${r.code || "?"}	${r.name || "?"}	${r.lived_text || ""}	${r.place || ""}	${r.role || ""}	${r.tagline || ""}	${(r.type === "event") ? "Hendelse" : "Person"}</div>
         `;
         elPreview.appendChild(div);
       });
@@ -583,7 +645,9 @@
 
       currentData = jsonRows;
 
-      elRowCount.textContent = `${jsonRows.length} personer`;
+      const personCount = jsonRows.filter(o => (o.type || "person") === "person").length;
+      const eventCount  = jsonRows.filter(o => (o.type || "person") === "event").length;
+      elRowCount.textContent = `${personCount} personer • ${eventCount} hendelser`;
       elErrCount.textContent = `${a.errorCount} feil`;
       elDupCount.textContent = `${a.dupCount} duplikater`;
 
@@ -620,12 +684,14 @@
 
     btnSample.addEventListener("click", () => {
       elIn.value =
-`NUMMER\tKODE\tNAVN\tLEVDE\tFØDT/OPPVOKST\tYRKE/ROLLE\tKJENNETEGN
-1-1\t1010011100\tAdam\tca. 4026 fvt\tEden\t\tBrøt Guds bud
-1-1\t1010011100\tAdam (duplikat)\tca. 4026 fvt\tEden\t\tBrøt Guds bud
-\t0110100101\tMangler ID\tca. 4026 fvt\tEden\t\tBlir skippet
-1-2\t0110100101\tEva\tca. 4026 fvt\tEden\tFørste kvinne\tBle fristet av slangen
-1-3\t1100101010\tAbel\tca. 3900 fvt\tUtenfor Eden\tHyrde\tFørste trofaste martyr`;
+`NUMMER	KODE	NAVN	LEVDE	FØDT/OPPVOKST	YRKE/ROLLE	KJENNETEGN	PERSON/HENDELSE
+INFO	INFO	INFO	Denne raden hoppes over (eller tolkes som info)				
+1-1	1010011100	Adam	ca. 4026 fvt	Eden		Brøt Guds bud	Person
+1-1	1010011100	Adam (duplikat)	ca. 4026 fvt	Eden		Brøt Guds bud	Person
+	0110100101	Mangler ID	ca. 4026 fvt	Eden		Blir skippet	Person
+1-2	0110100101	Eva	ca. 4026 fvt	Eden	Første kvinne	Ble fristet av slangen	Person
+23-2	1010011110	Keiser Tiberius	ca. 42 fvt – 37 evt	Roma	Keiser	Regjerte under Jesu tjeneste	Person
+25-1	0001011101	Vannflommen ødelegger verden	2370 fvt	Ødeleggende	Verdensomspennende ødeleggelse	En vannkatastrofe utsletter alt liv	Hendelse`;
       render();
     });
 
