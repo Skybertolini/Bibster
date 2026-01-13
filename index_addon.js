@@ -1,5 +1,6 @@
 (() => {
   const DATA_URL = "./data/persons.json";
+  const DEBUG = true;
 
   let persons = [];
   let personsByCode = new Map();
@@ -260,7 +261,9 @@
 
     if (scanning) await stopScan(true);
 
+    if (DEBUG) console.log("[random] picking from", persons.length);
     const person = persons[Math.floor(Math.random() * persons.length)];
+    if (DEBUG) console.log("[random] picked", person?.id, person?.type, person?.name || person?.title);
     showResult(person, { code: "", id: "", raw: "Tilfeldig" });
     bottomMsg.textContent = "Tilfeldig person";
   }
@@ -342,8 +345,29 @@
       const json = await res.json();
       if (!Array.isArray(json)) throw new Error("persons.json må være en array []");
 
-      persons = json;
+      persons = json.map((person) => {
+        const normalizedType = String(person.type ?? "").trim().toLowerCase();
+        if (normalizedType === "event" || normalizedType === "hendelse") {
+          person.type = "event";
+        } else if (normalizedType === "person") {
+          person.type = "person";
+        }
+        return person;
+      });
       buildIndexes(persons);
+
+      if (DEBUG) {
+        console.log(
+          "[cards] total",
+          persons.length,
+          "events",
+          persons.filter((card) => card.type === "event").length,
+          "persons",
+          persons.filter((card) => card.type === "person").length,
+          "missingType",
+          persons.filter((card) => !card.type).length
+        );
+      }
 
       setStatus(true, `Klar (${persons.length} kort)`);
       btnScan.disabled = false;
