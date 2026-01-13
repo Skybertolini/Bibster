@@ -33,6 +33,7 @@
   const rRole = el("rRole");
   const rTagline = el("rTagline");
   const bottomMsg = el("bottomMsg");
+  const resultStatusText = el("resultStatusText");
 
   const btnRevealName = el("btnRevealName");
   const silhouetteSrc = "./assets/silhouette.png";
@@ -214,6 +215,7 @@
     const isEvent = person.type === "event";
     currentIsEvent = isEvent;
     document.body.classList.toggle("is-event", isEvent);
+    resultStatusText.textContent = isEvent ? "Hendelse funnet" : "Person funnet";
 
     // Name hidden by default
     setNameHidden(person);
