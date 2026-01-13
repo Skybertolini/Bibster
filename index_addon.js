@@ -42,6 +42,9 @@
   let currentIsEvent = false;
 
   const hintCards = Array.from(document.querySelectorAll(".hint-card"));
+  const hint1Label = document.querySelector('.hint-card[data-hint="1"] .k span:last-child');
+  const hint1LabelPerson = "🗺️ Født / oppvokst";
+  const hint1LabelEvent = "🗺️ Hvor hendelsen skjedde";
   let hintProgressIndex = 0;
   const hintRevealTimers = new WeakMap();
 
@@ -217,6 +220,9 @@
     currentIsEvent = isEvent;
     document.body.classList.toggle("is-event", isEvent);
     resultStatusText.textContent = isEvent ? "Hendelse funnet" : "Person funnet";
+    if (hint1Label) {
+      hint1Label.textContent = isEvent ? hint1LabelEvent : hint1LabelPerson;
+    }
 
     // Name hidden by default
     setNameHidden(person);
