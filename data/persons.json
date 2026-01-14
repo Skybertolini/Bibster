@@ -915,6 +915,21 @@
     "approx": true
   },
   {
+    "id": "7-8",
+    "code": "0101111001",
+    "name": "Obed",
+    "type": "person",
+    "time_label": "Levde",
+    "lived_text": "ca. 1150–1090 fvt",
+    "place": "Betlehem",
+    "role": "Slektsledd",
+    "tagline": "Bestefar til David",
+    "era": "BCE",
+    "year_from": -1150,
+    "year_to": -1090,
+    "approx": true
+  },
+  {
     "id": "7-9",
     "code": "1011000110",
     "name": "Hofni og Pinehas",
@@ -957,6 +972,21 @@
     "era": "BCE",
     "year_from": -920,
     "year_to": -900,
+    "approx": true
+  },
+  {
+    "id": "8-3",
+    "code": "1010100011",
+    "name": "Mika",
+    "type": "person",
+    "time_label": "Levde",
+    "lived_text": "ca. 1130–1070 fvt",
+    "place": "Efraim",
+    "role": "Husfar",
+    "tagline": "Lagde avgudsbilde",
+    "era": "BCE",
+    "year_from": -1130,
+    "year_to": -1070,
     "approx": true
   },
   {
@@ -1080,6 +1110,21 @@
     "approx": true
   },
   {
+    "id": "9-3",
+    "code": "1000110101",
+    "name": "Akab",
+    "type": "person",
+    "time_label": "Levde",
+    "lived_text": "ca. 920–860 fvt",
+    "place": "Samaria",
+    "role": "Konge",
+    "tagline": "Gift med Jesabel",
+    "era": "BCE",
+    "year_from": -920,
+    "year_to": -860,
+    "approx": true
+  },
+  {
     "id": "9-5",
     "code": "1010001110",
     "name": "Elia",
@@ -1092,6 +1137,21 @@
     "era": "BCE",
     "year_from": -930,
     "year_to": -850,
+    "approx": true
+  },
+  {
+    "id": "9-6",
+    "code": "0010111011",
+    "name": "Akab",
+    "type": "person",
+    "time_label": "Levde",
+    "lived_text": "ca. 920–860 fvt",
+    "place": "Samaria",
+    "role": "Konge",
+    "tagline": "Gift med Jesabel",
+    "era": "BCE",
+    "year_from": -920,
+    "year_to": -860,
     "approx": true
   },
   {
@@ -1419,6 +1479,36 @@
     "place": "Israel",
     "role": "Prinsesse",
     "tagline": "Sentral i familietragedie",
+    "era": "BCE",
+    "year_from": -1030,
+    "year_to": -970,
+    "approx": true
+  },
+  {
+    "id": "14-3",
+    "code": "1010101001",
+    "name": "Adonja",
+    "type": "person",
+    "time_label": "Levde",
+    "lived_text": "ca. 1000–940 fvt",
+    "place": "Israel",
+    "role": "Prins",
+    "tagline": "Prøvde å ta tronen",
+    "era": "BCE",
+    "year_from": -1000,
+    "year_to": -940,
+    "approx": true
+  },
+  {
+    "id": "14-5",
+    "code": "1001100011",
+    "name": "Uria",
+    "type": "person",
+    "time_label": "Levde",
+    "lived_text": "ca. 1030–970 fvt",
+    "place": "Israel",
+    "role": "Soldat",
+    "tagline": "Trofast, men sviktet av David",
     "era": "BCE",
     "year_from": -1030,
     "year_to": -970,
@@ -1844,6 +1934,21 @@
     "approx": true
   },
   {
+    "id": "17-8",
+    "code": "1001110010",
+    "name": "Barnabas",
+    "type": "person",
+    "time_label": "Levde",
+    "lived_text": "ca. 5–60 evt",
+    "place": "Kypros",
+    "role": "Misjonær",
+    "tagline": "«Oppmuntringens sønn»",
+    "era": "CE",
+    "year_from": 5,
+    "year_to": 60,
+    "approx": true
+  },
+  {
     "id": "17-9",
     "code": "0101001100",
     "name": "Silas",
@@ -1916,6 +2021,21 @@
     "era": "CE",
     "year_from": 20,
     "year_to": 70,
+    "approx": true
+  },
+  {
+    "id": "18-5",
+    "code": "0111101011",
+    "name": "Apollos",
+    "type": "person",
+    "time_label": "Levde",
+    "lived_text": "ca. 30–60 evt",
+    "place": "Alexandria",
+    "role": "Lærer",
+    "tagline": "Sterk i Skriftene",
+    "era": "CE",
+    "year_from": 30,
+    "year_to": 60,
     "approx": true
   },
   {
