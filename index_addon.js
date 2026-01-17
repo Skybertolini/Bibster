@@ -47,6 +47,7 @@
   const hint1LabelEvent = "🗺️ Hvor hendelsen skjedde";
   let hintProgressIndex = 0;
   const hintRevealTimers = new WeakMap();
+  const hintRevealAudio = new Audio("./assets/timer-sfx.mp3");
 
   function setStatus(ok, text) {
     statusDot.classList.remove("ok", "bad");
@@ -171,6 +172,11 @@
     const finishReveal = () => {
       card.classList.remove("revealing");
       card.classList.add("revealed");
+      if (!hintRevealAudio.paused) {
+        hintRevealAudio.pause();
+      }
+      hintRevealAudio.currentTime = 0;
+      hintRevealAudio.play().catch(() => {});
       hintProgressIndex = Math.min(hintProgressIndex + 1, hintCards.length - 1);
       updateHintLocks();
     };
