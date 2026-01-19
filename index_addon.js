@@ -61,6 +61,7 @@
   const celebrationAudio = new Audio("./assets/Bibster-winning.mp3");
   const rulesOverlay = el("rulesOverlay");
   const rulesClose = el("rulesClose");
+  const rulesContent = el("rulesContent");
 
   function playHintSound(hintIndex) {
     const audio = hintSounds.get(hintIndex);
@@ -93,6 +94,9 @@
   function openRules() {
     rulesOverlay.classList.add("is-visible");
     rulesOverlay.setAttribute("aria-hidden", "false");
+    if (rulesContent) {
+      rulesContent.scrollTop = 0;
+    }
   }
 
   function closeRules() {
