@@ -18,6 +18,7 @@
   const btnScan = el("btnScan");
   const btnStop = el("btnStop");
   const btnRandom = el("btnRandom");
+  const btnCelebrate = el("btnCelebrate");
 
 
   const scannerWrap = el("scannerWrap");
@@ -47,7 +48,38 @@
   const hint1LabelEvent = "🗺️ Hvor hendelsen skjedde";
   let hintProgressIndex = 0;
   const hintRevealTimers = new WeakMap();
-  const hintRevealAudio = new Audio("./assets/timer-sfx.mp3");
+  const hintSounds = new Map([
+    [1, new Audio("./assets/Hint1.mp3")],
+    [2, new Audio("./assets/Hint2.mp3")],
+    [3, new Audio("./assets/Hint3.mp3")]
+  ]);
+
+  const celebrationOverlay = el("celebrationOverlay");
+  const celebrationClose = el("celebrationClose");
+  const celebrationAudio = new Audio("./assets/Bibster-winning.mp3");
+
+  function playHintSound(hintIndex) {
+    const audio = hintSounds.get(hintIndex);
+    if (!audio) return;
+    audio.currentTime = 0;
+    audio.play().catch(() => {});
+  }
+
+  function openCelebration() {
+    document.body.classList.add("is-celebrating");
+    celebrationOverlay.classList.add("is-visible");
+    celebrationOverlay.setAttribute("aria-hidden", "false");
+    celebrationAudio.currentTime = 0;
+    celebrationAudio.play().catch(() => {});
+  }
+
+  function closeCelebration() {
+    celebrationAudio.pause();
+    celebrationAudio.currentTime = 0;
+    document.body.classList.remove("is-celebrating");
+    celebrationOverlay.classList.remove("is-visible");
+    celebrationOverlay.setAttribute("aria-hidden", "true");
+  }
 
   function setStatus(ok, text) {
     statusDot.classList.remove("ok", "bad");
@@ -172,11 +204,8 @@
     const finishReveal = () => {
       card.classList.remove("revealing");
       card.classList.add("revealed");
-      if (!hintRevealAudio.paused) {
-        hintRevealAudio.pause();
-      }
-      hintRevealAudio.currentTime = 0;
-      hintRevealAudio.play().catch(() => {});
+      const hintIndex = Number(card.dataset.hint);
+      playHintSound(hintIndex);
       hintProgressIndex = Math.min(hintProgressIndex + 1, hintCards.length - 1);
       updateHintLocks();
     };
@@ -398,6 +427,14 @@
   btnScan.addEventListener("click", startScan);
   btnStop.addEventListener("click", () => stopScan(true));
   btnRandom.addEventListener("click", showRandomPerson);
+  btnCelebrate.addEventListener("click", openCelebration);
+
+  celebrationClose.addEventListener("click", closeCelebration);
+  celebrationOverlay.addEventListener("click", (event) => {
+    if (event.target === celebrationOverlay) {
+      closeCelebration();
+    }
+  });
 
 
   btnRevealName.addEventListener("click", () => {
