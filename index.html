@@ -682,10 +682,43 @@
       font-size: 24px;
     }
 
+    .rules-modal h3{
+      margin: 16px 0 6px;
+      font-size: 17px;
+      color: var(--text);
+    }
+
     .rules-modal p{
       margin: 0;
       color: var(--muted);
       line-height: 1.5;
+    }
+
+    .rules-modal ol,
+    .rules-modal ul{
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .rules-modal li{
+      margin-bottom: 6px;
+    }
+
+    .rules-modal li:last-child{
+      margin-bottom: 0;
+    }
+
+    .rules-image{
+      margin-top: 16px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.16);
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
     }
 
     .rules-close{
@@ -879,8 +912,34 @@
   <div class="rules-overlay" id="rulesOverlay" aria-hidden="true">
     <div class="rules-modal" role="dialog" aria-modal="true" aria-labelledby="rulesTitle">
       <button class="rules-close" type="button" id="rulesClose" aria-label="Lukk">×</button>
-      <h2 id="rulesTitle">Regler</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt, sapien nec faucibus blandit, nulla sem pulvinar erat, sed porta nisi magna vitae eros.</p>
+      <h2 id="rulesTitle">Regler i Bibster</h2>
+      <p>Målet i Bibster er å gjette navn på personer eller hendelser og plassere dem riktig i en tidslinje.</p>
+      <h3>Oppstart</h3>
+      <p>Hver spiller (eller hvert lag) trekker ett Startkort. Dette kortet danner starten på tidslinjen og viser et årstall. Alle nye kort som trekkes senere, plasseres før eller etter kortene som allerede ligger i tidslinjen.</p>
+      <h3>En runde går slik</h3>
+      <ol>
+        <li>Spilleren scanner QR-koden på det øverste kortet i bunken.</li>
+        <li>Spilleren kan åpne Hint 1 og begynne å gjette.</li>
+        <li>Hvert hint gir 20 sekunder betenkningstid.</li>
+        <li>Når tiden er ute, må spilleren enten plassere kortet i tidslinjen, eller åpne neste hint.</li>
+      </ol>
+      <h3>Bonuspoeng</h3>
+      <p>Gjetter spilleren riktig navn og plasserer kortet riktig i tidslinjen, får de:</p>
+      <ul>
+        <li>Etter Hint 1: 3 bonuspoeng</li>
+        <li>Etter Hint 2: 2 bonuspoeng</li>
+        <li>Etter Hint 3: 1 bonuspoeng</li>
+      </ul>
+      <h3>Overlapp i tidslinjen</h3>
+      <p>Hvis to personers leveår overlapper med minst 20 år, regnes plasseringen som riktig – selv om kortene ligger i “feil rekkefølge”.</p>
+      <h3>Feil svar</h3>
+      <p>Feil navn, men riktig plassering → kortet blir liggende, ingen bonuspoeng.<br />
+      Feil plassering → spilleren mister både kortet og bonuspoeng.</p>
+      <h3>Bonuskort</h3>
+      <p>6 bonuspoeng = 1 Bonuskort. Bonuskort teller som én person, kan plasseres hvor som helst, og kan bare kjøpes én om gangen – kun når det er spillerens tur.</p>
+      <h3>Slik vinner man</h3>
+      <p>Den som først får 10 personer (eller et annet antall dere blir enige om) i tidslinjen sin, vinner spillet 🎉</p>
+      <img class="rules-image" src="assets/Bibster-illustration.png" alt="Bibster-illustrasjon" />
     </div>
   </div>
 
