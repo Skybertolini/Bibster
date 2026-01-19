@@ -19,6 +19,7 @@
   const btnStop = el("btnStop");
   const btnRandom = el("btnRandom");
   const btnCelebrate = el("btnCelebrate");
+  const btnRules = el("btnRules");
 
 
   const scannerWrap = el("scannerWrap");
@@ -53,15 +54,23 @@
     [2, new Audio("./assets/Hint2.mp3")],
     [3, new Audio("./assets/Hint3.mp3")]
   ]);
+  let currentHintAudio = null;
 
   const celebrationOverlay = el("celebrationOverlay");
   const celebrationClose = el("celebrationClose");
   const celebrationAudio = new Audio("./assets/Bibster-winning.mp3");
+  const rulesOverlay = el("rulesOverlay");
+  const rulesClose = el("rulesClose");
 
   function playHintSound(hintIndex) {
     const audio = hintSounds.get(hintIndex);
     if (!audio) return;
+    if (currentHintAudio && currentHintAudio !== audio) {
+      currentHintAudio.pause();
+      currentHintAudio.currentTime = 0;
+    }
     audio.currentTime = 0;
+    currentHintAudio = audio;
     audio.play().catch(() => {});
   }
 
@@ -79,6 +88,16 @@
     document.body.classList.remove("is-celebrating");
     celebrationOverlay.classList.remove("is-visible");
     celebrationOverlay.setAttribute("aria-hidden", "true");
+  }
+
+  function openRules() {
+    rulesOverlay.classList.add("is-visible");
+    rulesOverlay.setAttribute("aria-hidden", "false");
+  }
+
+  function closeRules() {
+    rulesOverlay.classList.remove("is-visible");
+    rulesOverlay.setAttribute("aria-hidden", "true");
   }
 
   function setStatus(ok, text) {
@@ -428,6 +447,7 @@
   btnStop.addEventListener("click", () => stopScan(true));
   btnRandom.addEventListener("click", showRandomPerson);
   btnCelebrate.addEventListener("click", openCelebration);
+  btnRules.addEventListener("click", openRules);
 
   celebrationClose.addEventListener("click", closeCelebration);
   celebrationOverlay.addEventListener("click", (event) => {
@@ -436,6 +456,17 @@
     }
   });
 
+  rulesClose.addEventListener("click", closeRules);
+  rulesOverlay.addEventListener("click", (event) => {
+    if (event.target === rulesOverlay) {
+      closeRules();
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && rulesOverlay.classList.contains("is-visible")) {
+      closeRules();
+    }
+  });
 
   btnRevealName.addEventListener("click", () => {
     const hidden = rName.dataset.hidden === "1";
