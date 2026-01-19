@@ -159,6 +159,8 @@
       display:grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
+      width: clamp(260px, 75vw, 520px);
+      margin: 0 auto;
     }
 
     .actionButton{
@@ -195,7 +197,7 @@
     }
 
     .actionRandom{
-      background: rgba(255, 105, 180, .18);
+      background: rgba(160, 110, 255, .18);
     }
 
     .actionCelebrate{
@@ -567,6 +569,31 @@
       display: block;
     }
 
+    .celebration-arc{
+      width: 100%;
+      max-width: 420px;
+      margin-top: 6px;
+    }
+
+    .celebration-arc svg{
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .celebration-arc text{
+      font-family: "Bahnschrift", "Segoe UI", system-ui, sans-serif;
+      fill: #FFD84D;
+      stroke: #000;
+      stroke-width: 3;
+      paint-order: stroke fill;
+      text-shadow:
+        1px 1px 0 rgba(0,0,0,.8),
+        -1px 1px 0 rgba(0,0,0,.8),
+        1px -1px 0 rgba(0,0,0,.8),
+        -1px -1px 0 rgba(0,0,0,.8);
+    }
+
     .celebration-close{
       position: absolute;
       top: 10px;
@@ -593,6 +620,12 @@
     @media (max-width: 360px){
       .actionGrid{
         grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 640px){
+      .actionGrid{
+        width: min(70vw, 520px);
       }
     }
 
@@ -724,6 +757,20 @@
     <div class="celebration-modal" role="dialog" aria-modal="true" aria-label="Feiring">
       <button class="celebration-close" type="button" id="celebrationClose" aria-label="Lukk">×</button>
       <img src="./assets/Bibster-winning.gif" alt="Feiring" />
+      <div class="celebration-arc" aria-hidden="true">
+        <svg viewBox="0 0 420 140" role="img" aria-label="Gratulerer med seieren!">
+          <defs>
+            <path id="celebrationCurveTop" d="M 30 110 Q 210 10 390 110" />
+            <path id="celebrationCurveBottom" d="M 60 120 Q 210 60 360 120" />
+          </defs>
+          <text font-size="34" text-anchor="middle">
+            <textPath href="#celebrationCurveTop" startOffset="50%">Gratulerer</textPath>
+          </text>
+          <text font-size="28" text-anchor="middle">
+            <textPath href="#celebrationCurveBottom" startOffset="50%">med seieren!</textPath>
+          </text>
+        </svg>
+      </div>
     </div>
   </div>
 
