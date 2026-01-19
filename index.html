@@ -155,7 +155,23 @@
       position: relative;
     }
 
-    .actionGrid{
+    .actionArea{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .actionRowSmall{
+      display:flex;
+      justify-content:center;
+      gap: 14px;
+      width: clamp(260px, 75vw, 520px);
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .actionRowLarge{
       display:grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
@@ -174,6 +190,11 @@
       justify-content:center;
       gap: 10px;
       text-align: center;
+    }
+
+    .actionButton--small{
+      width: clamp(84px, 18vw, 120px);
+      padding: 12px;
     }
 
     .actionEmoji{
@@ -198,6 +219,10 @@
 
     .actionRandom{
       background: rgba(160, 110, 255, .18);
+    }
+
+    .actionRules{
+      background: rgba(190, 210, 255, .18);
     }
 
     .actionCelebrate{
@@ -569,6 +594,12 @@
       display: block;
     }
 
+    .celebration-gif{
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
     .celebration-arc{
       width: 100%;
       max-width: 420px;
@@ -584,17 +615,80 @@
     .celebration-arc text{
       font-family: "Bahnschrift", "Segoe UI", system-ui, sans-serif;
       fill: #FFD84D;
-      stroke: #000;
-      stroke-width: 3;
+      stroke: #fff;
+      stroke-width: 2;
+      -webkit-text-stroke: 2px #fff;
       paint-order: stroke fill;
       text-shadow:
-        1px 1px 0 rgba(0,0,0,.8),
-        -1px 1px 0 rgba(0,0,0,.8),
-        1px -1px 0 rgba(0,0,0,.8),
-        -1px -1px 0 rgba(0,0,0,.8);
+        1px 1px 0 rgba(255,255,255,.9),
+        -1px 1px 0 rgba(255,255,255,.9),
+        1px -1px 0 rgba(255,255,255,.9),
+        -1px -1px 0 rgba(255,255,255,.9),
+        2px 0 0 rgba(255,255,255,.7),
+        -2px 0 0 rgba(255,255,255,.7),
+        0 2px 0 rgba(255,255,255,.7),
+        0 -2px 0 rgba(255,255,255,.7);
     }
 
     .celebration-close{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(0,0,0,.35);
+      color: var(--text);
+      font-size: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .rules-overlay{
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(9, 10, 20, 0.55);
+      backdrop-filter: blur(2px);
+      z-index: 9998;
+      padding: 20px;
+    }
+
+    .rules-overlay.is-visible{
+      display: flex;
+    }
+
+    .rules-modal{
+      position: relative;
+      max-width: min(520px, 92vw);
+      width: 100%;
+      background: rgba(8, 12, 24, 0.95);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 18px;
+      box-shadow: 0 24px 60px rgba(0,0,0,.5);
+      padding: 22px 22px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .rules-modal h2{
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .rules-modal p{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .rules-close{
       position: absolute;
       top: 10px;
       right: 10px;
@@ -618,13 +712,13 @@
     }
 
     @media (max-width: 360px){
-      .actionGrid{
+      .actionRowLarge{
         grid-template-columns: 1fr;
       }
     }
 
     @media (min-width: 640px){
-      .actionGrid{
+      .actionRowLarge{
         width: min(70vw, 520px);
       }
     }
@@ -667,23 +761,31 @@
 
     <section class="panel">
       <div class="hero">
-        <div class="actionGrid">
-          <button class="actionButton actionScan" id="btnScan" disabled>
-            <span class="actionEmoji" aria-hidden="true">📷</span>
-            <span class="actionLabel">Scan QR</span>
-          </button>
-          <button class="actionButton actionRandom" id="btnRandom" type="button">
-            <span class="actionEmoji" aria-hidden="true">🎲</span>
-            <span class="actionLabel">Tilfeldig</span>
-          </button>
-          <button class="actionButton actionStop" id="btnStop" disabled>
-            <span class="actionEmoji" aria-hidden="true">🚫</span>
-            <span class="actionLabel">Stopp scan</span>
-          </button>
-          <button class="actionButton actionCelebrate" id="btnCelebrate" type="button">
-            <span class="actionEmoji" aria-hidden="true">🎉</span>
-            <span class="actionLabel">Feiring</span>
-          </button>
+        <div class="actionArea">
+          <div class="actionRowSmall">
+            <button class="actionButton actionButton--small actionRules" id="btnRules" type="button">
+              <span class="actionEmoji" aria-hidden="true">📜</span>
+              <span class="actionLabel">Regler</span>
+            </button>
+            <button class="actionButton actionButton--small actionRandom" id="btnRandom" type="button">
+              <span class="actionEmoji" aria-hidden="true">🎲</span>
+              <span class="actionLabel">Tilfeldig</span>
+            </button>
+            <button class="actionButton actionButton--small actionCelebrate" id="btnCelebrate" type="button">
+              <span class="actionEmoji" aria-hidden="true">🎉</span>
+              <span class="actionLabel">Feiring</span>
+            </button>
+          </div>
+          <div class="actionRowLarge">
+            <button class="actionButton actionScan" id="btnScan" disabled>
+              <span class="actionEmoji" aria-hidden="true">📷</span>
+              <span class="actionLabel">Scan QR</span>
+            </button>
+            <button class="actionButton actionStop" id="btnStop" disabled>
+              <span class="actionEmoji" aria-hidden="true">🚫</span>
+              <span class="actionLabel">Stopp scan</span>
+            </button>
+          </div>
         </div>
 
       <div class="scanner" id="scannerWrap">
@@ -756,7 +858,7 @@
   <div class="celebration-overlay" id="celebrationOverlay" aria-hidden="true">
     <div class="celebration-modal" role="dialog" aria-modal="true" aria-label="Feiring">
       <button class="celebration-close" type="button" id="celebrationClose" aria-label="Lukk">×</button>
-      <img src="./assets/Bibster-winning.gif" alt="Feiring" />
+      <img class="celebration-gif" src="./assets/Bibster-winning.gif" alt="Feiring" />
       <div class="celebration-arc" aria-hidden="true">
         <svg viewBox="0 0 420 140" role="img" aria-label="Gratulerer med seieren!">
           <defs>
@@ -771,6 +873,14 @@
           </text>
         </svg>
       </div>
+    </div>
+  </div>
+
+  <div class="rules-overlay" id="rulesOverlay" aria-hidden="true">
+    <div class="rules-modal" role="dialog" aria-modal="true" aria-labelledby="rulesTitle">
+      <button class="rules-close" type="button" id="rulesClose" aria-label="Lukk">×</button>
+      <h2 id="rulesTitle">Regler</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt, sapien nec faucibus blandit, nulla sem pulvinar erat, sed porta nisi magna vitae eros.</p>
     </div>
   </div>
 
