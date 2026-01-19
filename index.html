@@ -155,42 +155,51 @@
       position: relative;
     }
 
-    .btnStack{
+    .actionGrid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .actionButton{
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      padding: 16px;
+      border-radius: 18px;
       display:flex;
       flex-direction: column;
-      align-items: center;
-      gap:10px;
-    }
-
-    .btnActions{
-      position: absolute;
-      right: 16px;
-      top: 16px;
-      display: flex;
-      align-items: center;
-    }
-
-    .btnCentered{
-      margin-left:auto;
-      margin-right:auto;
-    }
-
-    .btnMain{
-      font-size: 20px;
-      padding: 20px 28px;
-      border-radius: 18px;
-      min-width: 220px;
-      justify-content: center;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
       text-align: center;
     }
 
-    .btnRandom{
-      padding: 10px 12px;
-      font-size: 20px;
-      min-width: 0;
-      width: 48px;
-      height: 44px;
-      justify-content: center;
+    .actionEmoji{
+      font-size: clamp(32px, 6vw, 64px);
+      line-height: 1;
+    }
+
+    .actionLabel{
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      color: var(--text);
+    }
+
+    .actionScan{
+      background: rgba(80, 220, 140, .18);
+    }
+
+    .actionStop{
+      background: rgba(255, 90, 90, .18);
+    }
+
+    .actionRandom{
+      background: rgba(255, 105, 180, .18);
+    }
+
+    .actionCelebrate{
+      background: rgba(255, 190, 80, .20);
     }
 
     #btnScan{ }
@@ -581,6 +590,12 @@
       .tagline{ display:none; }
     }
 
+    @media (max-width: 360px){
+      .actionGrid{
+        grid-template-columns: 1fr;
+      }
+    }
+
     @keyframes parchment-fall{
       0%{ opacity: 1; transform: translateY(0) rotate(0deg); filter: blur(0); }
       55%{ opacity: .75; transform: translateY(20px) rotate(-2deg); }
@@ -619,13 +634,23 @@
 
     <section class="panel">
       <div class="hero">
-        <div class="btnStack">
-          <button class="btnPrimary btnMain btnCentered" id="btnScan" disabled>SCAN QR-KODE</button>
-          <button class="btnGhost btnMain btnCentered" id="btnStop" disabled>STOPP SCANNING</button>
-        </div>
-        <div class="btnActions">
-          <button class="btnGhost btnRandom" id="btnRandom" type="button" aria-label="Tilfeldig person">🎲</button>
-          <button class="btnGhost btnRandom" id="btnCelebrate" type="button" aria-label="Feire">🎉</button>
+        <div class="actionGrid">
+          <button class="actionButton actionScan" id="btnScan" disabled>
+            <span class="actionEmoji" aria-hidden="true">📷</span>
+            <span class="actionLabel">Scan QR</span>
+          </button>
+          <button class="actionButton actionRandom" id="btnRandom" type="button">
+            <span class="actionEmoji" aria-hidden="true">🎲</span>
+            <span class="actionLabel">Tilfeldig</span>
+          </button>
+          <button class="actionButton actionStop" id="btnStop" disabled>
+            <span class="actionEmoji" aria-hidden="true">🚫</span>
+            <span class="actionLabel">Stopp scan</span>
+          </button>
+          <button class="actionButton actionCelebrate" id="btnCelebrate" type="button">
+            <span class="actionEmoji" aria-hidden="true">🎉</span>
+            <span class="actionLabel">Feiring</span>
+          </button>
         </div>
 
       <div class="scanner" id="scannerWrap">
