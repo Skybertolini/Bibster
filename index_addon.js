@@ -36,11 +36,14 @@
   const rTagline = el("rTagline");
   const bottomMsg = el("bottomMsg");
   const resultStatusText = el("resultStatusText");
+  const btnHintMute = el("btnHintMute");
 
   const btnRevealName = el("btnRevealName");
   const silhouetteSrc = "./assets/silhouette.png";
   const silhouetteEventSrc = "./assets/silhouette_event.png";
   let currentIsEvent = false;
+  const HINT_MUTE_STORAGE_KEY = "bibsterMuted";
+  let hintMuted = false;
 
   const hintCards = Array.from(document.querySelectorAll(".hint-card"));
   const hint1Label = document.querySelector('.hint-card[data-hint="1"] .k span:last-child');
@@ -61,8 +64,62 @@
   const rulesOverlay = el("rulesOverlay");
   const rulesClose = el("rulesClose");
   const rulesContent = el("rulesContent");
+  const imagesPerSet = 9;
+
+  function getImageFilenameFromIndex(index) {
+    if (!Number.isInteger(index) || index < 0) return "";
+    const setNumber = Math.floor(index / imagesPerSet) + 1;
+    const cardNumber = (index % imagesPerSet) + 1;
+    return `${setNumber}-${cardNumber}.png`;
+  }
+
+  function getPersonImagePath(person) {
+    if (!person || person.type === "event") return "";
+    const filename = getImageFilenameFromIndex(person.imageIndex);
+    return filename ? `./assets/${filename}` : "";
+  }
+
+  function logImageStatus(person, imagePath) {
+    if (!DEBUG) return;
+    const personCode = person?.code || "ukjent";
+    console.log("[image] person", personCode, "->", imagePath || "(ingen)");
+    if (!imagePath) return;
+    fetch(imagePath, { method: "HEAD", cache: "no-store" })
+      .then((res) => {
+        if (res.ok) {
+          console.log("[image] funnet", personCode, imagePath);
+        } else {
+          console.warn("[image] mangler", personCode, imagePath, `HTTP ${res.status}`);
+        }
+      })
+      .catch((err) => {
+        console.warn("[image] sjekk feilet", personCode, imagePath, err);
+      });
+  }
+
+  function setHintMuted(nextValue, { persist = true } = {}) {
+    hintMuted = Boolean(nextValue);
+    if (btnHintMute) {
+      btnHintMute.textContent = hintMuted ? "🔇" : "🔈";
+      btnHintMute.setAttribute("aria-pressed", hintMuted ? "true" : "false");
+      btnHintMute.setAttribute(
+        "aria-label",
+        hintMuted ? "Slå på hint-musikk" : "Slå av hint-musikk"
+      );
+    }
+    if (hintMuted && currentHintAudio) {
+      currentHintAudio.pause();
+      currentHintAudio.currentTime = 0;
+    }
+    if (persist) {
+      try {
+        localStorage.setItem(HINT_MUTE_STORAGE_KEY, hintMuted ? "true" : "false");
+      } catch {}
+    }
+  }
 
   function playHintSound(hintIndex) {
+    if (hintMuted) return;
     const audio = hintSounds.get(hintIndex);
     if (!audio) return;
     if (currentHintAudio && currentHintAudio !== audio) {
@@ -288,13 +345,11 @@
     rTimeLabel.textContent = person.time_label || "—";
     rLivedWrap.classList.remove("on");
 
-    if (person.code) {
-      rImage.dataset.personSrc = `./assets/${person.code}.png`;
-      rImage.dataset.failed = "0";
-    } else {
-      rImage.dataset.personSrc = "";
-      rImage.dataset.failed = "1";
-    }
+    const personImagePath = getPersonImagePath(person);
+    rImage.dataset.personCode = person.code || "";
+    rImage.dataset.personSrc = personImagePath;
+    rImage.dataset.failed = personImagePath ? "0" : "1";
+    logImageStatus(person, personImagePath);
     setImageSource(getSilhouetteSrc());
     rImage.alt = "Personbilde";
     rImageWrap.classList.add("on");
@@ -399,13 +454,14 @@
       const json = await res.json();
       if (!Array.isArray(json)) throw new Error("persons.json må være en array []");
 
-      persons = json.map((person) => {
+      persons = json.map((person, index) => {
         const normalizedType = String(person.type ?? "").trim().toLowerCase();
         if (normalizedType === "event" || normalizedType === "hendelse") {
           person.type = "event";
         } else if (normalizedType === "person") {
           person.type = "person";
         }
+        person.imageIndex = index;
         return person;
       });
       buildIndexes(persons);
@@ -470,6 +526,9 @@
   rImage.addEventListener("error", () => {
     const currentSrc = rImage.getAttribute("src") || "";
     rImage.dataset.failed = "1";
+    if (DEBUG) {
+      console.warn("[image] load-feil", rImage.dataset.personCode || "ukjent", currentSrc);
+    }
     if (!currentSrc.endsWith("silhouette.png") && !currentSrc.endsWith("silhouette_event.png")) {
       setImageSource(getSilhouetteSrc());
     }
@@ -478,10 +537,29 @@
   rImage.addEventListener("load", () => {
     rImage.dataset.failed = "0";
     rImageWrap.classList.add("on");
+    if (DEBUG) {
+      console.log("[image] lastet", rImage.dataset.personCode || "ukjent", rImage.getAttribute("src") || "");
+    }
   });
 
 
   // Init
+  try {
+    const storedMuted = localStorage.getItem(HINT_MUTE_STORAGE_KEY);
+    if (storedMuted !== null) {
+      setHintMuted(storedMuted === "true", { persist: false });
+    } else {
+      setHintMuted(false, { persist: false });
+    }
+  } catch {
+    setHintMuted(false, { persist: false });
+  }
+  if (btnHintMute) {
+    btnHintMute.addEventListener("click", () => {
+      setHintMuted(!hintMuted);
+    });
+  }
+  // Merk: Vi demper kun hint-musikken, ikke andre lyder som feiring.
   initHintTaps();
   loadPersons();
 })();
