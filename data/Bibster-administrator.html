@@ -228,7 +228,7 @@
     <div class="top">
       <div class="brand">
         <h1>Bibster Administrator</h1>
-        <p>Lim inn tabellen → få korrekt <code>persons.json</code> live (hopper over første datarad)</p>
+        <p>Lim inn rader (TSV/Excel-kopi) → få korrekt <code>persons.json</code> live</p>
       </div>
       <div class="btnrow">
         <button id="btnSample">Sett inn eksempel</button>
@@ -246,15 +246,22 @@
         <h2>Tabell (TSV/Excel-kopi)</h2>
         <div class="meta">
           <span class="pill">Støtter tab-separert</span>
-          <span class="pill">Kolonnenavn på første linje</span>
-          <span class="pill">Hopper over 1. datarad</span>
+          <span class="pill">Med eller uten header</span>
+          <span class="pill">Valgfri info-rad</span>
         </div>
       </div>
 
-      <textarea id="tableInput" spellcheck="false" placeholder="Lim inn tabellen din her (inkludér kolonnenavn).&#10;&#10;Kolonner: NUMMER, KODE, NAVN, LEVDE/SKJEDDE, (Hint 1) FØDT/OPPVOKST, (Hint 2) YRKE/ROLLE, (Hint 3) KJENNETEGN, PERSON/HENDELSE, PERSON/HENDELSE, PERSON/HENDELSE"></textarea>
+      <textarea id="tableInput" spellcheck="false" placeholder="Lim inn radene dine her. Du kan lime inn enten:
+
+A) Uten header (anbefalt):
+KODE	NAVN	LEVDE/SKJEDDE	FØDT/OPPVOKST	YRKE/ROLLE	KJENNETEGN	PERSON/HENDELSE
+
+B) Med header (valgfritt):
+KODE	NAVN	LEVDE	...
+"></textarea>
 
       <div class="hint">
-        ✅ Viktig: Etter kolonneheaderen hopper vi over første rad (den du bruker “bare til informasjon”).<br/>
+        ✅ Du kan ha en header-linje, men det er ikke nødvendig. En valgfri "INFO"-rad etter header blir hoppet over automatisk.<br/>
         🎨 Under ser du rader farget: <b>rød</b> = skippes, <b>grønn</b> = duplikat.
       </div>
 
@@ -291,10 +298,14 @@
     </section>
   </main>
 
-  <script>
-    // Kolonner -> inputfelt
+    <script>
+    // Bibster Administrator (uten ID-felt)
+    // Input kan være:
+    //  A) Uten header:  KODE  NAVN  LEVDE/SKJEDDE  FØDT/OPPVOKST  YRKE/ROLLE  KJENNETEGN  PERSON/HENDELSE
+    //  B) Med header (valgfritt) – vi mapper kolonnenavn automatisk.
+
+    // Kolonner -> inputfelt (ID er fjernet)
     const COLUMN_ALIASES = {
-      id: ["NUMMER","ID","NR"],
       code: ["KODE","CODE"],
       name: ["NAVN","NAME"],
       lived_text: ["LEVDE/SKJEDDE","LEVDE","SKJEDDE","LIVED","TID","PERIODE"],
@@ -375,7 +386,7 @@
 
     // ---- Tids-parser:
     // Støtter:
-    //  - "ca. 2500–2300 fvt"
+    //  - "ca. 2500–2300 fvt."
     //  - "2370 fvt"
     //  - "ca. 42 fvt – 37 evt" (blandet era)
     // Returnerer: era ("BCE"|"CE"|"MIXED"|null), year_from, year_to, approx
@@ -434,7 +445,7 @@
       }
 
       return { era, year_from, year_to, approx };
-    } 
+    }
 
     // Bygger "slankt" object: tar bare med felter som faktisk har innhold
     function addIf(out, key, val){
@@ -443,9 +454,8 @@
       out[key] = val;
     }
 
-    function buildPersonRow(base){
+    function buildRow(base){
       const o = {};
-      addIf(o, "id", base.id);
       addIf(o, "code", base.code);
       addIf(o, "name", base.name);
       addIf(o, "type", base.type || "person");
@@ -460,11 +470,46 @@
       if (base.lived_text && base.lived_text.trim() !== ""){
         addIf(o, "era", base.era);
         addIf(o, "year_from", base.year_from);
-        // year_to tas kun med hvis den finnes (ikke null)
         if (base.year_to !== null && base.year_to !== undefined) addIf(o, "year_to", base.year_to);
         if (base.approx === true) o.approx = true;
       }
       return o;
+    }
+
+    function looksLikeHeaderLine(parts){
+      // Typisk header har ikke 10-bit kode i første kolonne
+      const first = safeStr(parts[0]);
+      const second = safeStr(parts[1]);
+      const codeOk = /^[01]{10}$/.test(first);
+      if (codeOk) return false;
+      // "KODE" eller "CODE" i header
+      const h0 = normalizeHeader(first);
+      const h1 = normalizeHeader(second);
+      return (h0 === "KODE" || h0 === "CODE" || h1 === "NAVN" || h1 === "NAME");
+    }
+
+    function looksLikeInfoLine(parts){
+      const a = safeStr(parts[0]).toUpperCase();
+      const b = safeStr(parts[1]).toUpperCase();
+      if (a === "INFO" || b === "INFO") return true;
+      // Hvis første felt ikke er 10-bit kode, men linjen er ganske tom -> sannsynlig info
+      const codeOk = /^[01]{10}$/.test(safeStr(parts[0]));
+      const nonEmpty = parts.map(safeStr).filter(Boolean).length;
+      return (!codeOk && nonEmpty <= 2);
+    }
+
+    function parseHeaderless(delim, lineParts){
+      // Fallback: fast mapping uten header
+      // KODE, NAVN, LEVDE, PLACE, ROLE, TAGLINE, TYPE
+      return {
+        code: 0,
+        name: 1,
+        lived_text: 2,
+        place: 3,
+        role: 4,
+        tagline: 5,
+        type: 6
+      };
     }
 
     function parseTable(text){
@@ -473,56 +518,63 @@
       if (!lines.length) return { rows: [], issues: [] };
 
       const delim = guessDelimiter(lines[0]);
-      const headers = lines[0].split(delim).map(safeStr);
+      const firstParts = lines[0].split(delim);
 
-      const idx = {
-        id: findHeaderIndex(headers, COLUMN_ALIASES.id),
-        code: findHeaderIndex(headers, COLUMN_ALIASES.code),
-        name: findHeaderIndex(headers, COLUMN_ALIASES.name),
-        lived_text: findHeaderIndex(headers, COLUMN_ALIASES.lived_text),
-        place: findHeaderIndex(headers, COLUMN_ALIASES.place),
-        role: findHeaderIndex(headers, COLUMN_ALIASES.role),
-        tagline: findHeaderIndex(headers, COLUMN_ALIASES.tagline),
-        type: findHeaderIndex(headers, COLUMN_ALIASES.type),
-      };
+      let hasHeader = looksLikeHeaderLine(firstParts);
 
+      let headers = null;
+      let idx = null;
+      let startRow = 0;
       const issues = [];
-      for (const req of ["id","code","name","lived_text","place","role","tagline"]){
-        if (idx[req] === -1){
-          issues.push({ type:"bad", msg:`Mangler kolonne for ${req.toUpperCase()} (forventet f.eks. ${COLUMN_ALIASES[req].join(", ")})` });
+
+      if (hasHeader){
+        headers = firstParts.map(safeStr);
+        idx = {
+          code: findHeaderIndex(headers, COLUMN_ALIASES.code),
+          name: findHeaderIndex(headers, COLUMN_ALIASES.name),
+          lived_text: findHeaderIndex(headers, COLUMN_ALIASES.lived_text),
+          place: findHeaderIndex(headers, COLUMN_ALIASES.place),
+          role: findHeaderIndex(headers, COLUMN_ALIASES.role),
+          tagline: findHeaderIndex(headers, COLUMN_ALIASES.tagline),
+          type: findHeaderIndex(headers, COLUMN_ALIASES.type),
+        };
+
+        for (const req of ["code","name"]){
+          if (idx[req] === -1){
+            issues.push({ type:"bad", msg:`Mangler kolonne for ${req.toUpperCase()} (forventet f.eks. ${COLUMN_ALIASES[req].join(", ")})` });
+          }
         }
+
+        // Valgfri info-rad etter header (hopper over hvis den ikke ser ut som data)
+        startRow = 1;
+        if (lines.length > 1){
+          const p = lines[1].split(delim);
+          if (looksLikeInfoLine(p)) startRow = 2;
+        }
+      } else {
+        idx = parseHeaderless(delim, firstParts);
+        // Valgfri "INFO"-linje først (hopper over hvis første ikke er data)
+        const firstIsData = /^[01]{10}$/.test(safeStr(firstParts[idx.code])) && !!safeStr(firstParts[idx.name]);
+        startRow = firstIsData ? 0 : 1;
       }
-
-      // Vanligvis har du en "info"-rad etter headeren som skal hoppes over.
-// Hvis den IKKE finnes, skal vi ikke miste første faktiske data-rad.
-function looksLikeRealDataLine(line){
-  const parts = line.split(delim);
-  const idVal = safeStr(parts[idx.id]);
-  const codeVal = safeStr(parts[idx.code]);
-  const nameVal = safeStr(parts[idx.name]);
-  const idOk = /^\d+\-\d+$/.test(idVal);
-  const codeOk = /^[01]{10}$/.test(codeVal);
-  return idOk && codeOk && !!nameVal;
-}
-
-// startRow:
-// - 1 => vi leser fra første linje etter header
-// - 2 => vi hopper over info-raden (lines[1]) hvis den ikke ser ut som ekte data
-let startRow = 1;
-if (lines.length > 1 && !looksLikeRealDataLine(lines[1])) startRow = 2;
 
       const rows = [];
       for (let i = startRow; i < lines.length; i++){
         const parts = lines[i].split(delim);
 
+        const code = safeStr(parts[idx.code]);
+        const name = safeStr(parts[idx.name]);
+
+        // hopp over tydelig info-linje midt i teksten også
+        if (looksLikeInfoLine(parts)) continue;
+
         const lived_text = safeStr(parts[idx.lived_text]);
         const livedParsed = parseLivedText(lived_text);
 
         const base = {
-          id: safeStr(parts[idx.id]),
-          code: safeStr(parts[idx.code]),
-          name: safeStr(parts[idx.name]),
-          type: (idx.type !== -1) ? normalizeType(parts[idx.type]) : "person",
+          code,
+          name,
+          type: (idx.type !== -1 && idx.type !== undefined) ? normalizeType(parts[idx.type]) : "person",
           lived_text,
           place: safeStr(parts[idx.place]),
           role: safeStr(parts[idx.role]),
@@ -534,7 +586,7 @@ if (lines.length > 1 && !looksLikeRealDataLine(lines[1])) startRow = 2;
         };
 
         // dropp HELT tom linje
-        const allEmpty = ["id","code","name","lived_text","place","role","tagline"].every(k => !base[k]);
+        const allEmpty = ["code","name","lived_text","place","role","tagline"].every(k => !base[k]);
         if (allEmpty) continue;
 
         rows.push({ base, sourceLine: i + 1 }); // 1-basert input-linje
@@ -548,7 +600,6 @@ if (lines.length > 1 && !looksLikeRealDataLine(lines[1])) startRow = 2;
       let errorCount = 0;
       let dupCount = 0;
 
-      const seenId = new Map();
       const seenCode = new Map();
 
       const analyzed = wrapped.map((w) => {
@@ -560,13 +611,13 @@ if (lines.length > 1 && !looksLikeRealDataLine(lines[1])) startRow = 2;
         let skip = false;
 
         // Skipp-kriterier
-        const missingCore = (!r.id || !r.code || !r.name);
+        const missingCore = (!r.code || !r.name);
         const badCodeChars = (r.code && !/^[01]+$/.test(r.code));
         const badCodeLen = (r.code && /^[01]+$/.test(r.code) && r.code.length !== 10);
 
         if (missingCore){
-          status = "bad"; tag = "SKIP: mangler id/code/name"; skip = true;
-          issues.push({ type:"bad", msg:`Linje ${lineNo}: Mangler id/code/name.` });
+          status = "bad"; tag = "SKIP: mangler kode/navn"; skip = true;
+          issues.push({ type:"bad", msg:`Linje ${lineNo}: Mangler KODE eller NAVN.` });
           errorCount++;
         } else if (badCodeChars){
           status = "bad"; tag = "SKIP: kode ikke 0/1"; skip = true;
@@ -579,23 +630,13 @@ if (lines.length > 1 && !looksLikeRealDataLine(lines[1])) startRow = 2;
         }
 
         // Duplikater (markeres grønne, men skippes ikke)
-        if (!skip){
-          if (r.id){
-            if (seenId.has(r.id)){
-              status = "dup";
-              tag = `DUP ID (først ${seenId.get(r.id)})`;
-              dupCount++;
-              issues.push({ type:"warn", msg:`Linje ${lineNo}: Duplikat ID "${r.id}" (først linje ${seenId.get(r.id)}).` });
-            } else seenId.set(r.id, lineNo);
-          }
-          if (r.code){
-            if (seenCode.has(r.code)){
-              status = "dup";
-              tag = `DUP KODE (først ${seenCode.get(r.code)})`;
-              dupCount++;
-              issues.push({ type:"warn", msg:`Linje ${lineNo}: Duplikat KODE "${r.code}" (først linje ${seenCode.get(r.code)}).` });
-            } else seenCode.set(r.code, lineNo);
-          }
+        if (!skip && r.code){
+          if (seenCode.has(r.code)){
+            status = "dup";
+            tag = `DUP KODE (først ${seenCode.get(r.code)})`;
+            dupCount++;
+            issues.push({ type:"warn", msg:`Linje ${lineNo}: Duplikat KODE "${r.code}" (først linje ${seenCode.get(r.code)}).` });
+          } else seenCode.set(r.code, lineNo);
         }
 
         // Advarsel hvis LEVDE finnes men era ikke finnes (ikke skipp)
@@ -617,7 +658,7 @@ if (lines.length > 1 && !looksLikeRealDataLine(lines[1])) startRow = 2;
         div.className = `row ${w.status}`;
         div.innerHTML = `
           <div class="ln">Linje ${w.sourceLine}<span class="badge">${w.tag}</span><span class="badge">${(r.type === "event") ? "HENDELSE" : "PERSON"}</span></div>
-          <div class="txt">${r.id || "?"}	${r.code || "?"}	${r.name || "?"}	${r.lived_text || ""}	${r.place || ""}	${r.role || ""}	${r.tagline || ""}	${(r.type === "event") ? "Hendelse" : "Person"}</div>
+          <div class="txt">${r.code || "?"}\t${r.name || "?"}\t${r.lived_text || ""}\t${r.place || ""}\t${r.role || ""}\t${r.tagline || ""}\t${(r.type === "event") ? "Hendelse" : "Person"}</div>
         `;
         elPreview.appendChild(div);
       });
@@ -639,9 +680,7 @@ if (lines.length > 1 && !looksLikeRealDataLine(lines[1])) startRow = 2;
       // Kun rader som IKKE skippes -> JSON
       const jsonRows = a.analyzed
         .filter(w => !w.skip)
-        .map(w => buildPersonRow(w.base))
-        // ekstra sikkerhet: hvis id likevel tom (skal ikke skje), dropp
-        .filter(o => o.id && String(o.id).trim() !== "");
+        .map(w => buildRow(w.base));
 
       currentData = jsonRows;
 
@@ -650,6 +689,7 @@ if (lines.length > 1 && !looksLikeRealDataLine(lines[1])) startRow = 2;
       elRowCount.textContent = `${personCount} personer • ${eventCount} hendelser`;
       elErrCount.textContent = `${a.errorCount} feil`;
       elDupCount.textContent = `${a.dupCount} duplikater`;
+      elTypeCount.textContent = `${personCount} personer • ${eventCount} hendelser`;
 
       elOut.value = currentPretty ? prettyJson(currentData) : minifyJson(currentData);
     }
@@ -684,14 +724,13 @@ if (lines.length > 1 && !looksLikeRealDataLine(lines[1])) startRow = 2;
 
     btnSample.addEventListener("click", () => {
       elIn.value =
-`NUMMER	KODE	NAVN	LEVDE	FØDT/OPPVOKST	YRKE/ROLLE	KJENNETEGN	PERSON/HENDELSE
-INFO	INFO	INFO	Denne raden hoppes over (eller tolkes som info)				
-1-1	1010011100	Adam	ca. 4026 fvt	Eden		Brøt Guds bud	Person
-1-1	1010011100	Adam (duplikat)	ca. 4026 fvt	Eden		Brøt Guds bud	Person
-	0110100101	Mangler ID	ca. 4026 fvt	Eden		Blir skippet	Person
-1-2	0110100101	Eva	ca. 4026 fvt	Eden	Første kvinne	Ble fristet av slangen	Person
-23-2	1010011110	Keiser Tiberius	ca. 42 fvt – 37 evt	Roma	Keiser	Regjerte under Jesu tjeneste	Person
-25-1	0001011101	Vannflommen ødelegger verden	2370 fvt	Ødeleggende	Verdensomspennende ødeleggelse	En vannkatastrofe utsletter alt liv	Hendelse`;
+`KODE\tNAVN\tLEVDE/SKJEDDE\tFØDT/OPPVOKST\tYRKE/ROLLE\tKJENNETEGN\tPERSON/HENDELSE
+INFO\tINFO\t(denne raden hoppes over)\t\t\t\t
+1010011100\tAdam\t4026–3096 fvt.\tEden\tFar til mange\tVerdens første menneske.\tPerson
+0110100101\tEva\tca. 3950 fvt. – ?\tEden\tMor til mange\tVerdens første kvinne.\tPerson
+1100101010\tAbel\tca. 3930–3870 fvt.\tUtenfor Eden\tHyrde\tDen første som ble drept.\tPerson
+1010011100\tAdam (duplikat)\t4026–3096 fvt.\tEden\t\tDuplikatkode (markeres grønn)\tPerson
+0001011101\tVannflommen ødelegger verden\t2370 fvt\t\tØdeleggende\tEn vannkatastrofe utsletter alt liv\tHendelse`;
       render();
     });
 
@@ -721,5 +760,6 @@ INFO	INFO	INFO	Denne raden hoppes over (eller tolkes som info)
     // Initial
     render();
   </script>
+
 </body>
 </html>
