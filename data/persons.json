@@ -1,6 +1,5 @@
 [
   {
-    "id": "1-1",
     "code": "1010011100",
     "name": "Adam",
     "type": "person",
@@ -14,7 +13,6 @@
     "year_to": -3096
   },
   {
-    "id": "1-2",
     "code": "0110100101",
     "name": "Eva",
     "type": "person",
@@ -28,7 +26,6 @@
     "approx": true
   },
   {
-    "id": "1-3",
     "code": "1100101010",
     "name": "Abel",
     "type": "person",
@@ -43,7 +40,6 @@
     "approx": true
   },
   {
-    "id": "1-4",
     "code": "0101110010",
     "name": "Kain",
     "type": "person",
@@ -58,7 +54,6 @@
     "approx": true
   },
   {
-    "id": "1-5",
     "code": "1011100010",
     "name": "Set",
     "type": "person",
@@ -72,7 +67,6 @@
     "year_to": -2984
   },
   {
-    "id": "1-6",
     "code": "0010111010",
     "name": "Enok",
     "type": "person",
@@ -86,7 +80,6 @@
     "year_to": -3039
   },
   {
-    "id": "1-7",
     "code": "1101000110",
     "name": "Noah",
     "type": "person",
@@ -100,7 +93,6 @@
     "year_to": -2020
   },
   {
-    "id": "1-8",
     "code": "0111010100",
     "name": "Sem",
     "type": "person",
@@ -114,7 +106,6 @@
     "year_to": -1868
   },
   {
-    "id": "1-9",
     "code": "1001101010",
     "name": "Kam",
     "type": "person",
@@ -129,7 +120,6 @@
     "approx": true
   },
   {
-    "id": "2-1",
     "code": "1110010010",
     "name": "Jafet",
     "type": "person",
@@ -144,7 +134,6 @@
     "approx": true
   },
   {
-    "id": "2-2",
     "code": "0101011001",
     "name": "Abraham",
     "type": "person",
@@ -158,7 +147,6 @@
     "year_to": -1843
   },
   {
-    "id": "2-3",
     "code": "1000110110",
     "name": "Sara",
     "type": "person",
@@ -172,7 +160,6 @@
     "year_to": -1881
   },
   {
-    "id": "2-4",
     "code": "0110101110",
     "name": "Lot",
     "type": "person",
@@ -187,7 +174,6 @@
     "approx": true
   },
   {
-    "id": "2-5",
     "code": "1011000101",
     "name": "Hagar",
     "type": "person",
@@ -202,7 +188,6 @@
     "approx": true
   },
   {
-    "id": "2-6",
     "code": "0100111011",
     "name": "Ismael",
     "type": "person",
@@ -217,7 +202,6 @@
     "approx": true
   },
   {
-    "id": "2-7",
     "code": "1100110100",
     "name": "Isak",
     "type": "person",
@@ -231,7 +215,6 @@
     "year_to": -1738
   },
   {
-    "id": "2-8",
     "code": "0011101001",
     "name": "Rebekka",
     "type": "person",
@@ -246,7 +229,6 @@
     "approx": true
   },
   {
-    "id": "2-9",
     "code": "1010110010",
     "name": "Jakob",
     "type": "person",
@@ -260,7 +242,6 @@
     "year_to": -1711
   },
   {
-    "id": "3-1",
     "code": "1110100100",
     "name": "Esau",
     "type": "person",
@@ -275,7 +256,6 @@
     "approx": true
   },
   {
-    "id": "3-2",
     "code": "0100011110",
     "name": "Lea",
     "type": "person",
@@ -290,7 +270,6 @@
     "approx": true
   },
   {
-    "id": "3-3",
     "code": "1001110100",
     "name": "Rakel",
     "type": "person",
@@ -305,7 +284,6 @@
     "approx": true
   },
   {
-    "id": "3-4",
     "code": "0110011011",
     "name": "Josef",
     "type": "person",
@@ -319,7 +297,6 @@
     "year_to": -1657
   },
   {
-    "id": "3-5",
     "code": "1010100110",
     "name": "Juda",
     "type": "person",
@@ -334,7 +311,6 @@
     "approx": true
   },
   {
-    "id": "3-6",
     "code": "0010111100",
     "name": "Ruben",
     "type": "person",
@@ -349,7 +325,6 @@
     "approx": true
   },
   {
-    "id": "3-7",
     "code": "1101010010",
     "name": "Benjamin",
     "type": "person",
@@ -364,7 +339,6 @@
     "approx": true
   },
   {
-    "id": "3-8",
     "code": "0101101001",
     "name": "Moses",
     "type": "person",
@@ -378,7 +352,6 @@
     "year_to": -1473
   },
   {
-    "id": "3-9",
     "code": "1010010111",
     "name": "Aron",
     "type": "person",
@@ -392,7 +365,6 @@
     "year_to": -1474
   },
   {
-    "id": "4-1",
     "code": "1100100111",
     "name": "Farao",
     "type": "person",
@@ -407,7 +379,6 @@
     "approx": true
   },
   {
-    "id": "4-2",
     "code": "0011010101",
     "name": "Josva",
     "type": "person",
@@ -422,7 +393,6 @@
     "approx": true
   },
   {
-    "id": "4-3",
     "code": "1011100100",
     "name": "Kaleb",
     "type": "person",
@@ -437,7 +407,6 @@
     "approx": true
   },
   {
-    "id": "4-4",
     "code": "0100110111",
     "name": "Jetro",
     "type": "person",
@@ -452,7 +421,6 @@
     "approx": true
   },
   {
-    "id": "4-5",
     "code": "1001011100",
     "name": "Sippora",
     "type": "person",
@@ -467,7 +435,6 @@
     "approx": true
   },
   {
-    "id": "4-6",
     "code": "0110100011",
     "name": "Eleasar",
     "type": "person",
@@ -482,7 +449,6 @@
     "approx": true
   },
   {
-    "id": "4-7",
     "code": "1100011010",
     "name": "Pinehas",
     "type": "person",
@@ -497,7 +463,6 @@
     "approx": true
   },
   {
-    "id": "4-8",
     "code": "0011100110",
     "name": "Bileam",
     "type": "person",
@@ -512,7 +477,6 @@
     "approx": true
   },
   {
-    "id": "4-9",
     "code": "1010111000",
     "name": "Korah",
     "type": "person",
@@ -527,7 +491,6 @@
     "approx": true
   },
   {
-    "id": "5-1",
     "code": "1110010101",
     "name": "Datan",
     "type": "person",
@@ -542,7 +505,6 @@
     "approx": true
   },
   {
-    "id": "5-2",
     "code": "0101010011",
     "name": "Abiram",
     "type": "person",
@@ -557,7 +519,6 @@
     "approx": true
   },
   {
-    "id": "5-3",
     "code": "1000111100",
     "name": "Dina",
     "type": "person",
@@ -572,7 +533,6 @@
     "approx": true
   },
   {
-    "id": "5-4",
     "code": "0111100010",
     "name": "Nabal",
     "type": "person",
@@ -587,7 +547,6 @@
     "approx": true
   },
   {
-    "id": "5-5",
     "code": "1011001010",
     "name": "Laban",
     "type": "person",
@@ -602,7 +561,6 @@
     "approx": true
   },
   {
-    "id": "5-6",
     "code": "0010110111",
     "name": "Melkisedek",
     "type": "person",
@@ -617,7 +575,6 @@
     "approx": true
   },
   {
-    "id": "5-7",
     "code": "1100101100",
     "name": "Abimelek (Gerar)",
     "type": "person",
@@ -632,7 +589,6 @@
     "approx": true
   },
   {
-    "id": "5-8",
     "code": "0101110101",
     "name": "Potifar",
     "type": "person",
@@ -647,7 +603,6 @@
     "approx": true
   },
   {
-    "id": "5-9",
     "code": "1010011001",
     "name": "Potifars kone",
     "type": "person",
@@ -662,7 +617,6 @@
     "approx": true
   },
   {
-    "id": "6-1",
     "code": "1101010100",
     "name": "Debora",
     "type": "person",
@@ -677,7 +631,6 @@
     "approx": true
   },
   {
-    "id": "6-2",
     "code": "0011011100",
     "name": "Barak",
     "type": "person",
@@ -692,7 +645,6 @@
     "approx": true
   },
   {
-    "id": "6-3",
     "code": "1010101100",
     "name": "Jael",
     "type": "person",
@@ -707,7 +659,6 @@
     "approx": true
   },
   {
-    "id": "6-4",
     "code": "0100110011",
     "name": "Gideon",
     "type": "person",
@@ -722,7 +673,6 @@
     "approx": true
   },
   {
-    "id": "6-5",
     "code": "1001100111",
     "name": "Abigajil",
     "type": "person",
@@ -737,7 +687,6 @@
     "approx": true
   },
   {
-    "id": "6-6",
     "code": "0110010101",
     "name": "Jefta",
     "type": "person",
@@ -752,7 +701,6 @@
     "approx": true
   },
   {
-    "id": "6-7",
     "code": "1101110010",
     "name": "Samson",
     "type": "person",
@@ -767,7 +715,6 @@
     "approx": true
   },
   {
-    "id": "6-8",
     "code": "0010101011",
     "name": "Manoah",
     "type": "person",
@@ -782,7 +729,6 @@
     "approx": true
   },
   {
-    "id": "6-9",
     "code": "1011010010",
     "name": "Delila",
     "type": "person",
@@ -797,7 +743,6 @@
     "approx": true
   },
   {
-    "id": "7-1",
     "code": "1110001011",
     "name": "Eli",
     "type": "person",
@@ -812,7 +757,6 @@
     "approx": true
   },
   {
-    "id": "7-2",
     "code": "0101010110",
     "name": "Hanna",
     "type": "person",
@@ -827,7 +771,6 @@
     "approx": true
   },
   {
-    "id": "7-3",
     "code": "1000110011",
     "name": "Samuel",
     "type": "person",
@@ -842,7 +785,6 @@
     "approx": true
   },
   {
-    "id": "7-4",
     "code": "0111100101",
     "name": "Rut",
     "type": "person",
@@ -857,7 +799,6 @@
     "approx": true
   },
   {
-    "id": "7-5",
     "code": "1010011101",
     "name": "No'omi",
     "type": "person",
@@ -872,7 +813,6 @@
     "approx": true
   },
   {
-    "id": "7-6",
     "code": "0010111001",
     "name": "Boas",
     "type": "person",
@@ -887,7 +827,6 @@
     "approx": true
   },
   {
-    "id": "7-7",
     "code": "1100100110",
     "name": "Orpa",
     "type": "person",
@@ -902,7 +841,6 @@
     "approx": true
   },
   {
-    "id": "7-8",
     "code": "0101111001",
     "name": "Obed",
     "type": "person",
@@ -917,7 +855,6 @@
     "approx": true
   },
   {
-    "id": "7-9",
     "code": "1011000110",
     "name": "Hofni og Pinehas",
     "type": "person",
@@ -932,7 +869,6 @@
     "approx": true
   },
   {
-    "id": "8-1",
     "code": "1101010011",
     "name": "Kong Asa",
     "type": "person",
@@ -947,7 +883,6 @@
     "approx": true
   },
   {
-    "id": "8-2",
     "code": "0011100101",
     "name": "Enken i Sarefat",
     "type": "person",
@@ -962,7 +897,6 @@
     "approx": true
   },
   {
-    "id": "8-3",
     "code": "1010100011",
     "name": "Mika",
     "type": "person",
@@ -977,7 +911,6 @@
     "approx": true
   },
   {
-    "id": "8-4",
     "code": "0100111101",
     "name": "Saul",
     "type": "person",
@@ -992,7 +925,6 @@
     "approx": true
   },
   {
-    "id": "8-5",
     "code": "0101100011",
     "name": "Jonatan",
     "type": "person",
@@ -1007,7 +939,6 @@
     "approx": true
   },
   {
-    "id": "8-6",
     "code": "0110001110",
     "name": "David",
     "type": "person",
@@ -1022,7 +953,6 @@
     "approx": true
   },
   {
-    "id": "8-7",
     "code": "1101110100",
     "name": "Goliat",
     "type": "person",
@@ -1037,7 +967,6 @@
     "approx": true
   },
   {
-    "id": "8-8",
     "code": "0010101101",
     "name": "Jeftas datter",
     "type": "person",
@@ -1052,7 +981,6 @@
     "approx": true
   },
   {
-    "id": "8-9",
     "code": "1011010100",
     "name": "Natan",
     "type": "person",
@@ -1067,7 +995,6 @@
     "approx": true
   },
   {
-    "id": "9-1",
     "code": "1110011010",
     "name": "Batseba",
     "type": "person",
@@ -1082,7 +1009,6 @@
     "approx": true
   },
   {
-    "id": "9-2",
     "code": "0101001101",
     "name": "Salomo",
     "type": "person",
@@ -1097,7 +1023,6 @@
     "approx": true
   },
   {
-    "id": "9-3",
     "code": "1000110101",
     "name": "Rehabeam",
     "type": "person",
@@ -1112,7 +1037,6 @@
     "approx": true
   },
   {
-    "id": "9-4",
     "code": "0111101001",
     "name": "Jeroboam",
     "type": "person",
@@ -1127,7 +1051,6 @@
     "approx": true
   },
   {
-    "id": "9-5",
     "code": "1010001110",
     "name": "Elia",
     "type": "person",
@@ -1142,7 +1065,6 @@
     "approx": true
   },
   {
-    "id": "9-6",
     "code": "0010111011",
     "name": "Akab",
     "type": "person",
@@ -1157,7 +1079,6 @@
     "approx": true
   },
   {
-    "id": "9-7",
     "code": "1100101011",
     "name": "Jesabel",
     "type": "person",
@@ -1172,7 +1093,6 @@
     "approx": true
   },
   {
-    "id": "9-8",
     "code": "0101110011",
     "name": "Elisja",
     "type": "person",
@@ -1187,7 +1107,6 @@
     "approx": true
   },
   {
-    "id": "9-9",
     "code": "1011001001",
     "name": "Gehasi",
     "type": "person",
@@ -1202,7 +1121,6 @@
     "approx": true
   },
   {
-    "id": "10-1",
     "code": "1101011100",
     "name": "Jehu",
     "type": "person",
@@ -1217,7 +1135,6 @@
     "approx": true
   },
   {
-    "id": "10-2",
     "code": "0011010110",
     "name": "Atalja",
     "type": "person",
@@ -1232,7 +1149,6 @@
     "approx": true
   },
   {
-    "id": "10-3",
     "code": "1010101110",
     "name": "Jehojada",
     "type": "person",
@@ -1247,7 +1163,6 @@
     "approx": true
   },
   {
-    "id": "10-4",
     "code": "0100110101",
     "name": "Jehosjeba",
     "type": "person",
@@ -1262,7 +1177,6 @@
     "approx": true
   },
   {
-    "id": "10-5",
     "code": "1001101110",
     "name": "Joas",
     "type": "person",
@@ -1277,7 +1191,6 @@
     "approx": true
   },
   {
-    "id": "10-6",
     "code": "0110001011",
     "name": "Ussia",
     "type": "person",
@@ -1292,7 +1205,6 @@
     "approx": true
   },
   {
-    "id": "10-7",
     "code": "1101110011",
     "name": "Jotam",
     "type": "person",
@@ -1307,7 +1219,6 @@
     "approx": true
   },
   {
-    "id": "10-8",
     "code": "0010100111",
     "name": "Akas",
     "type": "person",
@@ -1322,7 +1233,6 @@
     "approx": true
   },
   {
-    "id": "10-9",
     "code": "1011011100",
     "name": "Haggai",
     "type": "person",
@@ -1337,7 +1247,6 @@
     "approx": true
   },
   {
-    "id": "11-1",
     "code": "1110001101",
     "name": "Sakarja",
     "type": "person",
@@ -1352,7 +1261,6 @@
     "approx": true
   },
   {
-    "id": "11-2",
     "code": "0101011010",
     "name": "Malaki",
     "type": "person",
@@ -1367,7 +1275,6 @@
     "approx": true
   },
   {
-    "id": "11-3",
     "code": "1000111010",
     "name": "Esra",
     "type": "person",
@@ -1382,7 +1289,6 @@
     "approx": true
   },
   {
-    "id": "11-4",
     "code": "0111100111",
     "name": "Nehemja",
     "type": "person",
@@ -1397,7 +1303,6 @@
     "approx": true
   },
   {
-    "id": "11-5",
     "code": "1010010101",
     "name": "Ester",
     "type": "person",
@@ -1412,7 +1317,6 @@
     "approx": true
   },
   {
-    "id": "11-6",
     "code": "0010111110",
     "name": "Mordekai",
     "type": "person",
@@ -1427,7 +1331,6 @@
     "approx": true
   },
   {
-    "id": "11-7",
     "code": "1100100011",
     "name": "Haman",
     "type": "person",
@@ -1442,7 +1345,6 @@
     "approx": true
   },
   {
-    "id": "11-8",
     "code": "0101111010",
     "name": "Sanballat",
     "type": "person",
@@ -1457,7 +1359,6 @@
     "approx": true
   },
   {
-    "id": "11-9",
     "code": "1011001110",
     "name": "Tobija",
     "type": "person",
@@ -1472,7 +1373,6 @@
     "approx": true
   },
   {
-    "id": "12-1",
     "code": "1101010111",
     "name": "Job",
     "type": "person",
@@ -1487,7 +1387,6 @@
     "approx": true
   },
   {
-    "id": "12-2",
     "code": "0011101010",
     "name": "Nebukadnesar",
     "type": "person",
@@ -1502,7 +1401,6 @@
     "approx": true
   },
   {
-    "id": "12-3",
     "code": "1010100101",
     "name": "Belsasar",
     "type": "person",
@@ -1517,7 +1415,6 @@
     "approx": true
   },
   {
-    "id": "12-4",
     "code": "0100111110",
     "name": "Kyros",
     "type": "person",
@@ -1532,7 +1429,6 @@
     "approx": true
   },
   {
-    "id": "12-5",
     "code": "1001100101",
     "name": "Darius",
     "type": "person",
@@ -1547,7 +1443,6 @@
     "approx": true
   },
   {
-    "id": "12-6",
     "code": "0110001101",
     "name": "Artaxerxes",
     "type": "person",
@@ -1562,7 +1457,6 @@
     "approx": true
   },
   {
-    "id": "12-7",
     "code": "1101111010",
     "name": "Serubabel",
     "type": "person",
@@ -1577,7 +1471,6 @@
     "approx": true
   },
   {
-    "id": "12-8",
     "code": "0010101110",
     "name": "Daniel",
     "type": "person",
@@ -1592,7 +1485,6 @@
     "approx": true
   },
   {
-    "id": "12-9",
     "code": "1011010110",
     "name": "Jona",
     "type": "person",
@@ -1607,7 +1499,6 @@
     "approx": true
   },
   {
-    "id": "13-1",
     "code": "1110010110",
     "name": "Amos",
     "type": "person",
@@ -1622,7 +1513,6 @@
     "approx": true
   },
   {
-    "id": "13-2",
     "code": "0101001011",
     "name": "Hananja",
     "type": "person",
@@ -1637,7 +1527,6 @@
     "approx": true
   },
   {
-    "id": "13-3",
     "code": "1000111110",
     "name": "Misael",
     "type": "person",
@@ -1652,7 +1541,6 @@
     "approx": true
   },
   {
-    "id": "13-4",
     "code": "0111100001",
     "name": "Asarja",
     "type": "person",
@@ -1667,7 +1555,6 @@
     "approx": true
   },
   {
-    "id": "13-5",
     "code": "1010011011",
     "name": "Jojakim",
     "type": "person",
@@ -1682,7 +1569,6 @@
     "approx": true
   },
   {
-    "id": "13-6",
     "code": "0010110101",
     "name": "Jojakin",
     "type": "person",
@@ -1697,7 +1583,6 @@
     "approx": true
   },
   {
-    "id": "13-7",
     "code": "1100101110",
     "name": "Sidkia",
     "type": "person",
@@ -1712,7 +1597,6 @@
     "approx": true
   },
   {
-    "id": "13-8",
     "code": "0101110001",
     "name": "Sjallum (Jehoakas)",
     "type": "person",
@@ -1727,7 +1611,6 @@
     "approx": true
   },
   {
-    "id": "13-9",
     "code": "1011000100",
     "name": "Absalom",
     "type": "person",
@@ -1742,7 +1625,6 @@
     "approx": true
   },
   {
-    "id": "14-1",
     "code": "1101010001",
     "name": "Amnon",
     "type": "person",
@@ -1757,7 +1639,6 @@
     "approx": true
   },
   {
-    "id": "14-2",
     "code": "0011011110",
     "name": "Tamar",
     "type": "person",
@@ -1772,7 +1653,6 @@
     "approx": true
   },
   {
-    "id": "14-3",
     "code": "1010101001",
     "name": "Adonja",
     "type": "person",
@@ -1787,7 +1667,6 @@
     "approx": true
   },
   {
-    "id": "14-4",
     "code": "0100111001",
     "name": "Sheba",
     "type": "person",
@@ -1802,7 +1681,6 @@
     "approx": true
   },
   {
-    "id": "14-5",
     "code": "1001100011",
     "name": "Uria",
     "type": "person",
@@ -1817,7 +1695,6 @@
     "approx": true
   },
   {
-    "id": "14-6",
     "code": "0110000111",
     "name": "Huldah",
     "type": "person",
@@ -1832,7 +1709,6 @@
     "approx": true
   },
   {
-    "id": "14-7",
     "code": "1101110001",
     "name": "Mefibosjet",
     "type": "person",
@@ -1847,7 +1723,6 @@
     "approx": true
   },
   {
-    "id": "14-8",
     "code": "0010101001",
     "name": "Joel",
     "type": "person",
@@ -1862,7 +1737,6 @@
     "approx": true
   },
   {
-    "id": "14-9",
     "code": "1011011001",
     "name": "Jesus",
     "type": "person",
@@ -1876,7 +1750,6 @@
     "year_to": 33
   },
   {
-    "id": "15-1",
     "code": "1110000111",
     "name": "Maria",
     "type": "person",
@@ -1891,7 +1764,6 @@
     "approx": true
   },
   {
-    "id": "15-2",
     "code": "0101010001",
     "name": "Josef",
     "type": "person",
@@ -1906,7 +1778,6 @@
     "approx": true
   },
   {
-    "id": "15-3",
     "code": "1000111001",
     "name": "Johannes døperen",
     "type": "person",
@@ -1921,7 +1792,6 @@
     "approx": true
   },
   {
-    "id": "15-4",
     "code": "0111101010",
     "name": "Elisabet",
     "type": "person",
@@ -1936,7 +1806,6 @@
     "approx": true
   },
   {
-    "id": "15-5",
     "code": "1010010001",
     "name": "Sakarja",
     "type": "person",
@@ -1951,7 +1820,6 @@
     "approx": true
   },
   {
-    "id": "15-6",
     "code": "0010110011",
     "name": "Simeon",
     "type": "person",
@@ -1966,7 +1834,6 @@
     "approx": true
   },
   {
-    "id": "15-7",
     "code": "1100101001",
     "name": "Anna",
     "type": "person",
@@ -1981,7 +1848,6 @@
     "approx": true
   },
   {
-    "id": "15-8",
     "code": "0101110110",
     "name": "Peter",
     "type": "person",
@@ -1996,7 +1862,6 @@
     "approx": true
   },
   {
-    "id": "15-9",
     "code": "1011000011",
     "name": "Andreas",
     "type": "person",
@@ -2011,7 +1876,6 @@
     "approx": true
   },
   {
-    "id": "16-1",
     "code": "1101011010",
     "name": "Jakob",
     "type": "person",
@@ -2026,7 +1890,6 @@
     "approx": true
   },
   {
-    "id": "16-2",
     "code": "0011100011",
     "name": "Johannes",
     "type": "person",
@@ -2041,7 +1904,6 @@
     "approx": true
   },
   {
-    "id": "16-3",
     "code": "1010100010",
     "name": "Filip",
     "type": "person",
@@ -2056,7 +1918,6 @@
     "approx": true
   },
   {
-    "id": "16-4",
     "code": "0100110001",
     "name": "Bartolomeus",
     "type": "person",
@@ -2071,7 +1932,6 @@
     "approx": true
   },
   {
-    "id": "16-5",
     "code": "1001101001",
     "name": "Tomas",
     "type": "person",
@@ -2086,7 +1946,6 @@
     "approx": true
   },
   {
-    "id": "16-6",
     "code": "0110001001",
     "name": "Matteus",
     "type": "person",
@@ -2101,7 +1960,6 @@
     "approx": true
   },
   {
-    "id": "16-7",
     "code": "1101110110",
     "name": "Jakob",
     "type": "person",
@@ -2116,7 +1974,6 @@
     "approx": true
   },
   {
-    "id": "16-8",
     "code": "0010100001",
     "name": "Taddeus",
     "type": "person",
@@ -2131,7 +1988,6 @@
     "approx": true
   },
   {
-    "id": "16-9",
     "code": "1011010001",
     "name": "Simon",
     "type": "person",
@@ -2146,7 +2002,6 @@
     "approx": true
   },
   {
-    "id": "17-1",
     "code": "0101101011",
     "name": "Judas Iskariot",
     "type": "person",
@@ -2161,7 +2016,6 @@
     "approx": true
   },
   {
-    "id": "17-2",
     "code": "1010010110",
     "name": "Maria Magdalena",
     "type": "person",
@@ -2176,7 +2030,6 @@
     "approx": true
   },
   {
-    "id": "17-3",
     "code": "0111010011",
     "name": "Marta",
     "type": "person",
@@ -2191,7 +2044,6 @@
     "approx": true
   },
   {
-    "id": "17-4",
     "code": "1001010110",
     "name": "Maria",
     "type": "person",
@@ -2206,7 +2058,6 @@
     "approx": true
   },
   {
-    "id": "17-5",
     "code": "0100111100",
     "name": "Lasarus",
     "type": "person",
@@ -2221,7 +2072,6 @@
     "approx": true
   },
   {
-    "id": "17-6",
     "code": "1011101001",
     "name": "Nikodemus",
     "type": "person",
@@ -2236,7 +2086,6 @@
     "approx": true
   },
   {
-    "id": "17-7",
     "code": "0110101101",
     "name": "Paulus",
     "type": "person",
@@ -2251,7 +2100,6 @@
     "approx": true
   },
   {
-    "id": "17-8",
     "code": "1001110010",
     "name": "Barnabas",
     "type": "person",
@@ -2266,7 +2114,6 @@
     "approx": true
   },
   {
-    "id": "17-9",
     "code": "0101001100",
     "name": "Silas",
     "type": "person",
@@ -2281,7 +2128,6 @@
     "approx": true
   },
   {
-    "id": "18-1",
     "code": "0110011100",
     "name": "Timoteus",
     "type": "person",
@@ -2296,7 +2142,6 @@
     "approx": true
   },
   {
-    "id": "18-2",
     "code": "1001100100",
     "name": "Titus",
     "type": "person",
@@ -2311,7 +2156,6 @@
     "approx": true
   },
   {
-    "id": "18-3",
     "code": "0101110100",
     "name": "Lukas",
     "type": "person",
@@ -2326,7 +2170,6 @@
     "approx": true
   },
   {
-    "id": "18-4",
     "code": "1010001101",
     "name": "Markus",
     "type": "person",
@@ -2341,7 +2184,6 @@
     "approx": true
   },
   {
-    "id": "18-5",
     "code": "0111101011",
     "name": "Apollos",
     "type": "person",
@@ -2356,7 +2198,6 @@
     "approx": true
   },
   {
-    "id": "18-6",
     "code": "0110010111",
     "name": "Priskilla",
     "type": "person",
@@ -2371,7 +2212,6 @@
     "approx": true
   },
   {
-    "id": "18-7",
     "code": "0101011101",
     "name": "Akvilas",
     "type": "person",
@@ -2386,7 +2226,6 @@
     "approx": true
   },
   {
-    "id": "18-8",
     "code": "1011000111",
     "name": "Stefanus",
     "type": "person",
@@ -2401,7 +2240,6 @@
     "approx": true
   },
   {
-    "id": "18-9",
     "code": "0110110010",
     "name": "Filip",
     "type": "person",
@@ -2416,7 +2254,6 @@
     "approx": true
   },
   {
-    "id": "19-1",
     "code": "0101100110",
     "name": "Kornelius",
     "type": "person",
@@ -2431,7 +2268,6 @@
     "approx": true
   },
   {
-    "id": "19-2",
     "code": "1010011010",
     "name": "Ananias",
     "type": "person",
@@ -2446,7 +2282,6 @@
     "approx": true
   },
   {
-    "id": "19-3",
     "code": "0111001101",
     "name": "Saffira",
     "type": "person",
@@ -2461,7 +2296,6 @@
     "approx": true
   },
   {
-    "id": "19-4",
     "code": "1000101110",
     "name": "Ananias",
     "type": "person",
@@ -2476,7 +2310,6 @@
     "approx": true
   },
   {
-    "id": "19-5",
     "code": "0101111011",
     "name": "Jakob",
     "type": "person",
@@ -2491,7 +2324,6 @@
     "approx": true
   },
   {
-    "id": "19-6",
     "code": "0101101010",
     "name": "Judas",
     "type": "person",
@@ -2506,7 +2338,6 @@
     "approx": true
   },
   {
-    "id": "19-7",
     "code": "0110011010",
     "name": "Epafroditus",
     "type": "person",
@@ -2521,7 +2352,6 @@
     "approx": true
   },
   {
-    "id": "19-8",
     "code": "1001101111",
     "name": "Onesimus",
     "type": "person",
@@ -2536,7 +2366,6 @@
     "approx": true
   },
   {
-    "id": "19-9",
     "code": "0101010111",
     "name": "Filemon",
     "type": "person",
@@ -2551,7 +2380,6 @@
     "approx": true
   },
   {
-    "id": "20-1",
     "code": "0110100110",
     "name": "Demas",
     "type": "person",
@@ -2566,7 +2394,6 @@
     "approx": true
   },
   {
-    "id": "20-2",
     "code": "1001110101",
     "name": "Tykikus",
     "type": "person",
@@ -2581,7 +2408,6 @@
     "approx": true
   },
   {
-    "id": "20-3",
     "code": "0101001111",
     "name": "Gaius",
     "type": "person",
@@ -2596,7 +2422,6 @@
     "approx": true
   },
   {
-    "id": "20-4",
     "code": "1010110011",
     "name": "Mirjam",
     "type": "person",
@@ -2611,7 +2436,6 @@
     "approx": true
   },
   {
-    "id": "20-5",
     "code": "0110001100",
     "name": "Noas hustru",
     "type": "person",
@@ -2626,7 +2450,6 @@
     "approx": true
   },
   {
-    "id": "20-6",
     "code": "1001010111",
     "name": "Elieser",
     "type": "person",
@@ -2641,7 +2464,6 @@
     "approx": true
   },
   {
-    "id": "20-7",
     "code": "0101110000",
     "name": "Rahab",
     "type": "person",
@@ -2656,7 +2478,6 @@
     "approx": true
   },
   {
-    "id": "20-8",
     "code": "1010101101",
     "name": "Baruk",
     "type": "person",
@@ -2671,7 +2492,6 @@
     "approx": true
   },
   {
-    "id": "20-9",
     "code": "0111010101",
     "name": "Jesaja",
     "type": "person",
@@ -2686,7 +2506,6 @@
     "approx": true
   },
   {
-    "id": "21-1",
     "code": "0110010011",
     "name": "Josjia",
     "type": "person",
@@ -2701,7 +2520,6 @@
     "approx": true
   },
   {
-    "id": "21-2",
     "code": "1010010100",
     "name": "Hiskia",
     "type": "person",
@@ -2716,7 +2534,6 @@
     "approx": true
   },
   {
-    "id": "21-3",
     "code": "0111000110",
     "name": "Jeremia",
     "type": "person",
@@ -2731,7 +2548,6 @@
     "approx": true
   },
   {
-    "id": "21-4",
     "code": "1000101101",
     "name": "Josef fra Arimatea",
     "type": "person",
@@ -2746,7 +2562,6 @@
     "approx": true
   },
   {
-    "id": "21-5",
     "code": "0101111101",
     "name": "Lamek",
     "type": "person",
@@ -2761,7 +2576,6 @@
     "approx": true
   },
   {
-    "id": "21-6",
     "code": "1010100111",
     "name": "Nimrod",
     "type": "person",
@@ -2776,7 +2590,6 @@
     "approx": true
   },
   {
-    "id": "21-7",
     "code": "0110010100",
     "name": "Ahitofel",
     "type": "person",
@@ -2791,7 +2604,6 @@
     "approx": true
   },
   {
-    "id": "21-8",
     "code": "1001101011",
     "name": "Manasse",
     "type": "person",
@@ -2806,7 +2618,6 @@
     "approx": true
   },
   {
-    "id": "21-9",
     "code": "0101010010",
     "name": "Annas",
     "type": "person",
@@ -2821,7 +2632,6 @@
     "approx": true
   },
   {
-    "id": "22-1",
     "code": "0110101001",
     "name": "Kaifas",
     "type": "person",
@@ -2836,7 +2646,6 @@
     "approx": true
   },
   {
-    "id": "22-2",
     "code": "1001111001",
     "name": "Herodes den store",
     "type": "person",
@@ -2851,7 +2660,6 @@
     "approx": true
   },
   {
-    "id": "22-3",
     "code": "0101001010",
     "name": "Felix",
     "type": "person",
@@ -2866,7 +2674,6 @@
     "approx": true
   },
   {
-    "id": "22-4",
     "code": "1010111110",
     "name": "Pontius Pilatus",
     "type": "person",
@@ -2881,7 +2688,6 @@
     "approx": true
   },
   {
-    "id": "22-5",
     "code": "0110001010",
     "name": "Porcius Festus",
     "type": "person",
@@ -2896,7 +2702,6 @@
     "approx": true
   },
   {
-    "id": "22-6",
     "code": "1001011101",
     "name": "Den israelittiske jenta",
     "type": "person",
@@ -2911,7 +2716,6 @@
     "approx": true
   },
   {
-    "id": "22-7",
     "code": "0101110111",
     "name": "Naaman",
     "type": "person",
@@ -2926,7 +2730,6 @@
     "approx": true
   },
   {
-    "id": "22-8",
     "code": "1010101000",
     "name": "Keiser Nero",
     "type": "person",
@@ -2941,7 +2744,6 @@
     "approx": true
   },
   {
-    "id": "22-9",
     "code": "0111011010",
     "name": "Kong Ahasverus",
     "type": "person",
@@ -2956,7 +2758,6 @@
     "approx": true
   },
   {
-    "id": "23-1",
     "code": "0101101110",
     "name": "Keiser Domitian",
     "type": "person",
@@ -2971,7 +2772,6 @@
     "approx": true
   },
   {
-    "id": "23-2",
     "code": "1010011110",
     "name": "Keiser Tiberius",
     "type": "person",
@@ -2986,7 +2786,6 @@
     "approx": true
   },
   {
-    "id": "23-3",
     "code": "0111001001",
     "name": "Sankerib",
     "type": "person",
@@ -3001,7 +2800,6 @@
     "approx": true
   },
   {
-    "id": "23-4",
     "code": "1011001100",
     "name": "Herodes Antipas",
     "type": "person",
@@ -3016,7 +2814,6 @@
     "approx": true
   },
   {
-    "id": "23-5",
     "code": "0101100111",
     "name": "Herodes Agrippa I",
     "type": "person",
@@ -3031,7 +2828,6 @@
     "approx": true
   },
   {
-    "id": "23-6",
     "code": "0111001010",
     "name": "Augustus",
     "type": "person",
@@ -3046,7 +2842,6 @@
     "approx": true
   },
   {
-    "id": "23-7",
     "code": "0101001110",
     "name": "Caligula",
     "type": "person",
@@ -3061,7 +2856,6 @@
     "approx": true
   },
   {
-    "id": "23-8",
     "code": "0111000111",
     "name": "Claudius",
     "type": "person",
@@ -3076,7 +2870,6 @@
     "approx": true
   },
   {
-    "id": "23-9",
     "code": "0101101100",
     "name": "Lots kone",
     "type": "person",
@@ -3090,7 +2883,6 @@
     "approx": true
   },
   {
-    "id": "24-1",
     "code": "0101100101",
     "name": "Titus",
     "type": "person",
@@ -3105,7 +2897,6 @@
     "approx": true
   },
   {
-    "id": "24-2",
     "code": "0110010001",
     "name": "Vespasian",
     "type": "person",
@@ -3120,7 +2911,6 @@
     "approx": true
   },
   {
-    "id": "24-3",
     "code": "0110011110",
     "name": "Domitian",
     "type": "person",
@@ -3135,7 +2925,6 @@
     "approx": true
   },
   {
-    "id": "24-4",
     "code": "1001011001",
     "name": "Mika (profeten)",
     "type": "person",
@@ -3150,7 +2939,6 @@
     "approx": true
   },
   {
-    "id": "24-5",
     "code": "0110011101",
     "name": "Hosea",
     "type": "person",
@@ -3165,7 +2953,6 @@
     "approx": true
   },
   {
-    "id": "24-6",
     "code": "0101100001",
     "name": "Bilha",
     "type": "person",
@@ -3180,7 +2967,6 @@
     "approx": true
   },
   {
-    "id": "24-7",
     "code": "0101101111",
     "name": "Silpa",
     "type": "person",
@@ -3195,7 +2981,6 @@
     "approx": true
   },
   {
-    "id": "25-1",
     "code": "0001011101",
     "name": "Vannflommen",
     "type": "event",
@@ -3208,7 +2993,6 @@
     "year_from": -2370
   },
   {
-    "id": "25-2",
     "code": "0001101011",
     "name": "Språkforvirring i Babel",
     "type": "event",
@@ -3222,7 +3006,6 @@
     "approx": true
   },
   {
-    "id": "25-3",
     "code": "0001110101",
     "name": "Jehova inngår pakt med Abraham",
     "type": "event",
@@ -3235,7 +3018,6 @@
     "year_from": -1943
   },
   {
-    "id": "25-4",
     "code": "0001111010",
     "name": "Sodoma og Gomorra blir ødelagt",
     "type": "event",
@@ -3248,7 +3030,6 @@
     "year_from": -1919
   },
   {
-    "id": "25-5",
     "code": "0010001101",
     "name": "Jakob får navnet Israel",
     "type": "event",
@@ -3261,7 +3042,6 @@
     "year_from": -1774
   },
   {
-    "id": "25-6",
     "code": "0010010110",
     "name": "Josef blir nestleder i Egypt",
     "type": "event",
@@ -3274,7 +3054,6 @@
     "year_from": -1886
   },
   {
-    "id": "25-7",
     "code": "0010011011",
     "name": "Jakob og familien flytter til Egypt",
     "type": "event",
@@ -3287,7 +3066,6 @@
     "year_from": -1728
   },
   {
-    "id": "25-8",
     "code": "0010100011",
     "name": "Israelittene blir frigjort fra Egypt",
     "type": "event",
@@ -3300,7 +3078,6 @@
     "year_from": -1513
   },
   {
-    "id": "25-9",
     "code": "0010101111",
     "name": "Rødehavet deles",
     "type": "event",
@@ -3313,7 +3090,6 @@
     "year_from": -1513
   },
   {
-    "id": "26-1",
     "code": "0010110000",
     "name": "Spionene utforsker det lovte land",
     "type": "event",
@@ -3326,7 +3102,6 @@
     "year_from": -1512
   },
   {
-    "id": "26-2",
     "code": "0010110100",
     "name": "Israel vil ha en konge over seg",
     "type": "event",
@@ -3340,7 +3115,6 @@
     "approx": true
   },
   {
-    "id": "26-3",
     "code": "0010111000",
     "name": "David beseirer Goliat",
     "type": "event",
@@ -3354,7 +3128,6 @@
     "approx": true
   },
   {
-    "id": "26-4",
     "code": "0011000101",
     "name": "Jehova inngår pakt med David om et rike",
     "type": "event",
@@ -3368,7 +3141,6 @@
     "approx": true
   },
   {
-    "id": "26-5",
     "code": "0011001010",
     "name": "Salomo begynner å bygge tempelet",
     "type": "event",
@@ -3381,7 +3153,6 @@
     "year_from": -1034
   },
   {
-    "id": "26-6",
     "code": "0011010001",
     "name": "Tempelet i Jerusalem innvies",
     "type": "event",
@@ -3394,7 +3165,6 @@
     "year_from": -1026
   },
   {
-    "id": "26-7",
     "code": "0011011001",
     "name": "Israel blir delt i to",
     "type": "event",
@@ -3407,7 +3177,6 @@
     "year_from": -997
   },
   {
-    "id": "26-8",
     "code": "0011100001",
     "name": "Elia får ild til å komme ned fra himmelen på Karmelfjellet",
     "type": "event",
@@ -3421,7 +3190,6 @@
     "approx": true
   },
   {
-    "id": "26-9",
     "code": "0011101101",
     "name": "Na’aman helbredes",
     "type": "event",
@@ -3435,7 +3203,6 @@
     "approx": true
   },
   {
-    "id": "27-1",
     "code": "0011111001",
     "name": "Assyria ødelegger Nordriket",
     "type": "event",
@@ -3448,7 +3215,6 @@
     "year_from": -740
   },
   {
-    "id": "27-2",
     "code": "0011110010",
     "name": "Babylonerne ødelegger tempelet og fører folket i eksil",
     "type": "event",
@@ -3461,7 +3227,6 @@
     "year_from": -607
   },
   {
-    "id": "27-3",
     "code": "0100001011",
     "name": "De tre hebreerne reddes fra ildovnen",
     "type": "event",
@@ -3475,7 +3240,6 @@
     "approx": true
   },
   {
-    "id": "27-4",
     "code": "0100001110",
     "name": "Daniel reddes fra løvehulen",
     "type": "event",
@@ -3489,7 +3253,6 @@
     "approx": true
   },
   {
-    "id": "27-5",
     "code": "0100010011",
     "name": "Babylon faller",
     "type": "event",
@@ -3502,7 +3265,6 @@
     "year_from": -539
   },
   {
-    "id": "27-6",
     "code": "0100011101",
     "name": "Jødene får vende hjem til Israel",
     "type": "event",
@@ -3515,7 +3277,6 @@
     "year_from": -537
   },
   {
-    "id": "27-7",
     "code": "0100100111",
     "name": "Tempelet bygges opp igjen",
     "type": "event",
@@ -3528,7 +3289,6 @@
     "year_from": -515
   },
   {
-    "id": "27-8",
     "code": "0100101010",
     "name": "Jerusalems murer gjenoppbygges",
     "type": "event",
@@ -3541,7 +3301,6 @@
     "year_from": -455
   },
   {
-    "id": "27-9",
     "code": "0100101110",
     "name": "Døperen Johannes begynner sin tjeneste",
     "type": "event",
@@ -3554,7 +3313,6 @@
     "year_from": 29
   },
   {
-    "id": "28-1",
     "code": "0100110000",
     "name": "Jesus blir døpt",
     "type": "event",
@@ -3567,7 +3325,6 @@
     "year_from": 29
   },
   {
-    "id": "28-2",
     "code": "0100111010",
     "name": "Jesus gjør sitt første mirakel",
     "type": "event",
@@ -3580,7 +3337,6 @@
     "year_from": 29
   },
   {
-    "id": "28-3",
     "code": "0101000011",
     "name": "Jesus gir sitt liv for alle mennesker",
     "type": "event",
@@ -3593,7 +3349,6 @@
     "year_from": 33
   },
   {
-    "id": "28-4",
     "code": "0101000110",
     "name": "Den første kristne menighet får hellig ånd",
     "type": "event",
@@ -3606,7 +3361,6 @@
     "year_from": 33
   },
   {
-    "id": "28-5",
     "code": "0101001001",
     "name": "Paulus sine misjonsreiser",
     "type": "event",
@@ -3621,7 +3375,6 @@
     "approx": true
   },
   {
-    "id": "28-6",
     "code": "0101010101",
     "name": "Jerusalem ødelegges av romerne",
     "type": "event",
@@ -3634,7 +3387,6 @@
     "year_from": 70
   },
   {
-    "id": "28-7",
     "code": "0101011110",
     "name": "Abraham møter Melkisedek",
     "type": "event",
@@ -3648,7 +3400,6 @@
     "approx": true
   },
   {
-    "id": "28-8",
     "code": "0101100010",
     "name": "David inntar Jerusalem og gjør den til kongeby",
     "type": "event",
@@ -3661,7 +3412,6 @@
     "year_from": -1070
   },
   {
-    "id": "28-9",
     "code": "0101100100",
     "name": "Israelittene inntar det lovte land",
     "type": "event",

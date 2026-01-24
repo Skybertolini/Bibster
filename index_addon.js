@@ -4,7 +4,6 @@
 
   let persons = [];
   let personsByCode = new Map();
-  let personsById = new Map();
 
   let html5QrCode = null;
   let scanning = false;
@@ -115,14 +114,13 @@
 
   function parseQRPayload(payloadRaw) {
     const raw = normalize(payloadRaw);
-    if (!raw) return { code: "", id: "", raw };
+    if (!raw) return { code: "", raw };
 
     if ((raw.startsWith("{") && raw.endsWith("}")) || (raw.startsWith("[") && raw.endsWith("]"))) {
       try {
         const obj = JSON.parse(raw);
         return {
           code: normalize(obj.code ?? obj.CODE),
-          id: normalize(obj.id ?? obj.ID),
           raw
         };
       } catch {}
@@ -131,41 +129,34 @@
     let s = raw.replace(/^bibster:/i, "").trim();
 
     const mCode = s.match(/(?:^|[?&\s])code\s*=\s*([01]{6,32})/i);
-    const mId = s.match(/(?:^|[?&\s])id\s*=\s*([0-9]{1,3}-[0-9]{1,3})/i);
-    if (mCode) return { code: mCode[1], id: "", raw };
-    if (mId) return { code: "", id: mId[1], raw };
+    if (mCode) return { code: mCode[1], raw };
 
-    if (/^[01]{6,32}$/.test(s)) return { code: s, id: "", raw };
-    if (/^[0-9]{1,3}-[0-9]{1,3}$/.test(s)) return { code: "", id: s, raw };
+    if (/^[01]{6,32}$/.test(s)) return { code: s, raw };
 
     const bitsInside = s.match(/[01]{6,32}/);
-    if (bitsInside) return { code: bitsInside[0], id: "", raw };
+    if (bitsInside) return { code: bitsInside[0], raw };
 
-    const idInside = s.match(/[0-9]{1,3}-[0-9]{1,3}/);
-    if (idInside) return { code: "", id: idInside[0], raw };
-
-    return { code: "", id: "", raw };
+    return { code: "", raw };
   }
 
   function buildIndexes(list) {
     personsByCode = new Map();
-    personsById = new Map();
     for (const p of list) {
       const code = normalize(p.code);
-      const id = normalize(p.id);
-      if (code) personsByCode.set(code, p);
-      if (id) personsById.set(id, p);
+      if (!code) continue;
+      if (personsByCode.has(code)) {
+        console.warn("[data] duplicate code detected:", code, p?.name || p?.title);
+      }
+      personsByCode.set(code, p);
     }
   }
 
   function findPersonByInput(inputRaw) {
     const parsed = parseQRPayload(inputRaw);
     if (parsed.code && personsByCode.has(parsed.code)) return { person: personsByCode.get(parsed.code), parsed };
-    if (parsed.id && personsById.has(parsed.id)) return { person: personsById.get(parsed.id), parsed };
 
     const direct = normalize(inputRaw);
-    if (personsByCode.has(direct)) return { person: personsByCode.get(direct), parsed: { code: direct, id: "", raw: inputRaw } };
-    if (personsById.has(direct)) return { person: personsById.get(direct), parsed: { code: "", id: direct, raw: inputRaw } };
+    if (personsByCode.has(direct)) return { person: personsByCode.get(direct), parsed: { code: direct, raw: inputRaw } };
 
     return { person: null, parsed };
   }
@@ -297,8 +288,8 @@
     rTimeLabel.textContent = person.time_label || "—";
     rLivedWrap.classList.remove("on");
 
-    if (person.id) {
-      rImage.dataset.personSrc = `./assets/${person.id}.png`;
+    if (person.code) {
+      rImage.dataset.personSrc = `./assets/${person.code}.png`;
       rImage.dataset.failed = "0";
     } else {
       rImage.dataset.personSrc = "";
@@ -310,7 +301,6 @@
 
     bottomMsg.textContent =
       parsed.code ? `QR: code=${parsed.code}` :
-      parsed.id   ? `QR: id=${parsed.id}` :
                     `QR: ${parsed.raw}`;
 
     resultCard.classList.add("on");
@@ -327,8 +317,8 @@
 
     if (DEBUG) console.log("[random] picking from", persons.length);
     const person = persons[Math.floor(Math.random() * persons.length)];
-    if (DEBUG) console.log("[random] picked", person?.id, person?.type, person?.name || person?.title);
-    showResult(person, { code: "", id: "", raw: "Tilfeldig" });
+    if (DEBUG) console.log("[random] picked", person?.code, person?.type, person?.name || person?.title);
+    showResult(person, { code: "", raw: "Tilfeldig" });
     bottomMsg.textContent = "Tilfeldig person";
   }
 
