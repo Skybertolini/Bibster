@@ -46,9 +46,18 @@
   let hintMuted = false;
 
   const hintCards = Array.from(document.querySelectorAll(".hint-card"));
-  const hint1Label = document.querySelector('.hint-card[data-hint="1"] .k span:last-child');
-  const hint1LabelPerson = "🗺️ Født / oppvokst";
-  const hint1LabelEvent = "🗺️ Hvor hendelsen skjedde";
+  const hintLabels = {
+    person: {
+      1: "🗺️ Født / oppvokst",
+      2: "🛡️ Yrke / rolle",
+      3: "✨ Kjennetegn"
+    },
+    event: {
+      1: "🗺️ Hvor det skjedde",
+      2: "🛡️ Hva som skjedde",
+      3: "✨ Litt mer informasjon"
+    }
+  };
   let hintProgressIndex = 0;
   const hintRevealTimers = new WeakMap();
   const hintSounds = new Map([
@@ -314,6 +323,16 @@
     });
   }
 
+  function setHintLabelsByType(isEvent) {
+    const labelsByType = isEvent ? hintLabels.event : hintLabels.person;
+    hintCards.forEach((card) => {
+      const hintNumber = Number(card.dataset.hint);
+      const labelElement = card.querySelector(".k span:last-child");
+      if (!labelElement || !labelsByType[hintNumber]) return;
+      labelElement.textContent = labelsByType[hintNumber];
+    });
+  }
+
   function showResult(person, parsed) {
     if (!person) {
       resultCard.classList.remove("on");
@@ -326,9 +345,7 @@
     currentIsEvent = isEvent;
     document.body.classList.toggle("is-event", isEvent);
     resultStatusText.textContent = isEvent ? "Hendelse funnet" : "Person funnet";
-    if (hint1Label) {
-      hint1Label.textContent = isEvent ? hint1LabelEvent : hint1LabelPerson;
-    }
+    setHintLabelsByType(isEvent);
 
     // Name hidden by default
     setNameHidden(person);
